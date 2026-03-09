@@ -1,0 +1,8 @@
+{
+  "name": "website-building",
+  "type": "module",
+  "version": "1.0.0",
+  "dependencies": {
+    "puppeteer": "^24.15.0"
+  }
+}

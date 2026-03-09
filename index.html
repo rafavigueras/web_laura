@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laura González Ortiz de Zárate — Coach Ejecutiva & Especialista en Talento</title>
+  <meta name="description" content="Coach certificada ICF, docente UCM y autora. Coaching ejecutivo para empresas y acompañamiento transformacional para particulares en Madrid.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:        #F8F5F0;
+      --cream-alt:    #F0EBE4;
+      --sage:         #BDC0B5;
+      --sage-light:   #D6D9D2;
+      --sage-dark:    #8A9087;
+      --copper:       #CDA085;
+      --copper-dark:  #B08060;
+      --copper-light: #ECD8CA;
+      --charcoal:     #1A1815;
+      --charcoal-mid: #3B3833;
+      --muted:        #7A7470;
+      --border:       rgba(26,24,21,0.1);
+      --white:        #FDFCFA;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--charcoal);
+      font-family: 'Jost', system-ui, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      font-weight: 600;
+    }
+
+    .label {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hr-deco {
+      display: block;
+      width: 2.5rem;
+      height: 1.5px;
+      background: var(--copper);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.125rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.45s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    nav.scrolled {
+      background: var(--cream);
+      box-shadow: 0 1px 0 var(--border);
+    }
+    .nav-logo { height: 50px; width: auto; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em;
+      color: var(--charcoal); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--copper); }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.5rem; border-radius: 100px;
+      font-family: 'Jost', sans-serif; font-size: 0.875rem;
+      font-weight: 500; letter-spacing: 0.02em;
+      text-decoration: none; border: none; cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+    .btn:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; }
+    .btn:active { transform: translateY(0) !important; }
+
+    .btn-dark { background: var(--charcoal); color: var(--white); }
+    .btn-dark:hover {
+      background: var(--copper-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(205,160,133,0.28);
+    }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--charcoal);
+      border: 1.5px solid var(--charcoal);
+    }
+    .btn-outline-dark:hover {
+      background: var(--charcoal); color: var(--white);
+      transform: translateY(-2px);
+    }
+    .btn-copper { background: var(--copper); color: var(--white); }
+    .btn-copper:hover {
+      background: var(--copper-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(205,160,133,0.35);
+    }
+    .btn-outline-white {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.4);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.7);
+      transform: translateY(-2px);
+    }
+
+    .arrow { display: inline-block; transition: transform 0.18s ease; }
+    a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      padding-top: 74px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+    .hero-content {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 3.5rem 5rem 5rem; gap: 2.25rem; position: relative; z-index: 2;
+    }
+    .hero-eyebrow { display: flex; flex-direction: column; gap: 0.875rem; }
+    .hero h1 {
+      font-size: clamp(3.5rem, 5.5vw, 7.5rem);
+      line-height: 0.93;
+      max-width: 9em;
+    }
+    .hero h1 em { font-style: italic; color: var(--copper); }
+    .hero-body { max-width: 42ch; color: var(--muted); font-size: 1.0625rem; }
+    .hero-ctas { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+
+    .hero-media {
+      position: relative; overflow: hidden;
+      background: var(--cream-alt);
+    }
+    .hero-media img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .hero-media::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 0%, rgba(248,245,240,0.18) 0%, transparent 45%),
+        radial-gradient(ellipse at 80% 20%, rgba(205,160,133,0.1) 0%, transparent 55%),
+        linear-gradient(to bottom, transparent 50%, rgba(26,24,21,0.5) 100%);
+    }
+
+    /* Floating stat cards in hero */
+    .hero-stat {
+      position: absolute; z-index: 10;
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 4px 24px rgba(26,24,21,0.12), 0 1px 4px rgba(26,24,21,0.06);
+      display: flex; flex-direction: column; gap: 0.15rem;
+      animation: floatCard 4s ease-in-out infinite;
+    }
+    .hero-stat:nth-child(2) { animation-delay: -2s; }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700; line-height: 1;
+      color: var(--charcoal);
+    }
+    .hero-stat-num span { color: var(--copper); }
+    .hero-stat-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--charcoal); color: var(--white);
+      padding: 1.375rem 5rem;
+      display: flex; align-items: center; gap: 3rem;
+      overflow-x: auto;
+    }
+    .trust-bar-label {
+      font-size: 0.625rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--sage); white-space: nowrap;
+    }
+    .trust-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
+    .trust-items { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+    .trust-item {
+      font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.025em;
+      color: rgba(253,252,250,0.65); white-space: nowrap;
+    }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 7rem 5rem; }
+    .section-white { background: var(--white); }
+    .section-dark { background: var(--charcoal); color: var(--white); }
+    .section-sage { background: var(--sage-light); }
+    .section-copper { background: var(--copper-light); }
+
+    .section-header { display: flex; flex-direction: column; gap: 0.875rem; margin-bottom: 4rem; }
+    .section-header.centered { align-items: center; text-align: center; }
+    .section-title { font-size: clamp(2.5rem, 3.5vw, 4.5rem); }
+
+    /* ─── BIFURCATION ─── */
+    .bifurc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .bifurc-card {
+      position: relative; border-radius: 1.75rem; overflow: hidden;
+      aspect-ratio: 5/6; cursor: pointer;
+    }
+    .bifurc-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.65s cubic-bezier(0.4,0,0.2,1);
+    }
+    .bifurc-card:hover img { transform: scale(1.05); }
+    .bifurc-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,24,21,0.88) 0%, rgba(26,24,21,0.15) 55%, transparent 100%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 2.5rem; gap: 0.875rem;
+    }
+    .bifurc-pill {
+      display: inline-flex; width: fit-content;
+      padding: 0.25rem 0.8rem; border-radius: 100px;
+      background: rgba(205,160,133,0.85);
+      font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: white;
+    }
+    .bifurc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.875rem, 2.5vw, 3.25rem); font-weight: 600;
+      color: white; line-height: 1.05; letter-spacing: -0.03em;
+    }
+    .bifurc-desc { font-size: 0.875rem; color: rgba(253,252,250,0.78); line-height: 1.55; }
+    .bifurc-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.875rem; font-weight: 600; color: white; text-decoration: none;
+      padding-top: 0.875rem; border-top: 1px solid rgba(255,255,255,0.18);
+      width: 100%;
+      transition: color 0.2s ease;
+    }
+    .bifurc-link:hover { color: var(--copper-light); }
+
+    /* ─── ABOUT ─── */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.25fr;
+      gap: 6rem; align-items: center;
+    }
+    .about-photo {
+      position: relative; border-radius: 1.75rem; overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-photo::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(205,160,133,0.18) 0%, transparent 65%);
+      mix-blend-mode: multiply;
+    }
+    .about-content { display: flex; flex-direction: column; gap: 1.625rem; }
+    .about-content h2 { font-size: clamp(2.5rem, 3vw, 4rem); }
+    .credentials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem; }
+    .cred-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.875rem 1rem; background: var(--cream-alt); border-radius: 0.875rem;
+    }
+    .cred-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--copper); margin-top: 0.55rem; flex-shrink: 0;
+    }
+    .cred-text { font-size: 0.8125rem; font-weight: 500; color: var(--charcoal-mid); line-height: 1.35; }
+
+    /* ─── BOOK FEATURE ─── */
+    .book-strip {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 5rem; align-items: center;
+      padding: 5rem; background: var(--charcoal); border-radius: 2rem;
+    }
+    .book-cover {
+      width: 200px; flex-shrink: 0;
+      border-radius: 0.5rem; overflow: hidden;
+      box-shadow: -12px 12px 40px rgba(0,0,0,0.45), -4px 4px 12px rgba(0,0,0,0.25);
+      transform: rotate(-3deg);
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .book-cover:hover { transform: rotate(0deg) scale(1.04); }
+    .book-cover img { width: 100%; display: block; }
+
+    /* ─── PHOTO STRIP ─── */
+    .photo-strip {
+      display: grid; grid-template-columns: 1.1fr 0.75fr 0.75fr 1.1fr;
+      gap: 0.875rem; height: 340px;
+    }
+    .strip-item { border-radius: 1.25rem; overflow: hidden; }
+    .strip-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+    .strip-item:hover img { transform: scale(1.06); }
+
+    /* ─── BENTO GRID ─── */
+    .bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .bento-card {
+      background: var(--white); border-radius: 1.375rem;
+      padding: 2rem; display: flex; flex-direction: column; gap: 0.875rem;
+      box-shadow: 0 1px 3px rgba(26,24,21,0.05), 0 4px 16px rgba(26,24,21,0.04);
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.22s ease;
+    }
+    .bento-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(205,160,133,0.16), 0 2px 8px rgba(26,24,21,0.07);
+    }
+    .bento-card.span-2 { grid-column: span 2; }
+    .bento-card.span-3 { grid-column: span 3; }
+    .bento-card.dark { background: var(--charcoal); color: var(--white); }
+    .bento-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem; font-weight: 300; line-height: 1; color: var(--copper); opacity: 0.55;
+    }
+    .bento-card.dark .bento-num { color: var(--copper-light); }
+    .bento-card h3 { font-size: clamp(1.375rem, 1.5vw, 1.75rem); }
+    .bento-card.dark h3 { color: var(--white); }
+    .bento-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+    .bento-card.dark p { color: rgba(253,252,250,0.6); }
+    .bento-pill {
+      display: inline-flex; padding: 0.2rem 0.65rem; border-radius: 100px;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      width: fit-content;
+    }
+    .pill-b2b { background: rgba(189,192,181,0.3); color: var(--sage-dark); }
+    .pill-b2c { background: rgba(205,160,133,0.15); color: var(--copper-dark); }
+    .pill-b2c-inv { background: rgba(205,160,133,0.2); color: var(--copper-light); }
+    .bento-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8125rem; font-weight: 600; color: var(--copper);
+      text-decoration: none; margin-top: auto; padding-top: 0.875rem;
+      transition: gap 0.18s ease;
+    }
+    .bento-link:hover { gap: 0.7rem; }
+    .bento-card.dark .bento-link { color: var(--copper-light); }
+    .bento-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .bento-tag-chip {
+      padding: 0.2rem 0.65rem; background: var(--cream); border-radius: 100px;
+      font-size: 0.6875rem; color: var(--muted);
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .testi-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 1.375rem; padding: 2rem;
+      display: flex; flex-direction: column; gap: 1.25rem;
+    }
+    .testi-stars { color: var(--copper); font-size: 1rem; letter-spacing: 0.1em; }
+    .testi-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-style: italic; font-weight: 500;
+      line-height: 1.45; letter-spacing: -0.02em; flex: 1;
+    }
+    .testi-name { font-size: 0.875rem; font-weight: 600; }
+    .testi-role { font-size: 0.75rem; color: var(--muted); margin-top: 0.15rem; }
+
+    /* ─── NEWSLETTER ─── */
+    .newsletter-wrap {
+      max-width: 580px; margin: 0 auto;
+      text-align: center; display: flex; flex-direction: column; align-items: center; gap: 2rem;
+    }
+    .newsletter-form { display: flex; gap: 0.75rem; width: 100%; }
+    .newsletter-form input {
+      flex: 1; padding: 0.875rem 1.25rem;
+      border: 1.5px solid rgba(255,255,255,0.2); border-radius: 100px;
+      background: rgba(255,255,255,0.08);
+      font-family: 'Jost', sans-serif; font-size: 0.9375rem;
+      color: var(--white); outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .newsletter-form input:focus { border-color: var(--copper); background: rgba(255,255,255,0.12); }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+
+    /* ─── CONTACT SECTION ─── */
+    .contact-inner {
+      max-width: 820px; margin: 0 auto;
+      text-align: center; display: flex; flex-direction: column; align-items: center; gap: 2rem;
+    }
+    .contact-inner h2 {
+      font-size: clamp(3rem, 5vw, 6.5rem);
+      line-height: 0.92; color: var(--charcoal);
+    }
+    .contact-inner h2 em { font-style: italic; color: var(--copper-dark); }
+    .contact-info { display: flex; gap: 2.5rem; flex-wrap: wrap; justify-content: center; }
+    .contact-info a {
+      font-size: 0.875rem; color: var(--muted); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .contact-info a:hover { color: var(--copper-dark); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--charcoal); color: var(--white);
+      padding: 5rem 5rem 2.5rem;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 4rem; padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 2rem;
+    }
+    .footer-logo { height: 46px; filter: brightness(0) invert(1) opacity(0.85); margin-bottom: 1.125rem; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(253,252,250,0.5); line-height: 1.7; max-width: 26ch; }
+    .social-row { display: flex; gap: 0.75rem; margin-top: 1.625rem; }
+    .social-btn {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.6875rem; font-weight: 700; color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    }
+    .social-btn:hover { border-color: var(--copper); color: var(--white); background: var(--copper); }
+    footer h5 {
+      font-family: 'Jost', sans-serif; font-size: 0.625rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage);
+      margin-bottom: 1.25rem;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 0.125rem; }
+    .footer-links a {
+      font-size: 0.875rem; color: rgba(253,252,250,0.55); text-decoration: none;
+      line-height: 2.1; transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+    .footer-legal { display: flex; gap: 1.75rem; }
+    .footer-legal a {
+      font-size: 0.75rem; color: rgba(255,255,255,0.25); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .footer-legal a:hover { color: rgba(255,255,255,0.55); }
+
+    /* ─── REVEAL ANIMATIONS ─── */
+    /* Elements visible by default — JS adds .js-reveals to body,
+       which then hides .reveal:not(.visible) elements for scroll-in effect.
+       Without JS (or in full-page screenshot), everything is visible. */
+    .reveal { }
+
+    body.js-reveals .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.75s cubic-bezier(0.4,0,0.2,1),
+                  transform 0.75s cubic-bezier(0.4,0,0.2,1);
+    }
+    body.js-reveals .reveal.from-left { transform: translateX(-26px); }
+    body.js-reveals .reveal.from-right { transform: translateX(26px); }
+    body.js-reveals .reveal.visible {
+      opacity: 1 !important;
+      transform: translate(0,0) !important;
+    }
+    body.js-reveals .d1 { transition-delay: 0.08s; }
+    body.js-reveals .d2 { transition-delay: 0.16s; }
+    body.js-reveals .d3 { transition-delay: 0.24s; }
+    body.js-reveals .d4 { transition-delay: 0.32s; }
+    body.js-reveals .d5 { transition-delay: 0.40s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-media { height: 55vw; min-height: 320px; }
+      .hero-content { padding: 3rem 2rem 3rem 3rem; }
+      .bifurc-grid { grid-template-columns: 1fr; }
+      .bifurc-card { aspect-ratio: 16/9; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-photo { aspect-ratio: 16/9; }
+      .bento { grid-template-columns: 1fr 1fr; }
+      .bento-card.span-2 { grid-column: span 2; }
+      .bento-card.span-3 { grid-column: span 2; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .photo-strip { grid-template-columns: 1fr 1fr; height: auto; }
+      .strip-item { aspect-ratio: 1; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      nav { padding: 1rem 2rem; }
+      .nav-links { display: none; }
+      .book-strip { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; align-items: center; }
+      .book-cover { margin: 0 auto; }
+      .trust-bar { padding: 1.25rem 2rem; }
+      .section { padding: 5rem 2rem; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 4rem 1.25rem; }
+      .bento { grid-template-columns: 1fr; }
+      .bento-card.span-2, .bento-card.span-3 { grid-column: span 1; }
+      .credentials-grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .contact-info { flex-direction: column; gap: 0.75rem; }
+      .photo-strip { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="#">
+    <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" class="nav-logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#conoceme">Conóceme</a></li>
+    <li><a href="#empresas">Para Empresas</a></li>
+    <li><a href="#particulares">Para Particulares</a></li>
+    <li><a href="#recursos">Recursos</a></li>
+  </ul>
+  <a href="#contacto" class="btn btn-dark">Hablemos <span class="arrow">→</span></a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section class="hero">
+
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal">
+      <span class="label">Coach Certificada ICF · Docente UCM · Autora</span>
+      <span class="hr-deco"></span>
+    </div>
+
+    <h1 class="reveal d1">
+      Liderazgo<br>
+      <em>Consciente</em><br>
+      para quien<br>exige más.
+    </h1>
+
+    <p class="hero-body reveal d2">
+      Ayudo a líderes corporativos, equipos ágiles y profesionales a desbloquear su máximo potencial combinando rigor analítico, neurocomunicación y profundidad humana.
+    </p>
+
+    <div class="hero-ctas reveal d3">
+      <a href="#empresas" class="btn btn-dark">Soluciones para Empresas <span class="arrow">→</span></a>
+      <a href="#particulares" class="btn btn-outline-dark">Acompañamiento Personal</a>
+    </div>
+  </div>
+
+  <div class="hero-media">
+    <img src="brand_assets/3578dc37-81a7-4583-aabf-1c1fb9fd241c.jpg"
+         alt="Laura González Ortiz de Zárate — Coach Ejecutiva">
+
+    <!-- Floating stat: left-bottom -->
+    <div class="hero-stat" style="bottom: 2.5rem; left: 1.5rem;">
+      <span class="hero-stat-num">+500<span>h</span></span>
+      <span class="hero-stat-label">Horas de coaching</span>
+    </div>
+
+    <!-- Floating stat: right-middle -->
+    <div class="hero-stat" style="top: 35%; right: 1.5rem;">
+      <span class="hero-stat-num">B2<span>B</span></span>
+      <span class="hero-stat-label">& B2C · ES / EN</span>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     TRUST BAR
+═══════════════════════════════════════ -->
+<div class="trust-bar">
+  <span class="trust-bar-label">Respaldada por</span>
+  <span class="trust-sep"></span>
+  <div class="trust-items">
+    <span class="trust-item">International Coach Federation (ICF)</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Universidad Complutense de Madrid</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Editorial Octaedro</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">DashBook — Autora publicada</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Ellas Coach · Cofundadora</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Asociación Yo No Renuncio</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     BIFURCACIÓN — ¿Desde dónde empiezas?
+═══════════════════════════════════════ -->
+<section class="section" id="servicios">
+  <div class="section-header reveal">
+    <span class="label">001 / Servicios</span>
+    <h2 class="section-title">¿Desde dónde inicias<br>tu transformación?</h2>
+  </div>
+
+  <div class="bifurc-grid">
+
+    <div class="bifurc-card reveal from-left">
+      <img src="brand_assets/IMG_2647.jpg" alt="Coaching Ejecutivo para Empresas">
+      <div class="bifurc-overlay">
+        <span class="bifurc-pill">Para Empresas</span>
+        <h3 class="bifurc-title">Liderazgo Corporativo<br>y Cultura Organizacional</h3>
+        <p class="bifurc-desc">Coaching ejecutivo, equipos, talleres de soft skills, consultoría D&I y formación Agile. Para Directores de RRHH, CEOs y líderes que exigen resultados.</p>
+        <a href="#empresas" class="bifurc-link">
+          Explorar programas corporativos <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="bifurc-card reveal from-right d2">
+      <img src="brand_assets/IMG_2548.jpg" alt="Coaching Individual y Personal">
+      <div class="bifurc-overlay">
+        <span class="bifurc-pill">Para Particulares</span>
+        <h3 class="bifurc-title">Autodescubrimiento<br>y Acción Individual</h3>
+        <p class="bifurc-desc">Procesos 1:1, sesiones Time To Talk, programas de neurocomunicación y curso online de productividad. A tu ritmo, en tu espacio.</p>
+        <a href="#particulares" class="bifurc-link">
+          Iniciar mi proceso individual <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     ABOUT — Mi historia
+═══════════════════════════════════════ -->
+<section class="section section-white" id="conoceme">
+  <div class="about-grid">
+
+    <div class="about-photo reveal from-left">
+      <img src="brand_assets/IMG_2313.jpg" alt="Laura González Ortiz de Zárate">
+    </div>
+
+    <div class="about-content">
+      <div class="reveal">
+        <span class="label">002 / Mi Historia</span>
+        <span class="hr-deco" style="margin-top: 0.75rem;"></span>
+      </div>
+
+      <h2 class="reveal d1">Del rigor fiscal a la<br><em>transformación humana.</em></h2>
+
+      <p class="reveal d2" style="color: var(--muted);">
+        Como hija de psicoanalistas y tras años en departamentos fiscales de corporaciones multinacionales, comprendí que el verdadero crecimiento —empresarial y personal— requiere integrar las emociones, los vínculos y la resiliencia en un mundo en constante transformación.
+      </p>
+      <p class="reveal d2" style="color: var(--muted);">
+        Hoy aplico mi Licenciatura en Economía (UCM), mi Máster en Asesoría Fiscal, estudios avanzados en Psicoanálisis y especialización en neurocomunicación para acelerar la evolución de líderes y organizaciones.
+      </p>
+
+      <div class="credentials-grid reveal d3">
+        <div class="cred-item"><span class="cred-dot"></span><span class="cred-text">Coach Certificada ICF</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="cred-text">Docente Colaboradora UCM</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="cred-text">Autora — Editorial Octaedro &amp; DashBook</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="cred-text">Cofundadora Ellas Coach</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="cred-text">Especialista en Neurocomunicación</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="cred-text">Lic. Economía · Máster Asesoría Fiscal</span></div>
+      </div>
+
+      <div class="reveal d4">
+        <a href="#contacto" class="btn btn-dark">Conoce mi trayectoria <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     BOOK FEATURE
+═══════════════════════════════════════ -->
+<section class="section" style="padding-top: 0; padding-bottom: 0; padding-left: 5rem; padding-right: 5rem; margin-bottom: 0;">
+  <div class="book-strip reveal" style="margin: 0;">
+    <div class="book-cover">
+      <img src="brand_assets/Libro.jpeg" alt="Cuando todo se rompe — Laura González Ortiz de Zárate">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <div>
+        <span class="label" style="color: var(--sage); margin-bottom: 0.75rem;">Libro publicado · DashBook</span>
+        <h2 style="font-size: clamp(2.25rem, 3vw, 4rem); color: var(--white); line-height: 1.0;">
+          <em>"Cuando todo se rompe"</em>
+        </h2>
+        <p style="font-size: 1rem; color: rgba(253,252,250,0.55); margin-top: 0.5rem; font-style: italic;">
+          El arte de hilar, deshilar y volver a hilar.
+        </p>
+      </div>
+      <p style="color: rgba(253,252,250,0.65); max-width: 50ch; line-height: 1.7;">
+        Una obra sobre los momentos en que todo se deshace — y sobre la increíble capacidad humana de rehacerse. Laura comparte aquí el conocimiento destilado de años acompañando procesos de transformación profunda.
+      </p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="#contacto" class="btn btn-copper">Conseguir el libro <span class="arrow">→</span></a>
+        <a href="#conoceme" class="btn btn-outline-white">Sobre la autora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     PHOTO STRIP
+═══════════════════════════════════════ -->
+<div style="padding: 3rem 5rem 0; overflow: hidden;" class="reveal">
+  <div class="photo-strip">
+    <div class="strip-item">
+      <img src="brand_assets/IMG_3295.jpg" alt="Laura González — outdoor portrait">
+    </div>
+    <div class="strip-item">
+      <img src="brand_assets/IMG_2604.jpg" alt="Sesión de coaching en acción">
+    </div>
+    <div class="strip-item">
+      <img src="brand_assets/IMG_2548.jpg" alt="Laura González leyendo">
+    </div>
+    <div class="strip-item">
+      <img src="brand_assets/IMG_2647.jpg" alt="Laura González formación empresarial">
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     SERVICIOS EMPRESAS
+═══════════════════════════════════════ -->
+<section class="section" id="empresas">
+  <div class="section-header reveal">
+    <span class="label">003 / Para Empresas</span>
+    <h2 class="section-title">Intervenciones estratégicas<br>para culturas de alto rendimiento.</h2>
+    <p style="max-width: 58ch; color: var(--muted); font-size: 1rem; margin-top: 0.5rem;">
+      Soluciones para Directores de RRHH, CEOs y líderes que buscan optimizar su estructura, potenciar el talento emergente y gestionar el cambio. Disponible en español e inglés.
+    </p>
+  </div>
+
+  <div class="bento">
+
+    <div class="bento-card span-2 reveal">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">01</span>
+        <span class="bento-pill pill-b2b">TOP 50</span>
+      </div>
+      <h3>Coaching Ejecutivo</h3>
+      <p>Procesos individuales para perfiles directivos de alto impacto, talento crítico en retención y nuevos managers en transición. Rutas de 8 sesiones con objetivos medibles y ROI demostrable.</p>
+      <a href="#contacto" class="bento-link">Solicitar información <span class="arrow">→</span></a>
+    </div>
+
+    <div class="bento-card reveal d1">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">02</span>
+        <span class="bento-pill pill-b2b">Equipos</span>
+      </div>
+      <h3>Coaching de Equipos</h3>
+      <p>Intervenciones sistémicas para incrementar la cohesión grupal, facilitar la integración ágil y fomentar el liderazgo compartido.</p>
+    </div>
+
+    <div class="bento-card reveal d2">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">03</span>
+        <span class="bento-pill pill-b2b">Formación</span>
+      </div>
+      <h3>Talleres de Soft Skills</h3>
+      <p>Liderazgo Consciente &amp; Femenino, Comunicación y Storytelling, Productividad y Desconexión Digital. Presentados como soluciones de retención de talento.</p>
+    </div>
+
+    <div class="bento-card reveal">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">04</span>
+        <span class="bento-pill pill-b2b">C-Level</span>
+      </div>
+      <h3>Consultoría Estratégica</h3>
+      <p>Diversidad e Inclusión, auditoría de Filosofía Agile y programas Reshape the Values. Para fundadores y C-Level en gestión del cambio cultural.</p>
+    </div>
+
+    <div class="bento-card span-2 reveal d1">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">05</span>
+        <span class="bento-pill pill-b2b">Conferencias</span>
+      </div>
+      <h3>In-company Talks</h3>
+      <p>Charlas y conferencias inspiracionales para audiencias corporativas en cualquier escala. Bilingüe español/inglés en formato presencial, remoto o híbrido.</p>
+      <div class="bento-tags">
+        <span class="bento-tag-chip">Presencial</span>
+        <span class="bento-tag-chip">Remoto</span>
+        <span class="bento-tag-chip">Híbrido</span>
+        <span class="bento-tag-chip">ES / EN</span>
+        <span class="bento-tag-chip">Audiencias ilimitadas</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- B2B CTA strip -->
+  <div style="margin-top: 2rem; padding: 2.5rem 3rem; background: var(--cream-alt); border-radius: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;" class="reveal">
+    <div>
+      <span class="label" style="margin-bottom: 0.4rem;">¿Tienes un proyecto corporativo?</span>
+      <h3 style="font-size: clamp(1.5rem, 2vw, 2rem);">Cuéntame el desafío de tu organización.</h3>
+    </div>
+    <a href="#contacto" class="btn btn-dark">Solicitar llamada exploratoria <span class="arrow">→</span></a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SERVICIOS PARTICULARES
+═══════════════════════════════════════ -->
+<section class="section section-white" id="particulares">
+  <div class="section-header reveal">
+    <span class="label">004 / Para Particulares</span>
+    <h2 class="section-title">Autodescubrimiento y acción:<br>diseña tu proceso personal.</h2>
+    <p style="max-width: 58ch; color: var(--muted); font-size: 1rem; margin-top: 0.5rem;">
+      Metodologías probadas y espacios seguros para disolver bloqueos, redefinir tu identidad profesional y recuperar el control de tu tiempo.
+    </p>
+  </div>
+
+  <div class="bento">
+
+    <div class="bento-card dark reveal" style="justify-content: space-between; min-height: 320px;">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <span class="bento-num">01</span>
+          <span class="bento-pill pill-b2c-inv">Proceso</span>
+        </div>
+        <h3 style="margin-top: 0.5rem;">Coaching Individual 1:1</h3>
+        <p style="margin-top: 0.75rem;">Acompañamiento en profundidad para crisis vitales, reinvención profesional o crecimiento personal. Metodología transformacional adaptada a ti.</p>
+      </div>
+      <a href="#contacto" class="bento-link">Reservar llamada gratuita <span class="arrow">→</span></a>
+    </div>
+
+    <div class="bento-card reveal d1">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">02</span>
+        <span class="bento-pill pill-b2c">40 min</span>
+      </div>
+      <h3>Time To Talk</h3>
+      <p>Sesiones ágiles de 40 minutos para desbloqueos puntuales e inmediatos. Reserva directa con pago anticipado.</p>
+    </div>
+
+    <div class="bento-card reveal d2">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">03</span>
+        <span class="bento-pill pill-b2c">Online</span>
+      </div>
+      <h3>Curso de Productividad y Organización</h3>
+      <p>Formación asíncrona para dominar tu gestión del tiempo y diseñar una vida más eficiente y consciente.</p>
+    </div>
+
+    <div class="bento-card span-3 reveal d1">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">04</span>
+        <span class="bento-pill pill-b2c">Programa Estrella</span>
+      </div>
+      <h3>Neurocomunicación &amp; Marca Personal</h3>
+      <p>Programa especializado que integra ciencia del comportamiento, comunicación estratégica y construcción de identidad profesional. Con testimonios, desglose de módulos y opciones de pago fraccionado.</p>
+      <a href="#contacto" class="bento-link">Ver temario completo <span class="arrow">→</span></a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     TESTIMONIOS
+═══════════════════════════════════════ -->
+<section class="section section-sage" id="testimonios">
+  <div class="section-header centered reveal">
+    <span class="label">005 / Testimonios</span>
+    <h2 class="section-title">Resultados que hablan<br>por sí solos.</h2>
+  </div>
+
+  <div class="testi-grid">
+
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">
+        "Laura me ayudó a encontrar claridad en el momento más exigente de mi carrera. Su combinación de rigor metodológico y profunda empatía es única e irrepetible."
+      </p>
+      <div>
+        <p class="testi-name">Elena M.</p>
+        <p class="testi-role">Directora de Talento · Multinacional sector financiero</p>
+      </div>
+    </div>
+
+    <div class="testi-card reveal d2">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">
+        "El proceso de coaching con Laura transformó la dinámica de mi equipo directivo. En tres meses medimos un incremento del 40% en indicadores de cohesión y productividad."
+      </p>
+      <div>
+        <p class="testi-name">Carlos R.</p>
+        <p class="testi-role">CEO · Empresa tecnológica, Madrid</p>
+      </div>
+    </div>
+
+    <div class="testi-card reveal d3">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">
+        "Su programa de Neurocomunicación cambió completamente cómo me percibo y comunico profesionalmente. Seis meses después conseguí el puesto que tanto deseaba."
+      </p>
+      <div>
+        <p class="testi-name">Ana P.</p>
+        <p class="testi-role">Responsable de Comunicación · Cliente particular</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     RECURSOS / NEWSLETTER
+═══════════════════════════════════════ -->
+<section class="section section-dark" id="recursos">
+  <div class="newsletter-wrap">
+
+    <div class="reveal" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+      <span class="label" style="color: var(--sage);">006 / Newsletter</span>
+      <h2 style="font-size: clamp(2.5rem, 4.5vw, 4.5rem); color: var(--white); text-align: center; line-height: 0.95;">
+        Únete a mi comunidad de aprendizaje continuo.
+      </h2>
+      <p style="color: rgba(253,252,250,0.55); text-align: center; max-width: 40ch;">
+        Reflexiones sobre liderazgo, productividad y bienestar integral cada viernes a las 8:00h.
+      </p>
+    </div>
+
+    <form class="newsletter-form reveal d1" onsubmit="return false;" novalidate>
+      <input type="email" placeholder="Tu correo electrónico" aria-label="Correo electrónico">
+      <button type="submit" class="btn btn-copper">Suscribirme <span class="arrow">→</span></button>
+    </form>
+
+    <p class="reveal d2" style="font-size: 0.75rem; color: rgba(253,252,250,0.25);">
+      Sin spam. Cancela cuando quieras. GDPR compliant.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CONTACTO CTA
+═══════════════════════════════════════ -->
+<section class="section section-copper" id="contacto">
+  <div class="contact-inner">
+
+    <div class="reveal" style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+      <span class="label">007 / Contacto</span>
+      <span class="hr-deco"></span>
+    </div>
+
+    <h2 class="reveal d1">
+      ¿Preparado para alinear<br>tus valores con<br><em>tus resultados?</em>
+    </h2>
+
+    <p class="reveal d2" style="color: var(--charcoal-mid); max-width: 44ch; font-size: 1.0625rem;">
+      Reserva una llamada exploratoria gratuita de 30 minutos. Sin compromisos. Con claridad total.
+    </p>
+
+    <a href="mailto:hola@lauragonzalezortizdezarate.com" class="btn btn-dark reveal d3" style="font-size: 1rem; padding: 0.875rem 2.5rem;">
+      Hablemos <span class="arrow">→</span>
+    </a>
+
+    <div class="contact-info reveal d4">
+      <a href="mailto:hola@lauragonzalezortizdezarate.com">hola@lauragonzalezortizdezarate.com</a>
+      <a href="tel:+34617392132">+34 617 392 132</a>
+      <span style="font-size: 0.875rem; color: var(--muted);">Madrid, España</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" class="footer-logo">
+      <p class="footer-tagline">
+        Coach ejecutiva, consultora de talento y especialista en habilidades directivas. Madrid, España.
+      </p>
+      <div class="social-row">
+        <a href="https://www.instagram.com/lauragonzalezortizdezarate" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+        <a href="https://www.linkedin.com/in/lauragonzalezortizdezarate" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+        <a href="https://www.youtube.com/@lauragonzalezortizdezarate" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener">YT</a>
+        <a href="https://www.tiktok.com/@lauragonzalezortizdezarate" class="social-btn" aria-label="TikTok" target="_blank" rel="noopener">TK</a>
+      </div>
+    </div>
+
+    <div>
+      <h5>Navegación</h5>
+      <div class="footer-links">
+        <a href="#conoceme">Conóceme</a>
+        <a href="#empresas">Para Empresas</a>
+        <a href="#particulares">Para Particulares</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#recursos">Newsletter</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </div>
+
+    <div>
+      <h5>Servicios</h5>
+      <div class="footer-links">
+        <a href="#empresas">Coaching Ejecutivo</a>
+        <a href="#empresas">Coaching de Equipos</a>
+        <a href="#empresas">Talleres Soft Skills</a>
+        <a href="#particulares">Coaching 1:1</a>
+        <a href="#particulares">Time To Talk</a>
+        <a href="#particulares">Curso Online</a>
+      </div>
+    </div>
+
+    <div>
+      <h5>Contacto</h5>
+      <div class="footer-links">
+        <a href="mailto:hola@lauragonzalezortizdezarate.com">hola@lauragonzalezortizdezarate.com</a>
+        <a href="tel:+34617392132">+34 617 392 132</a>
+        <a href="#" style="margin-top: 0.75rem;">Madrid, España</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Laura González Ortiz de Zárate. Todos los derechos reservados.</p>
+    <div class="footer-legal">
+      <a href="#">Aviso Legal</a>
+      <a href="#">Privacidad</a>
+      <a href="#">Cookies</a>
+      <a href="#">Términos y Condiciones</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Sticky nav on scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // Scroll-reveal: only activate animations after first user scroll.
+  // This ensures full-page screenshots (which don't scroll) always show
+  // all content visible. Real users get the scroll-in animation effect.
+  let revealActivated = false;
+
+  function activateReveals() {
+    if (revealActivated) return;
+    revealActivated = true;
+
+    document.body.classList.add('js-reveals');
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => obs.observe(el));
+  }
+
+  // Activate on first scroll or pointer move (not on load)
+  window.addEventListener('scroll',       activateReveals, { once: true, passive: true });
+  window.addEventListener('pointermove',  activateReveals, { once: true, passive: true });
+  window.addEventListener('touchstart',   activateReveals, { once: true, passive: true });
+</script>
+
+</body>
+</html>
