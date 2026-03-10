@@ -20,10 +20,11 @@
       --copper:       #CDA085;
       --copper-dark:  #B08060;
       --copper-light: #ECD8CA;
-      --charcoal:     #1A1815;
-      --charcoal-mid: #3B3833;
-      --muted:        #7A7470;
-      --border:       rgba(26,24,21,0.1);
+      --charcoal:     #69775c;
+      --charcoal-mid: #545454;
+      --text:         #545454;
+      --muted:        #888;
+      --border:       rgba(105,119,92,0.14);
       --white:        #FDFCFA;
     }
 
@@ -33,7 +34,7 @@
 
     body {
       background-color: var(--cream);
-      color: var(--charcoal);
+      color: var(--text);
       font-family: 'Jost', system-ui, sans-serif;
       font-size: 1.0625rem;
       line-height: 1.7;
@@ -82,7 +83,7 @@
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em;
-      color: var(--charcoal); text-decoration: none;
+      color: var(--text); text-decoration: none;
       transition: color 0.2s ease;
     }
     .nav-links a:hover { color: var(--copper); }
@@ -199,7 +200,7 @@
     .hero-stat-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2rem; font-weight: 700; line-height: 1;
-      color: var(--charcoal);
+      color: var(--text);
     }
     .hero-stat-num span { color: var(--copper); }
     .hero-stat-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); }
@@ -416,7 +417,7 @@
     }
     .contact-inner h2 {
       font-size: clamp(3rem, 5vw, 6.5rem);
-      line-height: 0.92; color: var(--charcoal);
+      line-height: 0.92; color: var(--text);
     }
     .contact-inner h2 em { font-style: italic; color: var(--copper-dark); }
     .contact-info { display: flex; gap: 2.5rem; flex-wrap: wrap; justify-content: center; }
@@ -526,7 +527,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 8vw, 3rem);
       font-weight: 600; letter-spacing: -0.03em;
-      color: var(--charcoal); text-decoration: none;
+      color: var(--text); text-decoration: none;
       padding: 0.75rem 0; width: 100%; text-align: center;
       border-bottom: 1px solid var(--border);
       transition: color 0.2s ease;
