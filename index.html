@@ -496,39 +496,137 @@
     body.js-reveals .d4 { transition-delay: 0.32s; }
     body.js-reveals .d5 { transition-delay: 0.40s; }
 
-    /* ─── RESPONSIVE ─── */
+    /* ─── NAV MOBILE MENU ─── */
+    .nav-burger {
+      display: none;
+      flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px; width: 40px; height: 40px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-burger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--charcoal);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .nav-mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--cream); z-index: 99;
+      flex-direction: column; justify-content: center; align-items: center; gap: 0;
+      padding: 6rem 2rem 3rem;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 8vw, 3rem);
+      font-weight: 600; letter-spacing: -0.03em;
+      color: var(--charcoal); text-decoration: none;
+      padding: 0.75rem 0; width: 100%; text-align: center;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.2s ease;
+    }
+    .nav-mobile-menu a:first-child { border-top: 1px solid var(--border); }
+    .nav-mobile-menu a:hover { color: var(--copper); }
+    .nav-mobile-cta { margin-top: 2rem; }
+
+    /* ─── RESPONSIVE — TABLET ─── */
     @media (max-width: 1100px) {
+      nav { padding: 1rem 2rem; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      nav .btn { display: none; }
+
       .hero { grid-template-columns: 1fr; }
-      .hero-media { height: 55vw; min-height: 320px; }
-      .hero-content { padding: 3rem 2rem 3rem 3rem; }
+      .hero-media { height: 60vw; min-height: 320px; order: -1; }
+      .hero-content { padding: 3rem 2.5rem 3rem 3rem; }
+
       .bifurc-grid { grid-template-columns: 1fr; }
       .bifurc-card { aspect-ratio: 16/9; }
+
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-photo { aspect-ratio: 16/9; }
+
       .bento { grid-template-columns: 1fr 1fr; }
       .bento-card.span-2 { grid-column: span 2; }
       .bento-card.span-3 { grid-column: span 2; }
-      .testi-grid { grid-template-columns: 1fr; }
+
+      .testi-grid { grid-template-columns: 1fr 1fr; }
+
       .photo-strip { grid-template-columns: 1fr 1fr; height: auto; }
       .strip-item { aspect-ratio: 1; }
+
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-      nav { padding: 1rem 2rem; }
-      .nav-links { display: none; }
-      .book-strip { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; align-items: center; }
+
+      .book-strip { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem; text-align: center; align-items: center; }
       .book-cover { margin: 0 auto; }
-      .trust-bar { padding: 1.25rem 2rem; }
-      .section { padding: 5rem 2rem; }
+
+      .trust-bar { padding: 1.25rem 2rem; gap: 1.5rem; }
+      .section { padding: 5rem 2.5rem; }
     }
+
+    /* ─── RESPONSIVE — MOBILE ─── */
     @media (max-width: 640px) {
-      .section { padding: 4rem 1.25rem; }
+      body { font-size: 0.9375rem; }
+
+      nav { padding: 0.875rem 1.25rem; }
+
+      .hero { padding-top: 64px; }
+      .hero-media { height: 72vw; }
+      .hero-content { padding: 2rem 1.25rem 2.5rem; gap: 1.5rem; }
+      .hero h1 { font-size: clamp(2.25rem, 10vw, 3.25rem); }
+      .hero-body { font-size: 0.9375rem; }
+      .hero-ctas { flex-direction: column; gap: 0.75rem; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .hero-stat { display: none; }
+
+      .trust-bar {
+        padding: 1rem 1.25rem;
+        flex-direction: column; gap: 0.75rem; align-items: flex-start;
+      }
+      .trust-sep { display: none; }
+      .trust-items { gap: 0.625rem; flex-direction: column; align-items: flex-start; }
+      .trust-item { font-size: 0.75rem; }
+
+      .section { padding: 3.5rem 1.25rem; }
+      .section-header { margin-bottom: 2.5rem; }
+      .section-title { font-size: clamp(1.875rem, 8vw, 2.5rem); }
+
+      .bifurc-card { aspect-ratio: 4/5; }
+      .bifurc-overlay { padding: 1.5rem; }
+      .bifurc-title { font-size: clamp(1.5rem, 6vw, 2.25rem); }
+
+      .about-content h2 { font-size: clamp(1.875rem, 8vw, 2.5rem); }
+      .about-photo { aspect-ratio: 4/3; }
+
+      .book-strip { padding: 2rem 1.25rem; gap: 2rem; }
+      .book-cover { width: 140px; }
+
       .bento { grid-template-columns: 1fr; }
       .bento-card.span-2, .bento-card.span-3 { grid-column: span 1; }
-      .credentials-grid { grid-template-columns: 1fr; }
+      .bento-card { padding: 1.5rem; }
+
+      .testi-grid { grid-template-columns: 1fr; }
+
+      .photo-strip { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+
       .newsletter-form { flex-direction: column; }
+      .newsletter-form .btn { width: 100%; justify-content: center; }
+
+      .contact-inner h2 { font-size: clamp(2rem, 9vw, 3.5rem); }
+      .contact-info { flex-direction: column; gap: 0.75rem; align-items: center; }
+
+      .credentials-grid { grid-template-columns: 1fr; }
+
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-      .contact-info { flex-direction: column; gap: 0.75rem; }
-      .photo-strip { display: grid; grid-template-columns: 1fr 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .footer-legal { flex-wrap: wrap; gap: 1rem; }
+      footer { padding: 3.5rem 1.25rem 2rem; }
     }
   </style>
 </head>
@@ -548,7 +646,19 @@
     <li><a href="#recursos">Recursos</a></li>
   </ul>
   <a href="#contacto" class="btn btn-dark">Hablemos <span class="arrow">→</span></a>
+  <button class="nav-burger" id="navBurger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="#conoceme">Conóceme</a>
+  <a href="#empresas">Para Empresas</a>
+  <a href="#particulares">Para Particulares</a>
+  <a href="#recursos">Recursos</a>
+  <a href="#contacto" class="btn btn-dark nav-mobile-cta" style="font-family:'Jost',sans-serif;font-size:0.875rem;font-weight:500;letter-spacing:0.02em;border-top:none;border-bottom:none;width:auto;margin-top:2rem;">Hablemos →</a>
+</div>
 
 
 <!-- ═══════════════════════════════════════
@@ -1110,6 +1220,26 @@
   window.addEventListener('scroll',       activateReveals, { once: true, passive: true });
   window.addEventListener('pointermove',  activateReveals, { once: true, passive: true });
   window.addEventListener('touchstart',   activateReveals, { once: true, passive: true });
+
+  // Mobile hamburger menu
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('navMobileMenu');
+
+  burger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    navbar.classList.toggle('scrolled', isOpen || window.scrollY > 20);
+  });
+
+  // Close menu when a link is clicked
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
 </script>
 
 </body>
