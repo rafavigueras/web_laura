@@ -291,9 +291,16 @@
       font-family: 'Cormorant Garamond', serif;
       font-weight: 700; letter-spacing: -0.02em;
     }
-    .bg-vogue     { background: linear-gradient(145deg, #f5f0f8 0%, #e8dff2 100%); }
-    .bg-cosmo     { background: linear-gradient(145deg, #fff0f5 0%, #ffd6e6 100%); }
-    .bg-proyecto  { background: linear-gradient(145deg, #f0ebe4 0%, #e0d8cc 100%); }
+    .bg-vogue        { background: linear-gradient(145deg, #f5f0f8 0%, #e8dff2 100%); }
+    .bg-cosmo        { background: linear-gradient(145deg, #fff0f5 0%, #ffd6e6 100%); }
+    .bg-proyecto     { background: linear-gradient(145deg, #f0ebe4 0%, #e0d8cc 100%); }
+    .bg-elmundo      { background: linear-gradient(145deg, #f0f0ec 0%, #ddddd4 100%); }
+    .bg-malasmadres  { background: linear-gradient(145deg, #fff2f8 0%, #f0d6e8 100%); }
+    .bg-youtube      { background: linear-gradient(145deg, #fff2f0 0%, #ffd8d0 100%); }
+
+    .badge-elmundo     { background: #ededea; color: #3a3a2e; }
+    .badge-malasmadres { background: #fff2f8; color: #8b3a5a; }
+    .badge-youtube     { background: #fff2f0; color: #cc0000; }
 
     /* ─── CTA STRIP ─── */
     .cta-strip {
@@ -472,54 +479,45 @@
 <div class="articles-section">
   <div class="articles-grid" id="articlesGrid">
 
-    <!-- ── FEATURED: Vogue — Estado de Flow ── -->
+    <!-- ── FEATURED: El Mundo — Entrevista creencias limitantes ── -->
     <a class="article-card featured reveal"
-       href="https://www.vogue.es/belleza/articulos/estado-flow-motivacion-reducir-estres-ansiedad-como-conseguirlo"
+       href="https://amp.elmundo.es/yodona/vida-saludable/2025/12/10/6932bc33fdddffa92f8b458c.html"
        target="_blank" rel="noopener"
-       data-topic="bienestar">
-      <div class="article-card-image bg-vogue">
-        <div class="outlet-visual">
-          <span class="outlet-logo-text" style="font-size:3.5rem; color:#6b4e8c; opacity:0.18;">VOGUE</span>
-          <svg style="width:64px;height:64px;opacity:0.12;color:#6b4e8c;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-          </svg>
-        </div>
+       data-topic="liderazgo">
+      <div class="article-card-image">
+        <img src="brand_assets/press_elmundo.jpg" alt="El Mundo YoDona — Laura González Ortiz de Zárate">
       </div>
       <div class="article-card-body">
         <div class="article-card-meta">
-          <span class="outlet-badge badge-vogue">Vogue España</span>
-          <span class="article-date">Bienestar & Productividad</span>
+          <span class="outlet-badge badge-elmundo">El Mundo · YoDona</span>
+          <span class="article-date">Dic. 2025</span>
         </div>
-        <h3>Estado de flow: qué es y cómo conseguirlo para reducir el estrés y la ansiedad</h3>
-        <p>Descubre cómo activar el estado de flujo en tu día a día profesional. Una guía práctica respaldada por la neurociencia para potenciar el rendimiento, encontrar motivación sostenida y reducir el estrés crónico en entornos de alta exigencia.</p>
+        <h3>Laura González Ortiz de Zárate: "Las mujeres crecemos con una mochila repleta de creencias limitantes"</h3>
+        <p>En una sociedad que vive acelerada, Laura González Ortiz de Zárate propone parar para reconectar con el yo interno y así identificar las necesidades reales, no las impuestas desde fuera. Una entrevista sobre creencias limitantes, culpa femenina y transformación personal.</p>
         <div class="article-card-footer">
-          <span class="article-topic-chip">Bienestar</span>
-          <span class="article-read-link">Leer en Vogue <span class="arrow">→</span></span>
+          <span class="article-topic-chip">Liderazgo</span>
+          <span class="article-read-link">Leer en El Mundo <span class="arrow">→</span></span>
         </div>
       </div>
     </a>
 
-    <!-- ── Vogue — Regla dos minutos ── -->
+    <!-- ── Vogue — Hablar en público ── -->
     <a class="article-card reveal"
-       href="https://www.vogue.es/articulos/regla-dos-minutos-procrastinar-experta-agilidad-beneficios"
+       href="https://www.vogue.es/belleza/articulos/como-hablar-en-publico-consejos-perder-miedo-nervios-estres"
        target="_blank" rel="noopener"
-       data-topic="productividad">
-      <div class="article-card-image bg-vogue">
-        <div class="outlet-visual">
-          <span class="outlet-logo-text" style="font-size:2.5rem; color:#6b4e8c; opacity:0.15;">VOGUE</span>
-          <svg style="width:44px;height:44px;opacity:0.1;color:#6b4e8c;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-        </div>
+       data-topic="liderazgo">
+      <div class="article-card-image">
+        <img src="brand_assets/press_vogue_publico.jpg" alt="Vogue España — Los consejos para perder el miedo a hablar en público">
       </div>
       <div class="article-card-body">
         <div class="article-card-meta">
           <span class="outlet-badge badge-vogue">Vogue España</span>
+          <span class="article-date">Ene. 2020</span>
         </div>
-        <h3>La regla de los dos minutos para dejar de procrastinar</h3>
-        <p>Una experta en agilidad explica por qué esta sencilla técnica puede transformar tu gestión del tiempo y eliminar el aplazamiento crónico de tareas en entornos de trabajo exigentes.</p>
+        <h3>Los consejos de dos expertas para perder el miedo a hablar en público</h3>
+        <p>Laura G. Ortiz de Zárate y Leïla Salamat, cofundadoras de Ellas Coach, desglosan técnicas prácticas para antes y durante la exposición: desde la preparación y el ensayo hasta el control de la respiración y el lenguaje no verbal.</p>
         <div class="article-card-footer">
-          <span class="article-topic-chip">Productividad</span>
+          <span class="article-topic-chip">Liderazgo</span>
           <span class="article-read-link">Leer en Vogue <span class="arrow">→</span></span>
         </div>
       </div>
@@ -530,20 +528,16 @@
        href="https://www.cosmopolitan.com/es/consejos-planes/trabajo-estudios/a40906772/como-convencer-jefe/"
        target="_blank" rel="noopener"
        data-topic="liderazgo">
-      <div class="article-card-image bg-cosmo">
-        <div class="outlet-visual">
-          <span class="outlet-logo-text" style="font-size:1.5rem; color:#b04070; opacity:0.15; letter-spacing:0.04em;">COSMOPOLITAN</span>
-          <svg style="width:44px;height:44px;opacity:0.1;color:#b04070;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-          </svg>
-        </div>
+      <div class="article-card-image">
+        <img src="brand_assets/press_cosmo_convencer.jpg" alt="Cosmopolitan — Cómo convencer a tu jefe con tu proyecto">
       </div>
       <div class="article-card-body">
         <div class="article-card-meta">
           <span class="outlet-badge badge-cosmo">Cosmopolitan</span>
+          <span class="article-date">Nov. 2022</span>
         </div>
-        <h3>Cómo convencer a tu jefe: estrategias que realmente funcionan</h3>
-        <p>Técnicas de comunicación, persuasión e influencia para presentar ideas, negociar condiciones y posicionarte como referente en tu organización, sin confrontaciones innecesarias.</p>
+        <h3>Cómo convencer a tu jefe con tu proyecto</h3>
+        <p>El arte de la persuasión se asienta en tres pilares: preparación, presencia y escucha activa. Laura González Ortiz y Leïla Salamat explican cómo estructurar un argumentario sólido, dominar el lenguaje no verbal y usar el silencio como herramienta de influencia.</p>
         <div class="article-card-footer">
           <span class="article-topic-chip">Liderazgo</span>
           <span class="article-read-link">Leer en Cosmopolitan <span class="arrow">→</span></span>
@@ -551,51 +545,113 @@
       </div>
     </a>
 
-    <!-- ── Cosmopolitan — Motivación vuelta vacaciones ── -->
+    <!-- ── Vogue — Estado de Flow ── -->
     <a class="article-card reveal d2"
-       href="https://www.cosmopolitan.com/es/consejos-planes/trabajo-estudios/a40927668/motivacion-vuelta-vacaciones/"
+       href="https://www.vogue.es/belleza/articulos/estado-flow-motivacion-reducir-estres-ansiedad-como-conseguirlo"
        target="_blank" rel="noopener"
-       data-topic="productividad">
-      <div class="article-card-image bg-cosmo">
-        <div class="outlet-visual">
-          <span class="outlet-logo-text" style="font-size:1.5rem; color:#b04070; opacity:0.15; letter-spacing:0.04em;">COSMOPOLITAN</span>
-          <svg style="width:44px;height:44px;opacity:0.1;color:#b04070;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
+       data-topic="bienestar">
+      <div class="article-card-image">
+        <img src="brand_assets/press_vogue_flow.jpg" alt="Vogue España — Cómo conseguir el estado de flow">
+      </div>
+      <div class="article-card-body">
+        <div class="article-card-meta">
+          <span class="outlet-badge badge-vogue">Vogue España</span>
+          <span class="article-date">Oct. 2022</span>
         </div>
+        <h3>Cómo conseguir el estado de flow para reducir el estrés y la ansiedad</h3>
+        <p>Activar el estado de flow —ese momento de máxima motivación en que el tiempo desaparece— requiere autoconocimiento y gestión de las distracciones. Laura González Ortiz y Leïla Salamat explican cómo lograrlo para mejorar productividad y salud mental.</p>
+        <div class="article-card-footer">
+          <span class="article-topic-chip">Bienestar</span>
+          <span class="article-read-link">Leer en Vogue <span class="arrow">→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── Cosmopolitan — Acoso laboral ── -->
+    <a class="article-card reveal"
+       href="https://www.cosmopolitan.com/es/consejos-planes/trabajo-estudios/a40905967/acoso-laboral-identificarlo-que-hacer/"
+       target="_blank" rel="noopener"
+       data-topic="liderazgo">
+      <div class="article-card-image">
+        <img src="brand_assets/press_cosmo_acoso.jpg" alt="Cosmopolitan — Acoso laboral: cómo identificarlo y qué debes hacer">
       </div>
       <div class="article-card-body">
         <div class="article-card-meta">
           <span class="outlet-badge badge-cosmo">Cosmopolitan</span>
+          <span class="article-date">Oct. 2022</span>
         </div>
-        <h3>Cómo recuperar la motivación tras las vacaciones</h3>
-        <p>La vuelta al trabajo tras un período de descanso puede ser un reto. Estas estrategias, avaladas por la neurociencia del comportamiento, ayudan a retomar el impulso profesional con energía renovada.</p>
+        <h3>Acoso laboral: cómo identificarlo y qué debes hacer</h3>
+        <p>El mobbing es más frecuente —y más silencioso— de lo que parece. Laura González Ortiz y Leïla Salamat desglosan sus señales de alerta, el impacto en la salud emocional y las claves para construir entornos donde la confianza y la escucha activa sean la norma.</p>
         <div class="article-card-footer">
-          <span class="article-topic-chip">Productividad</span>
+          <span class="article-topic-chip">Liderazgo</span>
           <span class="article-read-link">Leer en Cosmopolitan <span class="arrow">→</span></span>
         </div>
       </div>
     </a>
 
-    <!-- ── Cosmopolitan — Organizarse trabajo vacaciones ── -->
-    <a class="article-card reveal"
-       href="https://www.cosmopolitan.com/es/consejos-planes/trabajo-estudios/a40917720/organizarse-trabajo-vuelta-vacaciones/"
+    <!-- ── YouTube — Retención talento y maternidad ── -->
+    <a class="article-card reveal d1"
+       href="https://www.youtube.com/watch?v=bahYHhhXVJM"
        target="_blank" rel="noopener"
-       data-topic="productividad">
-      <div class="article-card-image bg-cosmo">
+       data-topic="liderazgo">
+      <div class="article-card-image bg-youtube">
         <div class="outlet-visual">
-          <span class="outlet-logo-text" style="font-size:1.5rem; color:#b04070; opacity:0.15; letter-spacing:0.04em;">COSMOPOLITAN</span>
-          <svg style="width:44px;height:44px;opacity:0.1;color:#b04070;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+          <svg style="width:56px;height:56px;opacity:0.18;color:#cc0000;" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
           </svg>
+          <span class="outlet-logo-text" style="font-size:1.25rem; color:#cc0000; opacity:0.2; letter-spacing:0.04em; margin-top:0.25rem;">YOUTUBE</span>
         </div>
       </div>
       <div class="article-card-body">
         <div class="article-card-meta">
-          <span class="outlet-badge badge-cosmo">Cosmopolitan</span>
+          <span class="outlet-badge badge-youtube">YouTube</span>
         </div>
-        <h3>Cómo organizarte en el trabajo a la vuelta de las vacaciones</h3>
-        <p>Métodos de planificación y gestión de prioridades para reincorporarse al entorno laboral sin estrés, retomando el control de la agenda con claridad y foco estratégico.</p>
+        <h3>Retención de talento y maternidad: estrategias para evitar la fuga de liderazgo femenino</h3>
+        <p>La maternidad representa uno de los mayores vectores de pérdida de talento cualificado en las organizaciones. Laura González Ortiz de Zárate expone un marco metodológico para gestionar esta transición crítica mediante la deconstrucción de creencias limitantes y el mapeo de la gestión de energía.</p>
+        <div class="article-card-footer">
+          <span class="article-topic-chip">Liderazgo</span>
+          <span class="article-read-link">Ver en YouTube <span class="arrow">→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── Malasmadres — Palabra "no" ── -->
+    <a class="article-card reveal d2"
+       href="https://clubdemalasmadres.com/reconciliacion-palabra-no/"
+       target="_blank" rel="noopener"
+       data-topic="bienestar">
+      <div class="article-card-image">
+        <img src="brand_assets/press_malasmadres_no.jpg" alt="Club de Malasmadres — Cómo reconciliarte con la palabra no">
+      </div>
+      <div class="article-card-body">
+        <div class="article-card-meta">
+          <span class="outlet-badge badge-malasmadres">Club de Malasmadres</span>
+          <span class="article-date">Jul. 2021</span>
+        </div>
+        <h3>Cómo reconciliarte con la palabra 'no' y aplicar límites en tu vida</h3>
+        <p>Decir "no" es un acto de autoconocimiento y autocuidado. Laura González Ortiz y Leïla Salamat proponen la técnica PERA para interrumpir el piloto automático del "sí" y aprender a poner límites desde la autenticidad, sin culpa y con coherencia.</p>
+        <div class="article-card-footer">
+          <span class="article-topic-chip">Bienestar</span>
+          <span class="article-read-link">Leer en Malasmadres <span class="arrow">→</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- ── Cosmopolitan — Organizarse vuelta vacaciones ── -->
+    <a class="article-card reveal"
+       href="https://www.cosmopolitan.com/es/consejos-planes/trabajo-estudios/a40917720/organizarse-trabajo-vuelta-vacaciones/"
+       target="_blank" rel="noopener"
+       data-topic="productividad">
+      <div class="article-card-image">
+        <img src="brand_assets/press_cosmo_organizar.jpg" alt="Cosmopolitan — Cómo organizarse en el trabajo a la vuelta de vacaciones">
+      </div>
+      <div class="article-card-body">
+        <div class="article-card-meta">
+          <span class="outlet-badge badge-cosmo">Cosmopolitan</span>
+          <span class="article-date">Sep. 2022</span>
+        </div>
+        <h3>Cómo organizarse en el trabajo a la vuelta de vacaciones</h3>
+        <p>Reincorporarse tras el verano sin abrumarse requiere legitimar la parada y dedicar tiempo a la planificación estratégica. Laura González Ortiz y Leïla Salamat ofrecen herramientas prácticas para retomar el control de la agenda con claridad y foco.</p>
         <div class="article-card-footer">
           <span class="article-topic-chip">Productividad</span>
           <span class="article-read-link">Leer en Cosmopolitan <span class="arrow">→</span></span>
@@ -608,49 +664,19 @@
        href="https://www.cosmopolitan.com/es/consejos-planes/familia-amigos/a40915841/habitos-saludables-vuelta-rutina/"
        target="_blank" rel="noopener"
        data-topic="bienestar">
-      <div class="article-card-image bg-cosmo">
-        <div class="outlet-visual">
-          <span class="outlet-logo-text" style="font-size:1.5rem; color:#b04070; opacity:0.15; letter-spacing:0.04em;">COSMOPOLITAN</span>
-          <svg style="width:44px;height:44px;opacity:0.1;color:#b04070;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-          </svg>
-        </div>
+      <div class="article-card-image">
+        <img src="brand_assets/press_cosmo_habitos.jpg" alt="Cosmopolitan — Hábitos saludables para estar en forma tras el verano">
       </div>
       <div class="article-card-body">
         <div class="article-card-meta">
           <span class="outlet-badge badge-cosmo">Cosmopolitan</span>
+          <span class="article-date">Sep. 2022</span>
         </div>
-        <h3>Hábitos saludables para retomar la rutina con energía</h3>
-        <p>Los profesionales de alto rendimiento comparten los rituales diarios que les permiten mantener el bienestar integral en los momentos de transición y cambio de ciclo.</p>
+        <h3>Hábitos saludables para estar en forma tras el verano, física y mentalmente</h3>
+        <p>La vuelta es el momento idóneo para soltar lo que ya no aporta e instaurar hábitos alineados con los propios valores. Moverse, alimentarse con consciencia, aprender algo nuevo y reservar espacios de descanso son las propuestas de Laura González Ortiz y Leïla Salamat.</p>
         <div class="article-card-footer">
           <span class="article-topic-chip">Bienestar</span>
           <span class="article-read-link">Leer en Cosmopolitan <span class="arrow">→</span></span>
-        </div>
-      </div>
-    </a>
-
-    <!-- ── Tu Proyecto de Vida — Propósitos ── -->
-    <a class="article-card reveal d2"
-       href="https://www.tuproyectodevida.es/propositos-ano-nuevo/"
-       target="_blank" rel="noopener"
-       data-topic="liderazgo">
-      <div class="article-card-image bg-proyecto">
-        <div class="outlet-visual">
-          <span class="outlet-logo-text" style="font-size:1.1rem; color:var(--sage-dark); opacity:0.3; letter-spacing:0.02em; text-align:center;">TU PROYECTO<br>DE VIDA</span>
-          <svg style="width:44px;height:44px;opacity:0.12;color:var(--sage-dark); margin-top:0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
-          </svg>
-        </div>
-      </div>
-      <div class="article-card-body">
-        <div class="article-card-meta">
-          <span class="outlet-badge badge-proyecto">Tu Proyecto de Vida</span>
-        </div>
-        <h3>Cómo convertir los propósitos de Año Nuevo en resultados reales</h3>
-        <p>La mayoría de los propósitos fracasan antes de febrero. Estas herramientas de coaching ejecutivo transforman la intención en compromiso sostenido y objetivos con fecha y métricas.</p>
-        <div class="article-card-footer">
-          <span class="article-topic-chip">Liderazgo</span>
-          <span class="article-read-link">Leer artículo <span class="arrow">→</span></span>
         </div>
       </div>
     </a>
