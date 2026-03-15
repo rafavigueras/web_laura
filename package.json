@@ -4,5 +4,8 @@
   "version": "1.0.0",
   "dependencies": {
     "puppeteer": "^24.15.0"
+  },
+  "devDependencies": {
+    "jimp": "^1.6.0"
   }
 }
