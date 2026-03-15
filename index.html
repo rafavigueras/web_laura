@@ -393,22 +393,46 @@
     .testi-name { font-size: 0.875rem; font-weight: 600; }
     .testi-role { font-size: 0.75rem; color: var(--muted); margin-top: 0.15rem; }
 
-    /* ─── NEWSLETTER ─── */
-    .newsletter-wrap {
-      max-width: 580px; margin: 0 auto;
-      text-align: center; display: flex; flex-direction: column; align-items: center; gap: 2rem;
+    /* ─── RECURSOS ─── */
+    .recursos-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+      max-width: 1200px; margin: 0 auto;
     }
-    .newsletter-form { display: flex; gap: 0.75rem; width: 100%; }
-    .newsletter-form input {
-      flex: 1; padding: 0.875rem 1.25rem;
-      border: 1.5px solid rgba(255,255,255,0.2); border-radius: 100px;
-      background: rgba(255,255,255,0.08);
-      font-family: 'Jost', sans-serif; font-size: 0.9375rem;
-      color: var(--white); outline: none;
-      transition: border-color 0.2s ease, background 0.2s ease;
+    .recursos-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1.25rem;
+      padding: 2rem 2rem 2.25rem;
+      display: flex; flex-direction: column; gap: 1.25rem;
+      transition: background 0.25s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
     }
-    .newsletter-form input:focus { border-color: var(--copper); background: rgba(255,255,255,0.12); }
-    .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .recursos-card:hover { background: rgba(255,255,255,0.10); transform: translateY(-4px); }
+    .recursos-card--copper { background: rgba(205,160,133,0.14); border-color: rgba(205,160,133,0.25); }
+    .recursos-card--copper:hover { background: rgba(205,160,133,0.22); }
+    .recursos-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: 'Jost', sans-serif; font-size: 0.6875rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--copper-light); background: rgba(205,160,133,0.15);
+      border-radius: 100px; padding: 0.3rem 0.75rem; width: fit-content;
+    }
+    .recursos-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 1.6vw, 1.875rem);
+      color: var(--white); line-height: 1.1; letter-spacing: -0.02em;
+    }
+    .recursos-card p {
+      font-size: 0.9375rem; color: rgba(253,252,250,0.6); line-height: 1.65; flex: 1;
+    }
+    .recursos-details {
+      display: flex; flex-direction: column; gap: 0.35rem;
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; margin-top: 0.25rem;
+    }
+    .recursos-detail-item {
+      font-size: 0.8125rem; font-family: 'Jost', sans-serif;
+      color: rgba(253,252,250,0.5); display: flex; align-items: center; gap: 0.5rem;
+    }
+    .recursos-detail-item strong { color: rgba(253,252,250,0.8); font-weight: 500; }
 
     /* ─── CONTACT SECTION ─── */
     .contact-inner {
@@ -560,6 +584,8 @@
 
       .testi-grid { grid-template-columns: 1fr 1fr; }
 
+      .recursos-grid { grid-template-columns: 1fr; }
+
       .photo-strip { grid-template-columns: 1fr 1fr; height: auto; }
       .strip-item { aspect-ratio: 1; }
 
@@ -618,8 +644,7 @@
 
       .photo-strip { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
 
-      .newsletter-form { flex-direction: column; }
-      .newsletter-form .btn { width: 100%; justify-content: center; }
+      .recursos-grid { grid-template-columns: 1fr; }
 
       .contact-inner h2 { font-size: clamp(2rem, 9vw, 3.5rem); }
       .contact-info { flex-direction: column; gap: 0.75rem; align-items: center; }
@@ -956,7 +981,7 @@
       <span class="label" style="margin-bottom: 0.4rem;">¿Tienes un proyecto corporativo?</span>
       <h3 style="font-size: clamp(1.5rem, 2vw, 2rem);">Cuéntame el desafío de tu organización.</h3>
     </div>
-    <a href="#contacto" class="btn btn-dark">Solicitar llamada exploratoria <span class="arrow">→</span></a>
+    <a href="mailto:hola@lauragonzalezortizdezarate.com" class="btn btn-dark">Contacta conmigo <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -1145,31 +1170,69 @@
 
 
 <!-- ═══════════════════════════════════════
-     RECURSOS / NEWSLETTER
+     RECURSOS
 ═══════════════════════════════════════ -->
 <section class="section section-dark" id="recursos">
-  <div class="newsletter-wrap">
 
-    <div class="reveal" style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-      <span class="label" style="color: var(--sage);">006 / Newsletter</span>
-      <h2 style="font-size: clamp(2.5rem, 4.5vw, 4.5rem); color: var(--white); text-align: center; line-height: 0.95;">
-        Únete a mi comunidad de aprendizaje continuo.
-      </h2>
-      <p style="color: rgba(253,252,250,0.55); text-align: center; max-width: 40ch;">
-        Reflexiones sobre liderazgo, productividad y bienestar integral cada viernes a las 8:00h.
-      </p>
+  <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center;margin-bottom:3.5rem;">
+    <span class="label" style="color:var(--sage);">006 / Recursos</span>
+    <h2 style="font-size:clamp(2.5rem,4.5vw,4.5rem);color:var(--white);text-align:center;line-height:0.95;">
+      Más formas de <em style="color:var(--copper-light);font-style:italic;">crecer juntas.</em>
+    </h2>
+    <p style="color:rgba(253,252,250,0.55);text-align:center;max-width:48ch;font-size:1.0625rem;line-height:1.65;">
+      Talleres presenciales, colaboraciones de marca y contenido semanal para seguir aprendiendo.
+    </p>
+  </div>
+
+  <div class="recursos-grid">
+
+    <!-- TALLERES PRESENCIALES -->
+    <div class="recursos-card reveal">
+      <span class="recursos-tag">Talleres Presenciales</span>
+      <h3>Taller + Desayuno:<br>aprende a pedir ayuda</h3>
+      <p>Un espacio íntimo para soltar el mito de la mujer invulnerable. Dinámicas prácticas, historia real y herramientas para decir "no puedo más" sin culpa. Grupo reducido para que la experiencia sea cercana y transformadora.</p>
+      <div class="recursos-details">
+        <span class="recursos-detail-item">📍 <strong>Aravaca, Madrid</strong></span>
+        <span class="recursos-detail-item">⏰ <strong>10:00 – 12:00 h</strong> · Desayuno incluido</span>
+        <span class="recursos-detail-item">💰 <strong>30 €</strong> por plaza</span>
+      </div>
+      <a href="https://wa.me/34617392132" class="btn btn-copper" target="_blank" rel="noopener" style="width:fit-content;">
+        Reservar plaza <span class="arrow">→</span>
+      </a>
     </div>
 
-    <form class="newsletter-form reveal d1" onsubmit="return false;" novalidate>
-      <input type="email" placeholder="Tu correo electrónico" aria-label="Correo electrónico">
-      <button type="submit" class="btn btn-copper">Suscribirme <span class="arrow">→</span></button>
-    </form>
+    <!-- COLABORACIÓN CON MARCAS -->
+    <div class="recursos-card reveal d1">
+      <span class="recursos-tag">Colaboraciones de Marca</span>
+      <h3>Neuro-Bienestar &amp;<br>Guest Experience</h3>
+      <p>Diseño intervenciones de bienestar para hoteles de lujo y eventos de marca — desde rituales de sueño hasta talleres Neuro-Glow. Con una comunidad de +17.000 personas en Instagram, la ciencia se encuentra con el estilo de vida.</p>
+      <div class="recursos-details">
+        <span class="recursos-detail-item">✦ <strong>Hoteles &amp; Eventos de Lujo</strong></span>
+        <span class="recursos-detail-item">✦ <strong>Soft Skills &amp; Liderazgo Consciente</strong></span>
+        <span class="recursos-detail-item">✦ <strong>Contenido &amp; Microinfluencer</strong></span>
+      </div>
+      <a href="mailto:hola@lauragonzalezortizdezarate.com" class="btn btn-copper" style="width:fit-content;">
+        Hablemos de tu proyecto <span class="arrow">→</span>
+      </a>
+    </div>
 
-    <p class="reveal d2" style="font-size: 0.75rem; color: rgba(253,252,250,0.25);">
-      Sin spam. Cancela cuando quieras. GDPR compliant.
-    </p>
+    <!-- NEWSLETTER -->
+    <div class="recursos-card recursos-card--copper reveal d2">
+      <span class="recursos-tag">Newsletter</span>
+      <h3>Comunidad de<br>aprendizaje continuo</h3>
+      <p>Reflexiones sobre liderazgo, productividad y bienestar integral cada viernes a las 8:00 h. Sin spam. Cancela cuando quieras.</p>
+      <div class="recursos-details">
+        <span class="recursos-detail-item">📬 <strong>Cada viernes a las 8:00 h</strong></span>
+        <span class="recursos-detail-item">✓ <strong>+17.000 personas</strong> en la comunidad</span>
+        <span class="recursos-detail-item">✓ Sin spam · GDPR compliant</span>
+      </div>
+      <a href="https://mailchi.mp/eee5f1ae7ccc/lauragonzalezortizdezarate" class="btn btn-copper" target="_blank" rel="noopener" style="width:fit-content;">
+        Suscribirme <span class="arrow">→</span>
+      </a>
+    </div>
 
   </div>
+
 </section>
 
 
@@ -1198,7 +1261,6 @@
 
     <div class="contact-info reveal d4">
       <a href="mailto:hola@lauragonzalezortizdezarate.com">hola@lauragonzalezortizdezarate.com</a>
-      <a href="tel:+34617392132">+34 617 392 132</a>
       <span style="font-size: 0.875rem; color: var(--muted);">Madrid, España</span>
     </div>
 
@@ -1240,7 +1302,7 @@
         <a href="#empresas">Para Empresas</a>
         <a href="#particulares">Para Particulares</a>
         <a href="#testimonios">Testimonios</a>
-        <a href="#recursos">Newsletter</a>
+        <a href="#recursos">Recursos</a>
         <a href="#contacto">Contacto</a>
       </div>
     </div>
@@ -1261,7 +1323,6 @@
       <h5>Contacto</h5>
       <div class="footer-links">
         <a href="mailto:hola@lauragonzalezortizdezarate.com">hola@lauragonzalezortizdezarate.com</a>
-        <a href="tel:+34617392132">+34 617 392 132</a>
         <a href="#" style="margin-top: 0.75rem;">Madrid, España</a>
       </div>
     </div>
