@@ -1,198 +1,174 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      width: 1200px;
-      height: 630px;
-      overflow: hidden;
-      background: #F8F5F0;
-      font-family: 'Jost', sans-serif;
-      position: relative;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
 
-    /* Noise texture overlay */
-    body::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 10;
-    }
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #F8F5F0;
+    font-family: 'Jost', sans-serif;
+    display: flex;
+  }
 
-    /* Right photo half */
-    .photo-panel {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 480px;
-      height: 630px;
-      overflow: hidden;
-    }
-    .photo-panel img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    .photo-panel::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, #F8F5F0 0%, transparent 35%),
-                  linear-gradient(to top, rgba(26,24,21,0.3) 0%, transparent 60%);
-    }
+  .left {
+    flex: 0 0 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 64px;
+    position: relative;
+    background: #F8F5F0;
+  }
 
-    /* Left content */
-    .content {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 760px;
-      height: 630px;
-      padding: 56px 64px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      z-index: 5;
-    }
+  .left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 10% 80%, rgba(205,160,133,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 90% 10%, rgba(189,192,181,0.10) 0%, transparent 70%);
+  }
 
-    /* Radial gradient glow */
-    .content::before {
-      content: '';
-      position: absolute;
-      top: -100px;
-      left: -100px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(205,160,133,0.12) 0%, transparent 65%);
-      pointer-events: none;
-    }
+  .logo {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 32px;
+    position: relative;
+  }
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo-area img {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-    }
-    .logo-wordmark {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 15px;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #5C5A56;
-    }
+  .tag {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #CDA085;
+    margin-bottom: 16px;
+    position: relative;
+  }
 
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #1A1815;
+    margin-bottom: 20px;
+    position: relative;
+  }
 
-    .eyebrow {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #CDA085;
-    }
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: #CDA085;
+  }
 
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 72px;
-      font-weight: 600;
-      line-height: 1.0;
-      letter-spacing: -0.03em;
-      color: #1A1815;
-    }
-    h1 em {
-      font-style: italic;
-      color: #CDA085;
-    }
+  .sub {
+    font-size: 14px;
+    font-weight: 300;
+    color: #6B6560;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+    position: relative;
+    max-width: 400px;
+  }
 
-    .tagline {
-      font-family: 'Jost', sans-serif;
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 1.6;
-      color: #5C5A56;
-      max-width: 44ch;
-    }
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: #CDA085;
+    margin: 24px 0;
+    position: relative;
+  }
 
-    .bottom-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+  .creds {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 28px;
+  }
 
-    .credentials {
-      display: flex;
-      gap: 20px;
-    }
-    .cred-chip {
-      font-family: 'Jost', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #5C5A56;
-      background: rgba(189,192,181,0.2);
-      border: 1px solid rgba(189,192,181,0.4);
-      border-radius: 100px;
-      padding: 5px 12px;
-    }
+  .cred {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1A1815;
+    background: rgba(189,192,181,0.25);
+    border: 1px solid rgba(189,192,181,0.5);
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
 
-    .url {
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      color: #9A9792;
-    }
-  </style>
+  .right {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .right img {
+    position: absolute;
+    top: -8%;
+    left: -10%;
+    width: 130%;
+    height: auto;
+  }
+
+  .right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #F8F5F0 0%, transparent 30%);
+    z-index: 1;
+  }
+
+  .right::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(205,160,133,0.08);
+    mix-blend-mode: multiply;
+    z-index: 2;
+  }
+
+  .url {
+    position: absolute;
+    bottom: 28px;
+    right: 32px;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(26,24,21,0.45);
+    z-index: 10;
+  }
+</style>
 </head>
 <body>
-
-  <div class="photo-panel">
-    <img src="brand_assets/3578dc37-81a7-4583-aabf-1c1fb9fd241c.jpg" alt="Laura González">
+  <div class="left">
+    <img class="logo" src="brand_assets/LG_logo.png" alt="LG">
+    <div class="tag">Coach Ejecutiva · Autora · Docente</div>
+    <h1>Laura González<br><em>Ortiz de Zárate</em></h1>
+    <div class="divider"></div>
+    <p class="sub">Coaching transformacional para empresas y personas que quieren crecer con propósito.</p>
+    <div class="creds">
+      <span class="cred">ICF Certificada</span>
+      <span class="cred">Docente UCM</span>
+      <span class="cred">Ellas Coach</span>
+    </div>
   </div>
 
-  <div class="content">
-
-    <div class="logo-area">
-      <img src="brand_assets/LG_logo.png" alt="LG">
-      <span class="logo-wordmark">Laura González<br>Ortiz de Zárate</span>
-    </div>
-
-    <div class="main-content">
-      <span class="eyebrow">Coach Ejecutiva · ICF · Docente UCM · Autora</span>
-      <h1>Liderazgo<br><em>consciente</em><br>para quien<br>exige más.</h1>
-      <p class="tagline">Coaching ejecutivo para líderes, equipos y profesionales que quieren alinear sus valores con sus resultados.</p>
-    </div>
-
-    <div class="bottom-row">
-      <div class="credentials">
-        <span class="cred-chip">ICF Certified</span>
-        <span class="cred-chip">Docente UCM</span>
-        <span class="cred-chip">Autora</span>
-      </div>
-      <span class="url">lauragonzalezortizdezarate.com</span>
-    </div>
-
+  <div class="right">
+    <img src="brand_assets/IMG_2313.jpg" alt="Laura González">
   </div>
 
+  <div class="url">lauragonzalezortizdezarate.com</div>
 </body>
 </html>
