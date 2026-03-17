@@ -501,6 +501,72 @@
     .badge-malasmadres { background: #fff2f8; color: #8b3a5a; }
     .badge-youtube     { background: #fff2f0; color: #cc0000; }
 
+    /* ─── NEWSLETTER ─── */
+    .nl-section {
+      padding: 6rem 5rem;
+      background: var(--cream-alt);
+    }
+    .nl-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .nl-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.25rem, 3.5vw, 3.75rem);
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      color: var(--text);
+    }
+    .nl-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      text-align: left;
+      margin-top: 2.5rem;
+    }
+    .nl-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+    .nl-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .nl-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6875rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nl-label span { font-weight: 400; text-transform: none; letter-spacing: 0; }
+    .nl-input, .nl-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9375rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.18s ease;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .nl-input:focus, .nl-select:focus { border-color: var(--copper); }
+    .nl-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+    .nl-submit {
+      width: 100%; padding: 1rem; margin-top: 0.375rem;
+      border-radius: 100px; border: none; cursor: pointer;
+      background: var(--charcoal); color: var(--white);
+      font-family: 'Jost', sans-serif; font-size: 0.9375rem; font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: background 0.18s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.18s ease;
+    }
+    .nl-submit:hover { background: var(--copper-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(205,160,133,0.28); }
+    .nl-submit:active { transform: translateY(0); }
+    .nl-msg { font-size: 0.8125rem; text-align: center; min-height: 1.2em; display: none; }
+    @media (max-width: 640px) {
+      .nl-section { padding: 4rem 1.5rem; }
+      .nl-row { grid-template-columns: 1fr; }
+    }
+
     /* ─── CTA STRIP ─── */
     .cta-strip {
       margin: 0 5rem 6rem;
@@ -977,6 +1043,77 @@
     ['scroll','pointerdown','touchstart'].forEach(ev => window.removeEventListener(ev, activateReveals));
   }
   ['scroll','pointerdown','touchstart'].forEach(ev => window.addEventListener(ev, activateReveals, { passive: true, once: true }));
+
+  // ─── Newsletter form ───
+  // ⚠️ Actualiza esta URL con la de tu formulario embebido de Mailchimp:
+  //   Mailchimp → Audiencia → Formularios de registro → Formularios embebidos → action="..."
+  const MAILCHIMP_ACTION = '';
+
+  // Populate day/month selects
+  const daySelect = document.getElementById('mc-bday-day');
+  const monthSelect = document.getElementById('mc-bday-month');
+  if (daySelect) {
+    for (let d = 1; d <= 31; d++) {
+      const opt = document.createElement('option');
+      opt.value = d; opt.textContent = d;
+      daySelect.appendChild(opt);
+    }
+  }
+  if (monthSelect) {
+    ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'].forEach((m, i) => {
+      const opt = document.createElement('option');
+      opt.value = i + 1; opt.textContent = m;
+      monthSelect.appendChild(opt);
+    });
+  }
+
+  const mcForm = document.getElementById('mc-newsletter-form');
+  const mcMsg  = document.getElementById('mc-message');
+
+  if (mcForm) {
+    mcForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email  = document.getElementById('mc-email').value.trim();
+      const fname  = document.getElementById('mc-fname').value.trim();
+      const bDay   = document.getElementById('mc-bday-day').value;
+      const bMonth = document.getElementById('mc-bday-month').value;
+
+      if (!email) return;
+
+      if (MAILCHIMP_ACTION) {
+        // Mailchimp JSONP (no-redirect embed)
+        const cbName = 'mc_cb_' + Date.now();
+        let jsonpUrl = MAILCHIMP_ACTION.replace('/post?', '/post-json?')
+          + '&EMAIL=' + encodeURIComponent(email)
+          + '&FNAME=' + encodeURIComponent(fname)
+          + (bDay   ? '&BDAY[day]='   + encodeURIComponent(bDay)   : '')
+          + (bMonth ? '&BDAY[month]=' + encodeURIComponent(bMonth) : '')
+          + '&c=' + cbName;
+
+        window[cbName] = function(data) {
+          mcMsg.style.display = 'block';
+          if (data.result === 'success') {
+            mcMsg.style.color = 'var(--charcoal)';
+            mcMsg.textContent = '¡Bienvenida! Ya estás suscrita a Semillas para el Cambio.';
+            mcForm.reset();
+          } else {
+            mcMsg.style.color = 'var(--copper-dark)';
+            mcMsg.textContent = (data.msg || 'Ha habido un error. Inténtalo de nuevo.').replace(/<[^>]+>/g,'');
+          }
+          delete window[cbName];
+        };
+        const s = document.createElement('script');
+        s.src = jsonpUrl;
+        document.head.appendChild(s);
+      } else {
+        // Fallback: abre la página de suscripción de Mailchimp en nueva pestaña
+        window.open('https://mailchi.mp/eee5f1ae7ccc/lauragonzalezortizdezarate', '_blank');
+        mcMsg.style.display = 'block';
+        mcMsg.style.color = 'var(--charcoal)';
+        mcMsg.textContent = 'Te hemos abierto la página de suscripción. ¡Hasta pronto!';
+      }
+    });
+  }
 
   // Filter buttons
   const filterBtns = document.querySelectorAll('.filter-btn');

@@ -600,7 +600,7 @@
     <!-- Urgency badge -->
     <div class="urgency-badge">
       <span class="urgency-dot"></span>
-      Plazas limitadas para proceso 1:1 — marzo 2025
+      Plazas limitadas para proceso 1:1 — <span id="urgency-date">marzo 2026</span>
     </div>
 
     <h1>
@@ -721,6 +721,7 @@
       </div>
       <h3>Curso de Productividad y Organización</h3>
       <p>Aprende a gestionar tu tiempo y tu energía — no solo tu agenda. Módulos prácticos desde cualquier lugar, con acceso de por vida.</p>
+      <a href="landing-curso-productividad.html" class="bento-link">Ver programa completo →</a>
     </div>
 
     <div class="bento-card span-3" style="background: var(--copper-light); border: none;">
@@ -730,7 +731,7 @@
       </div>
       <h3 style="color: var(--charcoal);">Neurocomunicación &amp; Marca Personal</h3>
       <p style="color: var(--charcoal-mid);">Aprende a comunicar quién eres con claridad e impacto. Basado en neurociencia aplicada, con módulos prácticos y opción de pago fraccionado. El programa con el que Ana P. consiguió el puesto que tanto deseaba — <em>seis meses después.</em></p>
-      <a href="#contacto" class="bento-link" style="color:var(--copper-dark);">Ver temario completo →</a>
+      <a href="https://www.escuelaunidadeditorial.es/cursos/empresa/neurocomunicacion-y-marca-personal-para-mujeres" target="_blank" rel="noopener" class="bento-link" style="color:var(--copper-dark);">Ver temario completo →</a>
     </div>
 
   </div>
@@ -867,7 +868,6 @@
   <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" style="height:40px;opacity:0.8;">
   <div class="footer-contact">
     <a href="mailto:hola@lauragonzalezortizdezarate.com">hola@lauragonzalezortizdezarate.com</a>
-    <a href="tel:+34617392132">+34 617 392 132</a>
     <a href="landing-b2b.html">Servicios para empresas</a>
     <a href="index.html">← Web principal</a>
   </div>
@@ -881,6 +881,11 @@
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
+
+  // Dynamic urgency date
+  const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  const urgencyEl = document.getElementById('urgency-date');
+  if (urgencyEl) urgencyEl.textContent = meses[new Date().getMonth()] + ' ' + new Date().getFullYear();
 
   // FAQ
   function toggleFaq(el) {

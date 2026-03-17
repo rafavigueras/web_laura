@@ -508,7 +508,7 @@
 
     /* ─── RECURSOS ─── */
     .recursos-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem;
       max-width: 1200px; margin: 0 auto;
     }
     .recursos-card {
@@ -543,6 +543,79 @@
       color: rgba(253,252,250,0.5); display: flex; align-items: center; gap: 0.5rem;
     }
     .recursos-detail-item strong { color: rgba(253,252,250,0.8); font-weight: 500; }
+
+    /* ─── NEWSLETTER (dark) ─── */
+    .nl-dark-wrap {
+      max-width: 1200px; margin: 2.5rem auto 0;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 1.5rem;
+      padding: 2.5rem 3rem 3rem;
+    }
+    .nl-dark-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 2rem; flex-wrap: wrap; margin-bottom: 2.25rem;
+    }
+    .nl-dark-header h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+      color: var(--white); line-height: 1.05; letter-spacing: -0.025em;
+    }
+    .nl-dark-header h3 em { font-style: italic; color: var(--copper-light); }
+    .nl-dark-header p {
+      font-size: 0.9375rem; color: rgba(253,252,250,0.55); line-height: 1.65;
+      max-width: 38ch; padding-top: 0.25rem;
+    }
+    .nl-dark-form {
+      display: flex; flex-direction: column; gap: 0.875rem;
+    }
+    .nl-dark-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.875rem; }
+    .nl-dark-field { display: flex; flex-direction: column; gap: 0.4rem; }
+    .nl-dark-label {
+      font-family: 'Jost', sans-serif; font-size: 0.6875rem; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(205,160,133,0.8);
+    }
+    .nl-dark-label span { font-weight: 400; text-transform: none; letter-spacing: 0; }
+    .nl-dark-input, .nl-dark-select {
+      width: 100%; padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: 1.5px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
+      font-family: 'Jost', sans-serif; font-size: 0.9375rem;
+      color: var(--white); outline: none;
+      transition: border-color 0.18s ease, background 0.18s ease;
+      appearance: none; -webkit-appearance: none;
+    }
+    .nl-dark-input::placeholder { color: rgba(253,252,250,0.35); }
+    .nl-dark-input:focus, .nl-dark-select:focus {
+      border-color: var(--copper-light);
+      background: rgba(255,255,255,0.1);
+    }
+    .nl-dark-select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23CDA085' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 1rem center;
+      padding-right: 2.5rem;
+      color: rgba(253,252,250,0.6);
+    }
+    .nl-dark-select option { background: #2e3828; color: #fdFCFA; }
+    .nl-dark-submit {
+      width: 100%; padding: 1rem; margin-top: 0.375rem;
+      border-radius: 100px; border: none; cursor: pointer;
+      background: var(--copper); color: var(--white);
+      font-family: 'Jost', sans-serif; font-size: 0.9375rem; font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: background 0.18s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease;
+    }
+    .nl-dark-submit:hover { background: var(--copper-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(205,160,133,0.3); }
+    .nl-dark-submit:active { transform: translateY(0); }
+    .nl-dark-msg { font-size: 0.8125rem; text-align: center; min-height: 1.2em; display: none; color: var(--copper-light); }
+    @media (max-width: 768px) {
+      .nl-dark-wrap { padding: 2rem 1.5rem 2.5rem; }
+      .nl-dark-header { flex-direction: column; gap: 0.75rem; }
+      .nl-dark-row { grid-template-columns: 1fr; }
+    }
 
     /* ─── CONTACT ─── */
     .contact-inner {
@@ -1062,17 +1135,42 @@
       <a href="mailto:colabs@lauragonzalezortizdezarate.com" class="btn btn-copper" style="width:fit-content;">Hablemos de tu proyecto</a>
     </div>
 
-    <div class="recursos-card recursos-card--copper reveal d2">
-      <span class="recursos-tag">Newsletter</span>
-      <h3>¡Inscríbete y así<br>estaremos conectadas!</h3>
-      <p>Te escribiré semanalmente para compartir cosas de mi día a día relacionadas con crecimiento personal, reflexiones y anécdotas que te ayudarán a abrir la mente, gestionar emociones y vivir con más paz.</p>
-      <div class="recursos-details">
-        <span class="recursos-detail-item">✓ <strong>Cada viernes</strong> en tu bandeja</span>
-        <span class="recursos-detail-item">✓ Sin spam · Cancela cuando quieras</span>
-      </div>
-      <a href="https://mailchi.mp/eee5f1ae7ccc/lauragonzalezortizdezarate" class="btn btn-copper" target="_blank" rel="noopener" style="width:fit-content;">Suscribirme</a>
-    </div>
+  </div>
 
+  <!-- Newsletter form -->
+  <div class="nl-dark-wrap reveal d2">
+    <div class="nl-dark-header">
+      <div>
+        <span class="recursos-tag" style="margin-bottom:0.75rem;display:inline-flex;">Newsletter</span>
+        <h3>Semillas para<br>el <em>Cambio.</em></h3>
+      </div>
+      <p>Cada viernes en tu bandeja: reflexiones sobre crecimiento personal, herramientas de coaching y anécdotas reales que te ayudarán a vivir y liderar con más conciencia.<br><br>Sin spam · Cancela cuando quieras.</p>
+    </div>
+    <form class="nl-dark-form" id="mc-newsletter-form" novalidate>
+      <div class="nl-dark-row">
+        <div class="nl-dark-field">
+          <label class="nl-dark-label" for="mc-fname">Nombre</label>
+          <input class="nl-dark-input" type="text" id="mc-fname" name="FNAME" placeholder="Tu nombre" autocomplete="given-name">
+        </div>
+        <div class="nl-dark-field">
+          <label class="nl-dark-label" for="mc-email">Email <span style="color:rgba(205,160,133,0.5)">*</span></label>
+          <input class="nl-dark-input" type="email" id="mc-email" name="EMAIL" placeholder="tu@email.com" required autocomplete="email">
+        </div>
+      </div>
+      <div class="nl-dark-field">
+        <label class="nl-dark-label" for="mc-bday-day">Cumpleaños <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(253,252,250,0.4)">(opcional — para mandarte algo especial)</span></label>
+        <div class="nl-dark-row" style="margin-top:0;">
+          <select class="nl-dark-select" id="mc-bday-day" name="BDAY[day]">
+            <option value="">Día</option>
+          </select>
+          <select class="nl-dark-select" id="mc-bday-month" name="BDAY[month]">
+            <option value="">Mes</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="nl-dark-submit">Suscribirme a Semillas para el Cambio →</button>
+      <p class="nl-dark-msg" id="mc-message-index"></p>
+    </form>
   </div>
 
 </section>
@@ -1206,6 +1304,73 @@
   window.addEventListener('scroll',      activateReveals, { once: true, passive: true });
   window.addEventListener('pointermove', activateReveals, { once: true, passive: true });
   window.addEventListener('touchstart',  activateReveals, { once: true, passive: true });
+
+  // ─── Newsletter form ───
+  // ⚠️ Actualiza esta URL con la de tu formulario embebido de Mailchimp:
+  //   Mailchimp → Audiencia → Formularios de registro → Formularios embebidos → action="..."
+  const MAILCHIMP_ACTION = '';
+
+  // Populate day/month selects
+  const daySelectIdx = document.getElementById('mc-bday-day');
+  const monthSelectIdx = document.getElementById('mc-bday-month');
+  if (daySelectIdx) {
+    for (let d = 1; d <= 31; d++) {
+      const opt = document.createElement('option');
+      opt.value = d; opt.textContent = d;
+      daySelectIdx.appendChild(opt);
+    }
+  }
+  if (monthSelectIdx) {
+    ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'].forEach((m, i) => {
+      const opt = document.createElement('option');
+      opt.value = i + 1; opt.textContent = m;
+      monthSelectIdx.appendChild(opt);
+    });
+  }
+
+  const mcFormIdx = document.getElementById('mc-newsletter-form');
+  const mcMsgIdx  = document.getElementById('mc-message-index');
+
+  if (mcFormIdx) {
+    mcFormIdx.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email  = document.getElementById('mc-email').value.trim();
+      const fname  = document.getElementById('mc-fname').value.trim();
+      const bDay   = document.getElementById('mc-bday-day').value;
+      const bMonth = document.getElementById('mc-bday-month').value;
+
+      if (!email) return;
+
+      if (MAILCHIMP_ACTION) {
+        const cbName = 'mc_cb_' + Date.now();
+        let jsonpUrl = MAILCHIMP_ACTION.replace('/post?', '/post-json?')
+          + '&EMAIL=' + encodeURIComponent(email)
+          + '&FNAME=' + encodeURIComponent(fname)
+          + (bDay   ? '&BDAY[day]='   + encodeURIComponent(bDay)   : '')
+          + (bMonth ? '&BDAY[month]=' + encodeURIComponent(bMonth) : '')
+          + '&c=' + cbName;
+
+        window[cbName] = function(data) {
+          mcMsgIdx.style.display = 'block';
+          if (data.result === 'success') {
+            mcMsgIdx.textContent = '¡Bienvenida! Ya estás suscrita a Semillas para el Cambio.';
+            mcFormIdx.reset();
+          } else {
+            mcMsgIdx.style.color = 'var(--copper-light)';
+            mcMsgIdx.textContent = (data.msg || 'Ha habido un error. Inténtalo de nuevo.').replace(/<[^>]+>/g,'');
+          }
+          delete window[cbName];
+        };
+        const s = document.createElement('script');
+        s.src = jsonpUrl;
+        document.head.appendChild(s);
+      } else {
+        window.open('https://mailchi.mp/eee5f1ae7ccc/lauragonzalezortizdezarate', '_blank');
+        mcMsgIdx.style.display = 'block';
+        mcMsgIdx.textContent = 'Te hemos abierto la página de suscripción. ¡Hasta pronto!';
+      }
+    });
+  }
 
   // Mobile hamburger
   const burger = document.getElementById('navBurger');

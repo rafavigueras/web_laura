@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso de Productividad Personal — Laura González Ortiz de Zárate</title>
+  <meta name="description" content="Curso online de productividad personal con Laura González Ortiz de Zárate. Aprende a gestionar tu tiempo, energía y agenda. 3 módulos prácticos, acceso de por vida.">
+  <link rel="icon" type="image/png" href="brand_assets/LG_logo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:        #F8F5F0;
+      --cream-alt:    #F0EBE4;
+      --sage:         #BDC0B5;
+      --sage-light:   #D6D9D2;
+      --sage-dark:    #8A9087;
+      --copper:       #CDA085;
+      --copper-dark:  #B08060;
+      --copper-light: #ECD8CA;
+      --charcoal:     #69775c;
+      --charcoal-mid: #545454;
+      --text:         #545454;
+      --muted:        #888;
+      --border:       rgba(105,119,92,0.14);
+      --white:        #FDFCFA;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: 'Jost', system-ui, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      font-weight: 600;
+    }
+
+    .label {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hr-deco {
+      display: block;
+      width: 2.5rem;
+      height: 1.5px;
+      background: var(--copper);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.125rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(248,245,240,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--border);
+      transition: background 0.3s ease;
+    }
+    .nav-logo { height: 46px; width: auto; }
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Jost', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      color: var(--charcoal); text-decoration: none;
+      padding: 0.4rem 1rem 0.4rem 0.75rem;
+      border: 1.5px solid rgba(105,119,92,0.45);
+      border-radius: 100px;
+      background: var(--white);
+      box-shadow: 0 1px 4px rgba(26,24,21,0.08);
+      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease,
+                  transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .nav-back:hover { color: var(--copper-dark); border-color: var(--copper); transform: translateX(-2px); }
+    .nav-back svg { width: 14px; height: 14px; flex-shrink: 0; transition: transform 0.18s ease; }
+    .nav-back:hover svg { transform: translateX(-2px); }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.5rem; border-radius: 100px;
+      font-family: 'Jost', sans-serif; font-size: 0.875rem;
+      font-weight: 500; letter-spacing: 0.02em;
+      text-decoration: none; border: none; cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.18s ease, background 0.18s ease;
+    }
+    .btn:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; }
+    .btn:active { transform: translateY(0) !important; }
+    .btn-dark { background: var(--charcoal); color: var(--white); }
+    .btn-dark:hover { background: var(--copper-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(205,160,133,0.28); }
+    .btn-copper { background: var(--copper); color: var(--white); }
+    .btn-copper:hover { background: var(--copper-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(205,160,133,0.35); }
+    .btn-outline-dark { background: transparent; color: var(--charcoal); border: 1.5px solid var(--charcoal); }
+    .btn-outline-dark:hover { background: var(--charcoal); color: var(--white); transform: translateY(-2px); }
+    .btn-lg { padding: 0.9rem 2.25rem; font-size: 1rem; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 88vh;
+      padding-top: 74px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+    .hero-content {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 3.5rem 5rem 5rem; gap: 2rem; position: relative; z-index: 2;
+    }
+    .hero h1 { font-size: clamp(3rem, 4.5vw, 6rem); line-height: 0.93; }
+    .hero h1 em { font-style: italic; color: var(--copper); }
+    .hero-body { max-width: 42ch; color: var(--muted); font-size: 1.0625rem; }
+    .hero-ctas { display: flex; gap: 0.875rem; flex-wrap: wrap; align-items: flex-start; }
+
+    .hero-media {
+      position: relative; overflow: hidden;
+      background: var(--cream-alt);
+    }
+    .hero-media img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .hero-media::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 0%, rgba(248,245,240,0.15) 0%, transparent 45%),
+        linear-gradient(to bottom, transparent 55%, rgba(26,24,21,0.38) 100%);
+    }
+
+    /* Floating badge */
+    .hero-badge {
+      position: absolute; z-index: 10; bottom: 2.5rem; left: 1.5rem;
+      background: var(--white);
+      border-radius: 1rem; padding: 1rem 1.25rem;
+      box-shadow: 0 4px 24px rgba(26,24,21,0.12), 0 1px 4px rgba(26,24,21,0.06);
+      animation: floatCard 4s ease-in-out infinite;
+    }
+    @keyframes floatCard { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    .hero-badge-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.875rem; font-weight: 700; line-height: 1; color: var(--copper);
+    }
+    .hero-badge-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--charcoal); color: var(--white);
+      padding: 1.25rem 5rem;
+      display: flex; align-items: center; gap: 3rem; overflow-x: auto;
+    }
+    .trust-bar-label { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); white-space: nowrap; }
+    .trust-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
+    .trust-item { font-size: 0.8125rem; color: rgba(253,252,250,0.65); white-space: nowrap; }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 7rem 5rem; }
+    .section-white { background: var(--white); }
+    .section-alt { background: var(--cream-alt); }
+    .section-dark { background: var(--charcoal); color: var(--white); }
+    .section-header { display: flex; flex-direction: column; gap: 0.875rem; margin-bottom: 3.5rem; }
+    .section-title { font-size: clamp(2.5rem, 3.5vw, 4.5rem); }
+
+    /* ─── FOR YOU SECTION ─── */
+    .foryou-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+    }
+    .foryou-card {
+      background: var(--white);
+      border-radius: 1.25rem; padding: 1.75rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+      border-left: 3px solid var(--copper);
+      box-shadow: 0 1px 3px rgba(26,24,21,0.05), 0 4px 16px rgba(26,24,21,0.04);
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+    }
+    .foryou-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(205,160,133,0.14); }
+    .foryou-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(205,160,133,0.15);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 0.25rem;
+    }
+    .foryou-check::after { content: '✓'; font-size: 0.625rem; font-weight: 700; color: var(--copper-dark); }
+    .foryou-text { font-size: 0.9375rem; color: var(--charcoal-mid); line-height: 1.55; }
+
+    /* ─── MODULES ─── */
+    .modules-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+      align-items: start;
+    }
+    .module-card {
+      border-radius: 1.375rem; overflow: hidden;
+      box-shadow: 0 1px 3px rgba(26,24,21,0.05), 0 4px 16px rgba(26,24,21,0.04);
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+    }
+    .module-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(205,160,133,0.16); }
+    .module-header {
+      padding: 1.75rem 1.75rem 1.25rem;
+      background: var(--charcoal); color: var(--white);
+    }
+    .module-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem; font-weight: 300; line-height: 1;
+      color: var(--copper-light); opacity: 0.7;
+    }
+    .module-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.25rem, 1.4vw, 1.625rem); font-weight: 600;
+      line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--white); margin-top: 0.75rem;
+    }
+    .module-body { background: var(--white); padding: 1.5rem 1.75rem; }
+    .module-list { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+    .module-list li {
+      display: flex; align-items: flex-start; gap: 0.625rem;
+      font-size: 0.875rem; color: var(--muted); line-height: 1.5;
+    }
+    .module-list li::before {
+      content: ''; width: 4px; height: 4px; border-radius: 50%;
+      background: var(--copper); flex-shrink: 0; margin-top: 0.55rem;
+    }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--charcoal) 0%, #4a5641 100%);
+      border-radius: 2rem; padding: 5rem;
+      text-align: center; display: flex; flex-direction: column;
+      align-items: center; gap: 2rem; position: relative; overflow: hidden;
+    }
+    .cta-strip::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(205,160,133,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-strip h2 { font-size: clamp(2.5rem, 4vw, 5rem); color: var(--white); line-height: 0.95; }
+    .cta-strip h2 em { font-style: italic; color: var(--copper); }
+    .cta-strip p { color: rgba(253,252,250,0.65); font-size: 1.0625rem; max-width: 46ch; }
+    .cta-btns { display: flex; gap: 0.875rem; flex-wrap: wrap; justify-content: center; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--charcoal); color: var(--white);
+      padding: 3rem 5rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.28); }
+    .footer-contact { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-contact a { font-size: 0.8125rem; color: rgba(253,252,250,0.5); text-decoration: none; transition: color 0.2s ease; }
+    .footer-contact a:hover { color: var(--white); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      nav { padding: 1rem 2rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-media { height: 60vw; min-height: 300px; order: -1; }
+      .hero-content { padding: 3rem 2.5rem; }
+      .modules-grid { grid-template-columns: 1fr 1fr; }
+      .foryou-grid { grid-template-columns: 1fr; }
+      .section { padding: 5rem 2.5rem; }
+      .trust-bar { padding: 1.25rem 2rem; gap: 1.5rem; }
+      .cta-strip { padding: 3rem 2.5rem; }
+      footer { padding: 2.5rem 2rem; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 0.9375rem; }
+      nav { padding: 0.875rem 1.25rem; }
+      .hero { padding-top: 64px; }
+      .hero-media { height: 72vw; }
+      .hero-content { padding: 2rem 1.25rem 2.5rem; gap: 1.5rem; }
+      .hero h1 { font-size: clamp(2.25rem, 10vw, 3.25rem); }
+      .hero-ctas { flex-direction: column; gap: 0.75rem; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .hero-badge { display: none; }
+      .modules-grid { grid-template-columns: 1fr; }
+      .section { padding: 3.5rem 1.25rem; }
+      .cta-strip { padding: 2.5rem 1.25rem; border-radius: 1.25rem; }
+      .cta-btns { flex-direction: column; width: 100%; }
+      .cta-btns .btn { width: 100%; justify-content: center; }
+      footer { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav id="navbar">
+  <div style="display:flex; align-items:center; gap:1.5rem;">
+    <a href="index.html">
+      <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" class="nav-logo">
+    </a>
+    <a href="landing-b2c.html" class="nav-back">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Programas individuales
+    </a>
+  </div>
+  <a href="https://ig.me/m/lauragonzalezortizdezarate" target="_blank" rel="noopener" class="btn btn-dark">Comprar el curso</a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     HERO
+═══════════════════════════════════════ -->
+<section class="hero">
+
+  <div class="hero-content">
+    <div style="display:flex;flex-direction:column;gap:0.875rem;">
+      <span class="label">Curso Online · 3 Módulos Prácticos</span>
+      <span class="hr-deco"></span>
+    </div>
+
+    <h1>
+      Curso de<br>
+      <em>Productividad</em><br>
+      Personal
+    </h1>
+
+    <p class="hero-body">
+      Aprende a gestionar tu tiempo, tu energía y tu agenda — no de forma genérica, sino construyendo tu propio sistema desde cero, alineado con tus valores y tu vida real.
+    </p>
+
+    <div class="hero-ctas">
+      <div style="display:flex;flex-direction:column;gap:0.35rem;">
+        <a href="https://ig.me/m/lauragonzalezortizdezarate" target="_blank" rel="noopener" class="btn btn-dark btn-lg">Comprar el curso</a>
+        <span style="font-family:'Jost',sans-serif;font-size:0.75rem;font-weight:400;color:var(--muted);padding-left:0.25rem;">Escríbenos por Instagram</span>
+      </div>
+      <a href="#modulos" class="btn btn-outline-dark btn-lg">Ver el programa</a>
+    </div>
+  </div>
+
+  <div class="hero-media">
+    <img src="brand_assets/IMG_2548.jpg"
+         alt="Laura González Ortiz de Zárate — Curso de Productividad Personal"
+         fetchpriority="high">
+
+    <div class="hero-badge">
+      <div class="hero-badge-num">3</div>
+      <div class="hero-badge-label">Módulos prácticos</div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span class="trust-bar-label">Garantía de calidad</span>
+  <span class="trust-sep"></span>
+  <div style="display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;">
+    <span class="trust-item">Coach Certificada · International Coach Federation (ICF)</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Docente — Universidad Complutense de Madrid</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Online · A tu ritmo · Acceso de por vida</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PARA TI SI...
+═══════════════════════════════════════ -->
+<section class="section section-white">
+  <div class="section-header">
+    <span class="label">¿Es este curso para ti?</span>
+    <h2 class="section-title">Este curso es para ti si…</h2>
+  </div>
+
+  <div class="foryou-grid">
+    <div class="foryou-card">
+      <span class="foryou-check"></span>
+      <p class="foryou-text">Sientes que tienes mil cosas en la cabeza en el día a día y vives con demasiado estrés.</p>
+    </div>
+    <div class="foryou-card">
+      <span class="foryou-check"></span>
+      <p class="foryou-text">Quieres ganar en paz y tranquilidad, y poder estar más presente en lo que para ti es realmente importante.</p>
+    </div>
+    <div class="foryou-card">
+      <span class="foryou-check"></span>
+      <p class="foryou-text">No tienes un sistema de organización claro y no sabes muy bien cómo empezar a planificarte.</p>
+    </div>
+    <div class="foryou-card">
+      <span class="foryou-check"></span>
+      <p class="foryou-text">Buscas una nueva perspectiva o un momento de pausa para reflexionar sobre lo que importa y comprometerte con tu bienestar.</p>
+    </div>
+    <div class="foryou-card" style="grid-column: span 2;">
+      <span class="foryou-check"></span>
+      <p class="foryou-text">Te organizas razonablemente bien, pero quieres hacer una parada en el camino y ajustar el rumbo — sin fórmulas genéricas, construyendo tu propio sistema.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     MÓDULOS DEL CURSO
+═══════════════════════════════════════ -->
+<section class="section" id="modulos">
+  <div class="section-header">
+    <span class="label">El programa</span>
+    <h2 class="section-title">Tres módulos.<br><em>Un sistema propio.</em></h2>
+    <p style="max-width:52ch;color:var(--muted);font-size:1rem;margin-top:0.5rem;">
+      Cada módulo incluye lecciones en vídeo, plan de acción personalizado y recursos descargables. A tu ritmo, desde cualquier dispositivo.
+    </p>
+  </div>
+
+  <div class="modules-grid">
+
+    <!-- Módulo 1 -->
+    <div class="module-card">
+      <div class="module-header">
+        <div class="module-num">01</div>
+        <div class="module-title">Productividad personal para ti</div>
+      </div>
+      <div class="module-body">
+        <ul class="module-list">
+          <li>Construye tu propia definición de productividad</li>
+          <li>Los distintos cajones de tu vida: situación ideal vs. situación real</li>
+          <li>Valores, hábitos y etiquetas · Plan de acción concreto</li>
+          <li>Sistema de listas y regla de los 3 minutos</li>
+          <li>Calendario y las tres tareas de alto impacto</li>
+          <li>Clasificar recursos según la tarea</li>
+          <li>Asana, tu gestor de proyectos: tutorial práctico</li>
+          <li>La importancia de los descansos estratégicos</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Módulo 2 -->
+    <div class="module-card">
+      <div class="module-header">
+        <div class="module-num">02</div>
+        <div class="module-title">Aprende a decir que no</div>
+      </div>
+      <div class="module-body">
+        <ul class="module-list">
+          <li>Identifica tus creencias limitantes</li>
+          <li>Los costes de decir "sí" cuando quieres decir "no"</li>
+          <li>Método para detener el piloto automático y ser más asertiva</li>
+          <li>Aprende a hacer peticiones con claridad</li>
+          <li>Plan de acción personal</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Módulo 3 -->
+    <div class="module-card">
+      <div class="module-header">
+        <div class="module-num">03</div>
+        <div class="module-title">Identifica tus ladrones de tiempo</div>
+      </div>
+      <div class="module-body">
+        <ul class="module-list">
+          <li>Tipos de ladrones de tiempo: cuáles son y cómo tomarles conciencia</li>
+          <li>Círculo de influencia y de responsabilidad</li>
+          <li>Preguntas potentes y recursos para atajar cada ladrón</li>
+          <li>Plan de acción individual</li>
+          <li>Sistema de organización del email: tutorial práctico</li>
+          <li>Sistema de organización de WhatsApp: tutorial práctico</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CTA FINAL
+═══════════════════════════════════════ -->
+<section class="section" style="padding-top: 0;">
+  <div class="cta-strip">
+    <span class="label" style="color: var(--sage);">Disponible ahora</span>
+    <h2>Un sistema propio.<br><em>Desde hoy.</em></h2>
+    <p>Acceso inmediato al curso online completo. Aprende a tu ritmo, desde cualquier dispositivo.</p>
+    <div class="cta-btns">
+      <a href="https://ig.me/m/lauragonzalezortizdezarate" target="_blank" rel="noopener" class="btn btn-copper btn-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Comprar el curso
+      </a>
+      <a href="mailto:hola@lauragonzalezortizdezarate.com?subject=Curso%20de%20Productividad%20Personal" class="btn btn-outline-white btn-lg" style="border-color:rgba(255,255,255,0.4);color:var(--white);" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='transparent'">
+        hola@lauragonzalezortizdezarate.com
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" style="height:40px;opacity:0.8;">
+  <div class="footer-contact">
+    <a href="mailto:hola@lauragonzalezortizdezarate.com">hola@lauragonzalezortizdezarate.com</a>
+    <a href="landing-b2c.html">← Programas individuales</a>
+    <a href="index.html">Web principal</a>
+  </div>
+  <span class="footer-copy">© 2026 Laura González Ortiz de Zárate</span>
+</footer>
+
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+</script>
+</body>
+</html>
