@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coaching Ejecutivo para Empresas — Laura González Ortiz de Zárate</title>
+  <meta name="description" content="Coaching ejecutivo, formación de equipos y consultoría para empresas. Coach certificada ICF, docente UCM. Resultados medibles para directivos y equipos.">
+  <link rel="icon" type="image/png" href="brand_assets/LG_logo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:        #F8F5F0;
+      --cream-alt:    #F0EBE4;
+      --sage:         #BDC0B5;
+      --sage-light:   #D6D9D2;
+      --sage-dark:    #8A9087;
+      --copper:       #CDA085;
+      --copper-dark:  #B08060;
+      --copper-light: #ECD8CA;
+      --charcoal:     #69775c;
+      --charcoal-mid: #545454;
+      --text:         #545454;
+      --muted:        #888;
+      --border:       rgba(105,119,92,0.14);
+      --white:        #FDFCFA;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: 'Jost', system-ui, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      font-weight: 600;
+    }
+
+    .label {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hr-deco {
+      display: block;
+      width: 2.5rem;
+      height: 1.5px;
+      background: var(--copper);
+    }
+
+    /* ─── NAV (minimal — no internal links) ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.125rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      /* Always visible background — landing page users need clear orientation */
+      background: rgba(248,245,240,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--border);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    nav.scrolled {
+      background: var(--cream);
+      box-shadow: 0 1px 0 var(--border);
+    }
+    .nav-logo { height: 46px; width: auto; }
+
+    /* Back link — pill style, always legible */
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Jost', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      color: var(--charcoal); text-decoration: none;
+      padding: 0.4rem 1rem 0.4rem 0.75rem;
+      border: 1.5px solid rgba(105,119,92,0.45);
+      border-radius: 100px;
+      background: var(--white);
+      box-shadow: 0 1px 4px rgba(26,24,21,0.08);
+      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease,
+                  box-shadow 0.2s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .nav-back:hover {
+      color: var(--copper-dark);
+      border-color: var(--copper);
+      background: rgba(205,160,133,0.06);
+      box-shadow: 0 2px 10px rgba(205,160,133,0.2);
+      transform: translateX(-2px);
+    }
+    .nav-back svg { width: 14px; height: 14px; flex-shrink: 0; transition: transform 0.18s ease; }
+    .nav-back:hover svg { transform: translateX(-2px); }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.5rem; border-radius: 100px;
+      font-family: 'Jost', sans-serif; font-size: 0.875rem;
+      font-weight: 500; letter-spacing: 0.02em;
+      text-decoration: none; border: none; cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.18s ease, background 0.18s ease;
+    }
+    .btn:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; }
+    .btn:active { transform: translateY(0) !important; }
+
+    .btn-dark { background: var(--charcoal); color: var(--white); }
+    .btn-dark:hover {
+      background: var(--copper-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(205,160,133,0.28);
+    }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--charcoal);
+      border: 1.5px solid var(--charcoal);
+    }
+    .btn-outline-dark:hover {
+      background: var(--charcoal); color: var(--white);
+      transform: translateY(-2px);
+    }
+    .btn-copper { background: var(--copper); color: var(--white); }
+    .btn-copper:hover {
+      background: var(--copper-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(205,160,133,0.35);
+    }
+    .btn-lg {
+      padding: 0.9rem 2.25rem;
+      font-size: 1rem;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      padding-top: 74px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+    .hero-content {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 3.5rem 5rem 5rem; gap: 2.25rem; position: relative; z-index: 2;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 4.5vw, 6.5rem);
+      line-height: 0.93;
+    }
+    .hero h1 em { font-style: italic; color: var(--copper); }
+    .hero-body { max-width: 42ch; color: var(--muted); font-size: 1.05rem; }
+    .hero-ctas { display: flex; gap: 0.875rem; flex-wrap: wrap; align-items: flex-start; }
+
+    .hero-media {
+      position: relative; overflow: hidden;
+      background: var(--cream-alt);
+    }
+    .hero-media img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .hero-media::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 0%, rgba(248,245,240,0.18) 0%, transparent 45%),
+        linear-gradient(to bottom, transparent 50%, rgba(26,24,21,0.45) 100%);
+    }
+
+    /* Floating stat */
+    .hero-stat {
+      position: absolute; z-index: 10;
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 4px 24px rgba(26,24,21,0.12), 0 1px 4px rgba(26,24,21,0.06);
+      display: flex; flex-direction: column; gap: 0.15rem;
+      animation: floatCard 4s ease-in-out infinite;
+    }
+    .hero-stat:nth-child(3) { animation-delay: -2s; }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700; line-height: 1;
+      color: var(--text);
+    }
+    .hero-stat-num span { color: var(--copper); }
+    .hero-stat-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--charcoal); color: var(--white);
+      padding: 1.375rem 5rem;
+      display: flex; align-items: center; gap: 3rem;
+      overflow-x: auto;
+    }
+    .trust-bar-label {
+      font-size: 0.625rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--sage); white-space: nowrap;
+    }
+    .trust-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
+    .trust-items { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+    .trust-item {
+      font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.025em;
+      color: rgba(253,252,250,0.65); white-space: nowrap;
+    }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 7rem 5rem; }
+    .section-white { background: var(--white); }
+    .section-dark { background: var(--charcoal); color: var(--white); }
+    .section-sage { background: var(--sage-light); }
+    .section-alt { background: var(--cream-alt); }
+
+    .section-header { display: flex; flex-direction: column; gap: 0.875rem; margin-bottom: 4rem; }
+    .section-title { font-size: clamp(2.5rem, 3.5vw, 4.5rem); }
+
+    /* ─── PAIN POINTS ─── */
+    .pain-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+    }
+    .pain-card {
+      background: var(--white);
+      border-radius: 1.375rem;
+      padding: 2rem;
+      display: flex; flex-direction: column; gap: 0.875rem;
+      border-left: 3px solid var(--copper);
+      box-shadow: 0 1px 3px rgba(26,24,21,0.05), 0 4px 16px rgba(26,24,21,0.04);
+    }
+    .pain-card h3 {
+      font-size: clamp(1.25rem, 1.4vw, 1.625rem);
+      color: var(--charcoal);
+    }
+    .pain-card p { font-size: 0.9375rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── BENTO ─── */
+    .bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .bento-card {
+      background: var(--white); border-radius: 1.375rem;
+      padding: 2rem; display: flex; flex-direction: column; gap: 0.875rem;
+      box-shadow: 0 1px 3px rgba(26,24,21,0.05), 0 4px 16px rgba(26,24,21,0.04);
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.22s ease;
+    }
+    .bento-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(205,160,133,0.16), 0 2px 8px rgba(26,24,21,0.07);
+    }
+    .bento-card.span-2 { grid-column: span 2; }
+    .bento-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem; font-weight: 300; line-height: 1; color: var(--copper); opacity: 0.55;
+    }
+    .bento-card h3 { font-size: clamp(1.375rem, 1.5vw, 1.75rem); }
+    .bento-card p { font-size: 0.9375rem; color: var(--muted); line-height: 1.6; }
+    .bento-pill {
+      display: inline-flex; padding: 0.2rem 0.65rem; border-radius: 100px;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      width: fit-content;
+      background: rgba(189,192,181,0.3); color: var(--sage-dark);
+    }
+    .bento-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8125rem; font-weight: 600; color: var(--copper);
+      text-decoration: none; margin-top: auto; padding-top: 0.875rem;
+      transition: gap 0.18s ease;
+    }
+    .bento-link:hover { gap: 0.7rem; }
+    .bento-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .bento-tag-chip {
+      padding: 0.2rem 0.65rem; background: var(--cream); border-radius: 100px;
+      font-size: 0.6875rem; color: var(--muted);
+    }
+
+    /* ─── TESTIMONIAL ─── */
+    .testi-feature {
+      background: var(--charcoal);
+      border-radius: 2rem;
+      padding: 4rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .testi-big-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(5rem, 8vw, 9rem);
+      font-weight: 700;
+      line-height: 0.9;
+      color: var(--copper);
+    }
+    .testi-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.375rem, 1.8vw, 2rem);
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.4;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .testi-attribution { margin-top: 1.5rem; }
+    .testi-name { font-size: 0.9375rem; font-weight: 600; color: rgba(253,252,250,0.9); }
+    .testi-role { font-size: 0.8125rem; color: rgba(253,252,250,0.5); margin-top: 0.15rem; }
+
+    /* ─── FAQ ─── */
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.75rem 0;
+    }
+    .faq-question {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.125rem, 1.3vw, 1.5rem);
+      font-weight: 600;
+      color: var(--charcoal);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .faq-toggle {
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--copper);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      font-family: 'Jost', sans-serif;
+    }
+    .faq-answer {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-top: 1rem; }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+    /* ─── CLIENT LOGOS ─── */
+    .logos-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem 3.5rem;
+    }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--charcoal) 0%, #4a5641 100%);
+      border-radius: 2rem;
+      padding: 4rem 5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(205,160,133,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-strip h2 {
+      font-size: clamp(2.5rem, 4vw, 5rem);
+      color: var(--white);
+      line-height: 0.95;
+    }
+    .cta-strip h2 em { font-style: italic; color: var(--copper); }
+    .cta-strip p { color: rgba(253,252,250,0.65); font-size: 1.0625rem; max-width: 48ch; }
+
+    /* ─── FOOTER (minimal) ─── */
+    footer {
+      background: var(--charcoal); color: var(--white);
+      padding: 3rem 5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.28); }
+    .footer-contact {
+      display: flex; gap: 2rem; flex-wrap: wrap;
+    }
+    .footer-contact a {
+      font-size: 0.8125rem; color: rgba(253,252,250,0.5);
+      text-decoration: none; transition: color 0.2s ease;
+    }
+    .footer-contact a:hover { color: var(--white); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      nav { padding: 1rem 2rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-media { height: 60vw; min-height: 320px; order: -1; }
+      .hero-content { padding: 3rem 2.5rem; }
+      .bento { grid-template-columns: 1fr 1fr; }
+      .bento-card.span-2 { grid-column: span 2; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .testi-feature { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem; }
+      .section { padding: 5rem 2.5rem; }
+      .trust-bar { padding: 1.25rem 2rem; gap: 1.5rem; }
+      .cta-strip { padding: 3rem 2.5rem; }
+      footer { padding: 2.5rem 2rem; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 0.9375rem; }
+      nav { padding: 0.875rem 1.25rem; }
+      .hero { padding-top: 64px; }
+      .hero-media { height: 72vw; }
+      .hero-content { padding: 2rem 1.25rem 2.5rem; gap: 1.5rem; }
+      .hero h1 { font-size: clamp(2.25rem, 10vw, 3.25rem); }
+      .hero-ctas { flex-direction: column; gap: 0.75rem; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .hero-stat { display: none; }
+      .section { padding: 3.5rem 1.25rem; }
+      .bento { grid-template-columns: 1fr; }
+      .bento-card.span-2 { grid-column: span 1; }
+      .testi-feature { padding: 2rem 1.25rem; }
+      .cta-strip { padding: 2.5rem 1.25rem; border-radius: 1.25rem; }
+      footer { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV MÍNIMA — logo + breadcrumb + CTA -->
+<nav id="navbar">
+  <div style="display:flex; align-items:center; gap:1.5rem;">
+    <a href="index.html">
+      <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" class="nav-logo">
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Inicio
+    </a>
+  </div>
+  <a href="mailto:hola@lauragonzalezortizdezarate.com" class="btn btn-dark">Solicitar propuesta</a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     HERO — ENFOCADO EN EMPRESA
+═══════════════════════════════════════ -->
+<section class="hero">
+
+  <div class="hero-content">
+    <div style="display:flex;flex-direction:column;gap:0.875rem;">
+      <span class="label">Coaching Ejecutivo · Formación · Consultoría Corporativa</span>
+      <span class="hr-deco"></span>
+    </div>
+
+    <h1>
+      Líderes más fuertes.<br>
+      Equipos más <em>cohesionados.</em><br>
+      Resultados medibles.
+    </h1>
+
+    <p class="hero-body">
+      Para Directores de RRHH, CEOs y fundadores que saben que el crecimiento de una organización empieza en las personas que la dirigen.
+    </p>
+
+    <div class="hero-ctas">
+      <div style="display:flex;flex-direction:column;gap:0.35rem;">
+        <a href="mailto:hola@lauragonzalezortizdezarate.com" class="btn btn-dark btn-lg">Solicitar una propuesta</a>
+        <span style="font-family:'Jost',sans-serif;font-size:0.75rem;font-weight:400;color:var(--muted);padding-left:0.25rem;">Respuesta en menos de 24h</span>
+      </div>
+      <a href="#servicios" class="btn btn-outline-dark btn-lg">Ver programas</a>
+    </div>
+  </div>
+
+  <div class="hero-media">
+    <img src="brand_assets/IMG_2647.jpg"
+         alt="Laura González Ortiz de Zárate impartiendo formación empresarial"
+         fetchpriority="high">
+
+    <!-- Stat flotante: ROI real de testimonial -->
+    <div class="hero-stat" style="bottom: 6rem; left: 1.5rem;">
+      <span class="hero-stat-num"><span>+40</span>%</span>
+      <span class="hero-stat-label">Cohesión de equipo · 3 meses</span>
+    </div>
+
+    <div class="hero-stat" style="bottom: 2.5rem; right: 1.5rem;">
+      <span class="hero-stat-num">+500<span>h</span></span>
+      <span class="hero-stat-label">Horas de coaching ejecutivo</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span class="trust-bar-label">Respaldada por</span>
+  <span class="trust-sep"></span>
+  <div class="trust-items">
+    <span class="trust-item">International Coach Federation (ICF)</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Universidad Complutense de Madrid</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Vogue España · Articulista</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Cosmopolitan · Colaboradora</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Ellas Coach · Cofundadora</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAIN POINTS — ¿Te suena esto?
+═══════════════════════════════════════ -->
+<section class="section section-white">
+  <div class="section-header">
+    <span class="label">El problema</span>
+    <h2 class="section-title">¿Reconoces alguna<br>de estas situaciones?</h2>
+  </div>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <h3>Tu equipo directivo no tira en la misma dirección</h3>
+      <p>Reuniones sin acuerdos reales, silos entre departamentos y líderes que no logran alinear a sus equipos con la estrategia de la empresa.</p>
+    </div>
+    <div class="pain-card">
+      <h3>Tienes talento brillante que no termina de despegar</h3>
+      <p>Managers con potencial que se estancan por falta de herramientas de comunicación, gestión emocional o visión estratégica. Alto coste de oportunidad.</p>
+    </div>
+    <div class="pain-card">
+      <h3>La cultura que describes no es la que se vive</h3>
+      <p>Los valores existen en papel pero no en el día a día. La rotación sube, el compromiso baja y los procesos de cambio no terminan de arraigar.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SERVICIOS B2B
+═══════════════════════════════════════ -->
+<section class="section" id="servicios">
+  <div class="section-header">
+    <span class="label">Programas Corporativos</span>
+    <h2 class="section-title">Cinco formas de trabajar<br>juntos en tu organización.</h2>
+    <p style="max-width: 58ch; color: var(--muted); font-size: 1rem; margin-top: 0.5rem;">
+      Presencial en Madrid o remoto. En español e inglés. Con propuesta a medida para cada proyecto.
+    </p>
+  </div>
+
+  <div class="bento">
+
+    <div class="bento-card span-2">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">01</span>
+        <span class="bento-pill">Más solicitado</span>
+      </div>
+      <h3>Coaching Ejecutivo Individual</h3>
+      <p>Para directivos de alto impacto, líderes que quieres retener y managers que acaban de asumir responsabilidad de equipo. Rutas de 8 sesiones con objetivos claros y resultados medibles.</p>
+      <a href="mailto:hola@lauragonzalezortizdezarate.com" class="bento-link">Solicitar información →</a>
+    </div>
+
+    <div class="bento-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">02</span>
+        <span class="bento-pill">Equipos</span>
+      </div>
+      <h3>Coaching de Equipos</h3>
+      <p>Para equipos que necesitan conectar mejor, tomar decisiones más rápido y liderar juntos. Taller intensivo o proceso continuado.</p>
+    </div>
+
+    <div class="bento-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">03</span>
+        <span class="bento-pill">Formación</span>
+      </div>
+      <h3>Talleres de Soft Skills</h3>
+      <p>Liderazgo Consciente, Comunicación y Storytelling, Productividad. Talleres que los equipos recuerdan — y que reducen la rotación.</p>
+    </div>
+
+    <div class="bento-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">04</span>
+        <span class="bento-pill">C-Level</span>
+      </div>
+      <h3>Consultoría Estratégica</h3>
+      <p>Diversidad e Inclusión, cultura organizacional y gestión del cambio. Para fundadores y C-Level que quieren que sus valores no se queden en un PDF.</p>
+    </div>
+
+    <div class="bento-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">05</span>
+        <span class="bento-pill">Conferencias</span>
+      </div>
+      <h3>In-company Talks</h3>
+      <p>Charlas para equipos de 10 o eventos de 1.000. En español o inglés, presencial, remoto o híbrido.</p>
+      <div class="bento-tags">
+        <span class="bento-tag-chip">Presencial</span>
+        <span class="bento-tag-chip">Remoto</span>
+        <span class="bento-tag-chip">Híbrido</span>
+        <span class="bento-tag-chip">ES / EN</span>
+      </div>
+    </div>
+
+    <div class="bento-card span-2" style="background: var(--cream-alt); border: 1.5px solid var(--border);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">06</span>
+        <span class="bento-pill">Prensa</span>
+      </div>
+      <h3>Articulista y Experta en Medios</h3>
+      <p>Colaboraciones en Vogue España, Cosmopolitan y otros medios sobre liderazgo consciente, productividad y bienestar profesional. Disponible como portavoz o experta para tu empresa.</p>
+      <div class="bento-tags" style="margin-top: 0.25rem;">
+        <span class="bento-tag-chip">Vogue España</span>
+        <span class="bento-tag-chip">Cosmopolitan</span>
+        <span class="bento-tag-chip">Liderazgo</span>
+      </div>
+      <a href="publicaciones.html" class="bento-link">Ver todas las publicaciones →</a>
+    </div>
+
+  </div>
+
+  <!-- Cross-link a B2C -->
+  <div style="
+    margin-top: 2rem; padding: 1.25rem 2rem;
+    background: var(--cream-alt); border-radius: 1rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    border: 1px solid var(--border);
+  ">
+    <p style="font-size: 0.9375rem; color: var(--muted); margin: 0;">
+      ¿Buscas acompañamiento personal, no corporativo?
+    </p>
+    <a href="landing-b2c.html" style="
+      font-family: 'Jost', sans-serif; font-size: 0.875rem; font-weight: 600;
+      color: var(--copper-dark); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: gap 0.18s ease;
+    " onmouseover="this.style.gap='0.7rem'" onmouseout="this.style.gap='0.4rem'">
+      Ver servicios para particulares →
+    </a>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     LOGOS DE CLIENTES
+═══════════════════════════════════════ -->
+<section class="section section-alt" style="padding-top: 4rem; padding-bottom: 4.5rem;">
+  <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+    <span class="label" style="margin-bottom: 0.75rem; display:block;">Han confiado en Laura</span>
+    <div class="logos-row" style="margin-top: 2.5rem;">
+      <img src="brand_assets/Logo_Nationale_Nederlanden.png" alt="Nationale Nederlanden" loading="lazy" style="height:44px; width:auto; filter: grayscale(100%) opacity(0.7); mix-blend-mode: multiply;">
+      <img src="brand_assets/Logo_insparya.png" alt="Insparya" loading="lazy" style="height:36px; width:auto; filter: grayscale(100%) opacity(0.7); mix-blend-mode: multiply;">
+      <img src="brand_assets/Logo_santander_women_network.jpg" alt="Santander Women Network" loading="lazy" style="height:38px; width:auto; filter: grayscale(100%) opacity(0.7); mix-blend-mode: multiply;">
+      <img src="brand_assets/Logo_Bnext.png" alt="bnext" loading="lazy" style="height:34px; width:auto; filter: grayscale(100%) opacity(0.7); mix-blend-mode: multiply;">
+      <img src="brand_assets/Logo_Vidacaixa.png" alt="VidaCaixa" loading="lazy" style="height:34px; width:auto; filter: grayscale(100%) opacity(0.7); mix-blend-mode: multiply;">
+      <img src="brand_assets/Logo_Just_media_group.png" alt="Just Media Group" loading="lazy" style="height:52px; width:auto; filter: grayscale(100%) invert(1) opacity(0.65); mix-blend-mode: multiply;">
+      <img src="brand_assets/Log_CRYS-DYAZ.png" alt="CRYS DYAZ & CO" loading="lazy" style="height:40px; width:auto; filter: grayscale(100%) opacity(0.7); mix-blend-mode: multiply;">
+      <img src="brand_assets/Logo_fundacion_integra.png" alt="Fundación Integra" loading="lazy" style="height:44px; width:auto; filter: grayscale(100%) opacity(0.7); mix-blend-mode: multiply;">
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     TESTIMONIO DESTACADO (con dato concreto)
+═══════════════════════════════════════ -->
+<section class="section section-white">
+  <div class="testi-feature">
+    <div>
+      <span class="label" style="color: var(--sage); margin-bottom: 1rem;">Resultado real</span>
+      <div class="testi-big-num">+40%</div>
+      <p style="color: var(--sage-light); font-size: 0.875rem; margin-top: 0.75rem; letter-spacing: 0.04em;">
+        MEJORA EN COHESIÓN Y PRODUCTIVIDAD<br>EN 3 MESES
+      </p>
+    </div>
+    <div>
+      <p class="testi-quote">
+        "El proceso de coaching con Laura transformó la dinámica de mi equipo directivo. En tres meses medimos un incremento del 40% en indicadores de cohesión y productividad."
+      </p>
+      <div class="testi-attribution">
+        <div class="testi-name">Carlos R.</div>
+        <div class="testi-role">Director General · Sector seguros</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FAQ CORPORATIVO
+═══════════════════════════════════════ -->
+<section class="section">
+  <div style="max-width: 760px; margin: 0 auto;">
+    <div class="section-header">
+      <span class="label">Preguntas frecuentes</span>
+      <h2 class="section-title">Lo que nos preguntan<br>antes de empezar.</h2>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        ¿Cómo se miden los resultados del coaching ejecutivo?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Antes de cada proceso definimos juntos los indicadores de éxito: puede ser una mejora en encuestas de clima, reducción de rotación, avance en evaluaciones de desempeño o métricas de negocio específicas. Al cierre del proceso hacemos una evaluación formal y entregamos un informe de resultados.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        ¿Cuánto dura un proceso de coaching ejecutivo?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        El formato estándar es de 8 sesiones en 4-6 meses, que es el tiempo mínimo para que los cambios sean sostenibles. Para proyectos de equipo o consultoría, diseñamos el alcance juntos en función del objetivo. Siempre con contrato y propuesta escrita.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        ¿Trabajáis solo en Madrid o también de forma remota?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Las sesiones individuales se hacen online o presencial en Madrid, según la preferencia del directivo. Los talleres de equipo son habitualmente presenciales (Madrid o desplazamiento), aunque tenemos formato remoto y híbrido disponible. También disponible en inglés para equipos internacionales.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        ¿Cómo es el proceso para solicitar una propuesta?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Escríbenos a hola@lauragonzalezortizdezarate.com con una descripción breve de la situación o necesidad. Respondemos en menos de 24h para agendar una primera llamada de diagnóstico (gratuita, 30 min) y a partir de ahí preparamos una propuesta personalizada.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CTA FINAL
+═══════════════════════════════════════ -->
+<section class="section" style="padding-top: 0;">
+  <div class="cta-strip">
+    <span class="label" style="color: var(--sage);">¿Tienes un proyecto corporativo?</span>
+    <h2>Cuéntame el desafío<br>de tu <em>organización.</em></h2>
+    <p>Primera llamada de diagnóstico gratuita. Propuesta personalizada en 48h. Sin compromisos previos.</p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+      <a href="mailto:hola@lauragonzalezortizdezarate.com" class="btn btn-copper btn-lg">Solicitar propuesta</a>
+    </div>
+    <span style="font-size:0.8125rem;color:rgba(253,252,250,0.4);">hola@lauragonzalezortizdezarate.com</span>
+  </div>
+</section>
+
+
+<!-- ─── FOOTER MÍNIMO ─── -->
+<footer>
+  <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" style="height:40px;opacity:0.8;">
+  <div class="footer-contact">
+    <a href="mailto:hola@lauragonzalezortizdezarate.com">hola@lauragonzalezortizdezarate.com</a>
+    <a href="tel:+34617392132">+34 617 392 132</a>
+    <a href="landing-b2c.html">Servicios para particulares</a>
+    <a href="index.html">← Web principal</a>
+  </div>
+  <span class="footer-copy">© 2025 Laura González Ortiz de Zárate</span>
+</footer>
+
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // FAQ
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>

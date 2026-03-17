@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coaching Individual — Laura González Ortiz de Zárate</title>
+  <meta name="description" content="Coaching individual, Time To Talk y Neurocomunicación. Coach certificada ICF. Primera llamada gratuita de 30 minutos. Para profesionales en transición.">
+  <link rel="icon" type="image/png" href="brand_assets/LG_logo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:        #F8F5F0;
+      --cream-alt:    #F0EBE4;
+      --sage:         #BDC0B5;
+      --sage-light:   #D6D9D2;
+      --sage-dark:    #8A9087;
+      --copper:       #CDA085;
+      --copper-dark:  #B08060;
+      --copper-light: #ECD8CA;
+      --charcoal:     #69775c;
+      --charcoal-mid: #545454;
+      --text:         #545454;
+      --muted:        #888;
+      --border:       rgba(105,119,92,0.14);
+      --white:        #FDFCFA;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: 'Jost', system-ui, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      font-weight: 600;
+    }
+
+    .label {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hr-deco {
+      display: block;
+      width: 2.5rem;
+      height: 1.5px;
+      background: var(--copper);
+    }
+
+    /* ─── NAV (minimal) ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.125rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(248,245,240,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--border);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    nav.scrolled {
+      background: var(--cream);
+      box-shadow: 0 1px 0 var(--border);
+    }
+    .nav-logo { height: 46px; width: auto; }
+
+    /* Back link — pill style, always legible */
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'Jost', sans-serif; font-size: 0.8125rem; font-weight: 600;
+      color: var(--charcoal); text-decoration: none;
+      padding: 0.4rem 1rem 0.4rem 0.75rem;
+      border: 1.5px solid rgba(105,119,92,0.45);
+      border-radius: 100px;
+      background: var(--white);
+      box-shadow: 0 1px 4px rgba(26,24,21,0.08);
+      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease,
+                  box-shadow 0.2s ease, transform 0.18s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .nav-back:hover {
+      color: var(--copper-dark);
+      border-color: var(--copper);
+      background: rgba(205,160,133,0.06);
+      box-shadow: 0 2px 10px rgba(205,160,133,0.2);
+      transform: translateX(-2px);
+    }
+    .nav-back svg { width: 14px; height: 14px; flex-shrink: 0; transition: transform 0.18s ease; }
+    .nav-back:hover svg { transform: translateX(-2px); }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.5rem; border-radius: 100px;
+      font-family: 'Jost', sans-serif; font-size: 0.875rem;
+      font-weight: 500; letter-spacing: 0.02em;
+      text-decoration: none; border: none; cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.18s ease, background 0.18s ease;
+    }
+    .btn:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; }
+    .btn:active { transform: translateY(0) !important; }
+
+    .btn-dark { background: var(--charcoal); color: var(--white); }
+    .btn-dark:hover {
+      background: var(--copper-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(205,160,133,0.28);
+    }
+    .btn-outline-dark {
+      background: transparent; color: var(--charcoal);
+      border: 1.5px solid var(--charcoal);
+    }
+    .btn-outline-dark:hover {
+      background: var(--charcoal); color: var(--white);
+      transform: translateY(-2px);
+    }
+    .btn-copper { background: var(--copper); color: var(--white); }
+    .btn-copper:hover {
+      background: var(--copper-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(205,160,133,0.35);
+    }
+    .btn-outline-white {
+      background: transparent; color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.4);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.7);
+      transform: translateY(-2px);
+    }
+    .btn-lg {
+      padding: 0.9rem 2.25rem;
+      font-size: 1rem;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      padding-top: 74px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+    .hero-content {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 3.5rem 5rem 5rem; gap: 2.25rem; position: relative; z-index: 2;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 4.5vw, 6.5rem);
+      line-height: 0.93;
+    }
+    .hero h1 em { font-style: italic; color: var(--copper); }
+    .hero-body { max-width: 42ch; color: var(--muted); font-size: 1.05rem; }
+    .hero-ctas { display: flex; gap: 0.875rem; flex-wrap: wrap; align-items: flex-start; }
+
+    /* Urgency badge */
+    .urgency-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(205,160,133,0.12);
+      border: 1px solid rgba(205,160,133,0.3);
+      border-radius: 100px;
+      padding: 0.375rem 0.875rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--copper-dark);
+      width: fit-content;
+    }
+    .urgency-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--copper);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero-media {
+      position: relative; overflow: hidden;
+      background: var(--cream-alt);
+    }
+    .hero-media img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .hero-media::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 0%, rgba(248,245,240,0.15) 0%, transparent 45%),
+        radial-gradient(ellipse at 80% 20%, rgba(205,160,133,0.08) 0%, transparent 55%),
+        linear-gradient(to bottom, transparent 50%, rgba(26,24,21,0.4) 100%);
+    }
+
+    /* Floating stat */
+    .hero-stat {
+      position: absolute; z-index: 10;
+      background: var(--white);
+      border-radius: 1rem;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 4px 24px rgba(26,24,21,0.12), 0 1px 4px rgba(26,24,21,0.06);
+      display: flex; flex-direction: column; gap: 0.15rem;
+      animation: floatCard 4s ease-in-out infinite;
+    }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .hero-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700; line-height: 1; color: var(--text);
+    }
+    .hero-stat-num span { color: var(--copper); }
+    .hero-stat-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--charcoal); color: var(--white);
+      padding: 1.375rem 5rem;
+      display: flex; align-items: center; gap: 3rem;
+      overflow-x: auto;
+    }
+    .trust-bar-label {
+      font-size: 0.625rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--sage); white-space: nowrap;
+    }
+    .trust-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
+    .trust-items { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+    .trust-item {
+      font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.025em;
+      color: rgba(253,252,250,0.65); white-space: nowrap;
+    }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 7rem 5rem; }
+    .section-white { background: var(--white); }
+    .section-dark { background: var(--charcoal); color: var(--white); }
+    .section-alt { background: var(--cream-alt); }
+    .section-copper { background: var(--copper-light); }
+
+    .section-header { display: flex; flex-direction: column; gap: 0.875rem; margin-bottom: 4rem; }
+    .section-title { font-size: clamp(2.5rem, 3.5vw, 4.5rem); }
+
+    /* ─── PAIN POINTS ─── */
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .pain-card {
+      background: var(--white); border-radius: 1.375rem;
+      padding: 2rem; display: flex; flex-direction: column; gap: 0.875rem;
+      border-left: 3px solid var(--copper);
+      box-shadow: 0 1px 3px rgba(26,24,21,0.05), 0 4px 16px rgba(26,24,21,0.04);
+    }
+    .pain-card h3 { font-size: clamp(1.25rem, 1.4vw, 1.625rem); color: var(--charcoal); }
+    .pain-card p { font-size: 0.9375rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── BENTO ─── */
+    .bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .bento-card {
+      background: var(--white); border-radius: 1.375rem;
+      padding: 2rem; display: flex; flex-direction: column; gap: 0.875rem;
+      box-shadow: 0 1px 3px rgba(26,24,21,0.05), 0 4px 16px rgba(26,24,21,0.04);
+      transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+    }
+    .bento-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(205,160,133,0.16), 0 2px 8px rgba(26,24,21,0.07);
+    }
+    .bento-card.dark { background: var(--charcoal); color: var(--white); }
+    .bento-card.span-3 { grid-column: span 3; }
+    .bento-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem; font-weight: 300; line-height: 1; color: var(--copper); opacity: 0.55;
+    }
+    .bento-card.dark .bento-num { color: var(--copper-light); }
+    .bento-card h3 { font-size: clamp(1.375rem, 1.5vw, 1.75rem); }
+    .bento-card.dark h3 { color: var(--white); }
+    .bento-card p { font-size: 0.9375rem; color: var(--muted); line-height: 1.6; }
+    .bento-card.dark p { color: rgba(253,252,250,0.6); }
+    .bento-pill {
+      display: inline-flex; padding: 0.2rem 0.65rem; border-radius: 100px;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      width: fit-content;
+      background: rgba(205,160,133,0.15); color: var(--copper-dark);
+    }
+    .bento-pill-inv { background: rgba(205,160,133,0.2); color: var(--copper-light); }
+    .bento-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8125rem; font-weight: 600; color: var(--copper);
+      text-decoration: none; margin-top: auto; padding-top: 0.875rem;
+      transition: gap 0.18s ease;
+    }
+    .bento-link:hover { gap: 0.7rem; }
+    .bento-card.dark .bento-link { color: var(--copper-light); }
+
+    /* ─── ABOUT STRIP (quién es Laura) ─── */
+    .about-strip {
+      display: grid; grid-template-columns: 1fr 1.25fr;
+      gap: 5rem; align-items: center;
+    }
+    .about-photo {
+      position: relative; border-radius: 1.75rem; overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .about-photo::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(205,160,133,0.18) 0%, transparent 65%);
+      mix-blend-mode: multiply;
+    }
+    .cred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem; }
+    .cred-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.875rem 1rem; background: var(--cream-alt); border-radius: 0.875rem;
+    }
+    .cred-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--copper); margin-top: 0.55rem; flex-shrink: 0;
+    }
+    .cred-text { font-size: 0.8125rem; font-weight: 500; color: var(--charcoal-mid); line-height: 1.35; }
+
+    /* ─── BOOK STRIP ─── */
+    .book-strip {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 4rem; align-items: center;
+      padding: 4rem 5rem; background: var(--charcoal); border-radius: 2rem;
+    }
+    .book-cover {
+      width: 180px; flex-shrink: 0;
+      border-radius: 0.5rem; overflow: hidden;
+      box-shadow: -12px 12px 40px rgba(0,0,0,0.45), -4px 4px 12px rgba(0,0,0,0.25);
+      transform: rotate(-3deg);
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .book-cover:hover { transform: rotate(0deg) scale(1.04); }
+    .book-cover img { width: 100%; display: block; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .testi-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 1.375rem; padding: 2rem;
+      display: flex; flex-direction: column; gap: 1.25rem;
+    }
+    .testi-stars { color: var(--copper); font-size: 1rem; letter-spacing: 0.1em; }
+    .testi-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-style: italic; font-weight: 500;
+      line-height: 1.45; letter-spacing: -0.02em; flex: 1;
+    }
+    .testi-name { font-size: 0.875rem; font-weight: 600; }
+    .testi-role { font-size: 0.75rem; color: var(--muted); margin-top: 0.15rem; }
+    /* Highlight de resultado en testimonial */
+    .testi-result {
+      display: inline-block;
+      background: rgba(205,160,133,0.12);
+      border-radius: 0.375rem;
+      padding: 0.125rem 0.375rem;
+      color: var(--copper-dark);
+      font-style: normal;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.75rem 0; }
+    .faq-question {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.125rem, 1.3vw, 1.5rem); font-weight: 600;
+      color: var(--charcoal); cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      letter-spacing: -0.02em; line-height: 1.2;
+    }
+    .faq-toggle {
+      font-size: 1.5rem; font-weight: 300; color: var(--copper);
+      flex-shrink: 0; transition: transform 0.3s ease; font-family: 'Jost', sans-serif;
+    }
+    .faq-answer {
+      font-size: 0.9375rem; color: var(--muted); line-height: 1.7;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-top: 1rem; }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--charcoal) 0%, #4a5641 100%);
+      border-radius: 2rem; padding: 5rem;
+      text-align: center; display: flex; flex-direction: column;
+      align-items: center; gap: 2rem; position: relative; overflow: hidden;
+    }
+    .cta-strip::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(205,160,133,0.18) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-strip h2 { font-size: clamp(2.5rem, 4vw, 5.5rem); color: var(--white); line-height: 0.95; }
+    .cta-strip h2 em { font-style: italic; color: var(--copper); }
+    .cta-strip p { color: rgba(253,252,250,0.65); font-size: 1.0625rem; max-width: 46ch; }
+
+    /* ─── FOOTER (minimal) ─── */
+    footer {
+      background: var(--charcoal); color: var(--white);
+      padding: 3rem 5rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.28); }
+    .footer-contact { display: flex; gap: 2rem; flex-wrap: wrap; }
+    .footer-contact a {
+      font-size: 0.8125rem; color: rgba(253,252,250,0.5);
+      text-decoration: none; transition: color 0.2s ease;
+    }
+    .footer-contact a:hover { color: var(--white); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      nav { padding: 1rem 2rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-media { height: 60vw; min-height: 320px; order: -1; }
+      .hero-content { padding: 3rem 2.5rem; }
+      .bento { grid-template-columns: 1fr 1fr; }
+      .bento-card.span-3 { grid-column: span 2; }
+      .pain-grid { grid-template-columns: 1fr; }
+      .about-strip { grid-template-columns: 1fr; gap: 3rem; }
+      .about-photo { aspect-ratio: 16/9; }
+      .book-strip { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem; text-align: center; align-items: center; }
+      .book-cover { margin: 0 auto; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .section { padding: 5rem 2.5rem; }
+      .trust-bar { padding: 1.25rem 2rem; gap: 1.5rem; }
+      .cta-strip { padding: 3rem 2.5rem; }
+      footer { padding: 2.5rem 2rem; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 0.9375rem; }
+      nav { padding: 0.875rem 1.25rem; }
+      .hero { padding-top: 64px; }
+      .hero-media { height: 72vw; }
+      .hero-content { padding: 2rem 1.25rem 2.5rem; gap: 1.5rem; }
+      .hero h1 { font-size: clamp(2.25rem, 10vw, 3.25rem); }
+      .hero-ctas { flex-direction: column; gap: 0.75rem; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .hero-stat { display: none; }
+      .section { padding: 3.5rem 1.25rem; }
+      .bento { grid-template-columns: 1fr; }
+      .bento-card.span-3 { grid-column: span 1; }
+      .cred-grid { grid-template-columns: 1fr; }
+      .book-strip { padding: 2rem 1.25rem; gap: 2rem; }
+      .book-cover { width: 140px; }
+      .cta-strip { padding: 2.5rem 1.25rem; border-radius: 1.25rem; }
+      footer { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV MÍNIMA — logo + breadcrumb + CTA -->
+<nav id="navbar">
+  <div style="display:flex; align-items:center; gap:1.5rem;">
+    <a href="index.html">
+      <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" class="nav-logo">
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Inicio
+    </a>
+  </div>
+  <a href="https://calendly.com/lauragonzalezortizdezarate/" class="btn btn-dark" target="_blank" rel="noopener">Reservar llamada gratuita</a>
+</nav>
+
+
+<!-- ═══════════════════════════════════════
+     HERO — ENFOCADO EN PARTICULAR
+═══════════════════════════════════════ -->
+<section class="hero">
+
+  <div class="hero-content">
+    <div style="display:flex;flex-direction:column;gap:0.875rem;">
+      <span class="label">Coach Certificada ICF · +500h de acompañamiento</span>
+      <span class="hr-deco"></span>
+    </div>
+
+    <!-- Urgency badge -->
+    <div class="urgency-badge">
+      <span class="urgency-dot"></span>
+      Plazas limitadas para proceso 1:1 — marzo 2025
+    </div>
+
+    <h1>
+      Pedir ayuda no te<br>
+      hace menos capaz.<br>
+      Te hace <em>más inteligente.</em>
+    </h1>
+
+    <p class="hero-body">
+      Procesos individuales para profesionales que están en un momento de transición y quieren tomar las riendas — de su carrera, de su comunicación, de su vida.
+    </p>
+
+    <div class="hero-ctas">
+      <div style="display:flex;flex-direction:column;gap:0.35rem;">
+        <a href="https://calendly.com/lauragonzalezortizdezarate/" target="_blank" rel="noopener" class="btn btn-dark btn-lg">Reservar llamada gratuita</a>
+        <span style="font-family:'Jost',sans-serif;font-size:0.75rem;font-weight:400;color:var(--muted);padding-left:0.25rem;">30 minutos · sin compromiso · sin coste</span>
+      </div>
+      <a href="#servicios" class="btn btn-outline-dark btn-lg">Ver los programas</a>
+    </div>
+  </div>
+
+  <div class="hero-media">
+    <img src="brand_assets/3578dc37-81a7-4583-aabf-1c1fb9fd241c.jpg"
+         alt="Laura González Ortiz de Zárate, coach individual certificada ICF en Madrid"
+         fetchpriority="high">
+
+    <div class="hero-stat" style="bottom: 2.5rem; left: 1.5rem;">
+      <span class="hero-stat-num">+500<span>h</span></span>
+      <span class="hero-stat-label">Horas de acompañamiento</span>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <span class="trust-bar-label">Garantía de calidad</span>
+  <span class="trust-sep"></span>
+  <div class="trust-items">
+    <span class="trust-item">Coach Certificada · International Coach Federation (ICF)</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Docente — Universidad Complutense de Madrid</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Autora publicada · DashBook &amp; Octaedro</span>
+    <span class="trust-sep"></span>
+    <span class="trust-item">Cofundadora · Ellas Coach</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════
+     PAIN POINTS — ¿Te reconoces?
+═══════════════════════════════════════ -->
+<section class="section section-white">
+  <div class="section-header">
+    <span class="label">Para ti si...</span>
+    <h2 class="section-title">Algo de esto<br>te suena familiar.</h2>
+  </div>
+
+  <div class="pain-grid">
+    <div class="pain-card">
+      <h3>Sabes lo que no quieres, pero no lo que sí quieres</h3>
+      <p>Llevas tiempo sintiéndote fuera de lugar en tu trabajo o en tu carrera, pero no logras ver con claridad hacia dónde ir — ni cómo llegar.</p>
+    </div>
+    <div class="pain-card">
+      <h3>Te comunicas bien, pero no te perciben como quieres</h3>
+      <p>En reuniones, en entrevistas o en tu vida cotidiana sientes que lo que proyectas no refleja quién realmente eres. Tu comunicación no te está representando.</p>
+    </div>
+    <div class="pain-card">
+      <h3>Estás en un momento de quiebre o reinvención</h3>
+      <p>Un cambio de trabajo, una separación, un éxito que no te satisface. Momentos en que todo se tambalea y necesitas a alguien que te ayude a rehacerte.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     SERVICIOS B2C
+═══════════════════════════════════════ -->
+<section class="section" id="servicios">
+  <div class="section-header">
+    <span class="label">Programas Individuales</span>
+    <h2 class="section-title">Cuatro formas de empezar<br>tu proceso.</h2>
+    <p style="max-width: 52ch; color: var(--muted); font-size: 1rem; margin-top: 0.5rem;">
+      Desde una sesión puntual de 40 minutos hasta un proceso transformador a medida. A tu ritmo y desde cualquier lugar.
+    </p>
+  </div>
+
+  <div class="bento">
+
+    <div class="bento-card dark" style="justify-content: space-between; min-height: 300px;">
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <span class="bento-num">01</span>
+          <span class="bento-pill bento-pill-inv">Proceso completo</span>
+        </div>
+        <h3 style="margin-top: 0.5rem;">Coaching Individual 1:1</h3>
+        <p style="margin-top: 0.75rem;">Para momentos de quiebre, reinvención profesional o cuando ya no quieres seguir igual. Un proceso a medida, a tu ritmo, con objetivos concretos.</p>
+      </div>
+      <a href="https://calendly.com/lauragonzalezortizdezarate/" target="_blank" rel="noopener" class="bento-link">Reservar llamada gratuita →</a>
+    </div>
+
+    <div class="bento-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">02</span>
+        <span class="bento-pill">40 min</span>
+      </div>
+      <h3>Time To Talk</h3>
+      <p>Sesiones ágiles de 40 minutos para desbloqueos puntuales e inmediatos. Reserva directa con pago anticipado. Sin proceso, sin compromisos.</p>
+      <a href="https://calendly.com/lauragonzalezortizdezarate/" target="_blank" rel="noopener" class="bento-link">Reservar sesión →</a>
+    </div>
+
+    <div class="bento-card">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num">03</span>
+        <span class="bento-pill">Online · A tu ritmo</span>
+      </div>
+      <h3>Curso de Productividad y Organización</h3>
+      <p>Aprende a gestionar tu tiempo y tu energía — no solo tu agenda. Módulos prácticos desde cualquier lugar, con acceso de por vida.</p>
+    </div>
+
+    <div class="bento-card span-3" style="background: var(--copper-light); border: none;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <span class="bento-num" style="color:var(--copper-dark);opacity:0.6;">04</span>
+        <span class="bento-pill" style="background:rgba(176,128,96,0.15);color:var(--copper-dark);">Programa estrella</span>
+      </div>
+      <h3 style="color: var(--charcoal);">Neurocomunicación &amp; Marca Personal</h3>
+      <p style="color: var(--charcoal-mid);">Aprende a comunicar quién eres con claridad e impacto. Basado en neurociencia aplicada, con módulos prácticos y opción de pago fraccionado. El programa con el que Ana P. consiguió el puesto que tanto deseaba — <em>seis meses después.</em></p>
+      <a href="#contacto" class="bento-link" style="color:var(--copper-dark);">Ver temario completo →</a>
+    </div>
+
+  </div>
+
+  <!-- Cross-link a B2B -->
+  <div style="
+    margin-top: 2rem; padding: 1.25rem 2rem;
+    background: var(--cream-alt); border-radius: 1rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    border: 1px solid var(--border);
+  ">
+    <p style="font-size: 0.9375rem; color: var(--muted); margin: 0;">
+      ¿Representas a una empresa y buscas programas corporativos?
+    </p>
+    <a href="landing-b2b.html" style="
+      font-family: 'Jost', sans-serif; font-size: 0.875rem; font-weight: 600;
+      color: var(--copper-dark); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: gap 0.18s ease;
+    " onmouseover="this.style.gap='0.7rem'" onmouseout="this.style.gap='0.4rem'">
+      Ver servicios para empresas →
+    </a>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     TESTIMONIOS (solo B2C relevantes)
+═══════════════════════════════════════ -->
+<section class="section section-alt" id="testimonios">
+  <div class="section-header">
+    <span class="label">Lo que dicen quienes ya lo vivieron</span>
+    <h2 class="section-title">Resultados reales.<br>En su propia voz.</h2>
+  </div>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">
+        "Laura me ayudó a encontrar claridad en el momento más exigente de mi carrera. Su combinación de rigor metodológico y profunda empatía es única e irrepetible."
+      </p>
+      <div>
+        <div class="testi-name">Elena M.</div>
+        <div class="testi-role">Directora de Marketing · Madrid</div>
+      </div>
+    </div>
+
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">
+        "Su programa de Neurocomunicación cambió completamente cómo me percibo y comunico profesionalmente. <span class="testi-result">Seis meses después conseguí el puesto que tanto deseaba.</span>"
+      </p>
+      <div>
+        <div class="testi-name">Ana P.</div>
+        <div class="testi-role">Profesional en transición · Barcelona</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     FAQ INDIVIDUAL
+═══════════════════════════════════════ -->
+<section class="section section-white" id="contacto">
+  <div style="max-width: 760px; margin: 0 auto;">
+    <div class="section-header">
+      <span class="label">Antes de empezar</span>
+      <h2 class="section-title">Las preguntas que casi<br>todos me hacen primero.</h2>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        ¿Cómo es la primera llamada gratuita?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Son 30 minutos por videollamada donde me cuentas dónde estás y qué quieres transformar. No hay ninguna presión de venta — si al final de la llamada no encajamos, te lo digo. Mi objetivo es que salgas de esa llamada con más claridad que cuando entraste, hayas decidido trabajar conmigo o no.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        ¿Cuánto dura un proceso de coaching individual?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Depende del objetivo. El proceso estándar 1:1 es de 8 sesiones en 4-5 meses. El Time To Talk es una sola sesión de 40 minutos. Y los programas online son completamente a tu ritmo. En la primera llamada te propongo el formato más adecuado para lo que necesitas.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        ¿Las sesiones son presenciales u online?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Las sesiones individuales se pueden hacer online (videollamada) o presencial en Madrid. La mayoría de mis clientes individuales eligen online por la flexibilidad que ofrece. El resultado es exactamente el mismo.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        ¿Puedo fraccionar el pago?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        El pago del proceso es íntegro al inicio, y hay una razón detrás de eso: quiero que el dinero deje de ser una variable desde el primer día. Cuando el pago está resuelto, puedes llegar a cada sesión con la cabeza despejada — sin calcular si "merece la pena" o si "queda mucho". Esa libertad cambia la calidad del trabajo. Las primeras sesiones son de escucha y de construcción de confianza. La sesión de ruptura, ese momento en que algo se quiebra por dentro para poder reconstruirse mejor, solo llega cuando estás completamente presente. Y eso requiere que no haya ninguna otra preocupación en la sala.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════
+     CTA FINAL
+═══════════════════════════════════════ -->
+<section class="section" style="padding-top: 0;">
+  <div class="cta-strip">
+    <span class="label" style="color: var(--sage);">El primer paso es el más fácil</span>
+    <h2>Una llamada.<br>30 minutos. <em>Gratis.</em></h2>
+    <p>Sin compromisos, sin presión. Solo una conversación honesta sobre dónde estás y hacia dónde quieres ir.</p>
+    <a href="https://calendly.com/lauragonzalezortizdezarate/" target="_blank" rel="noopener" class="btn btn-copper btn-lg">Reservar mi llamada gratuita</a>
+    <span style="font-size:0.8125rem;color:rgba(253,252,250,0.4);">O escríbeme directamente: hola@lauragonzalezortizdezarate.com</span>
+  </div>
+</section>
+
+
+<!-- ─── FOOTER MÍNIMO ─── -->
+<footer>
+  <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" style="height:40px;opacity:0.8;">
+  <div class="footer-contact">
+    <a href="mailto:hola@lauragonzalezortizdezarate.com">hola@lauragonzalezortizdezarate.com</a>
+    <a href="tel:+34617392132">+34 617 392 132</a>
+    <a href="landing-b2b.html">Servicios para empresas</a>
+    <a href="index.html">← Web principal</a>
+  </div>
+  <span class="footer-copy">© 2025 Laura González Ortiz de Zárate</span>
+</footer>
+
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // FAQ
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
