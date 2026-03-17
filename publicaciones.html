@@ -31,26 +31,32 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://www.lauragonzalezortizdezarate.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Publicaciones & Prensa",
+            "item": "https://www.lauragonzalezortizdezarate.com/publicaciones.html"
+          }
+        ]
+      },
+      {
         "@type": "WebPage",
         "@id": "https://www.lauragonzalezortizdezarate.com/publicaciones.html",
         "url": "https://www.lauragonzalezortizdezarate.com/publicaciones.html",
         "name": "Publicaciones & Prensa — Laura González Ortiz de Zárate",
-        "description": "Artículos de Laura González Ortiz de Zárate en Vogue España, Cosmopolitan y otros medios sobre liderazgo, productividad y bienestar profesional.",
+        "description": "Artículos de Laura González Ortiz de Zárate en Vogue España, Cosmopolitan, El Mundo YoDona, Club de Malasmadres y otros medios sobre liderazgo, productividad y bienestar profesional.",
         "inLanguage": "es",
         "isPartOf": { "@id": "https://www.lauragonzalezortizdezarate.com/#website" },
         "about": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" },
         "author": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://www.lauragonzalezortizdezarate.com/#person",
-        "name": "Laura González Ortiz de Zárate",
-        "url": "https://www.lauragonzalezortizdezarate.com/",
-        "jobTitle": "Coach Ejecutiva Certificada ICF",
-        "sameAs": [
-          "https://www.instagram.com/lauragonzalezortizdezarate",
-          "https://www.linkedin.com/in/laura-g-ortizdezarate/"
-        ]
       },
       {
         "@type": "ItemList",
@@ -63,10 +69,14 @@
             "position": 1,
             "item": {
               "@type": "Article",
-              "name": "Publicaciones en Vogue España",
+              "url": "https://amp.elmundo.es/yodona/vida-saludable/2025/12/10/6932bc33fdddffa92f8b458c.html",
+              "name": "Laura González Ortiz de Zárate: \"Las mujeres crecemos con una mochila repleta de creencias limitantes\"",
+              "description": "En una sociedad que vive acelerada, Laura González Ortiz de Zárate propone parar para reconectar con el yo interno y así identificar las necesidades reales, no las impuestas desde fuera.",
               "author": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" },
-              "publisher": { "@type": "Organization", "name": "Vogue España" },
-              "inLanguage": "es"
+              "publisher": { "@type": "Organization", "name": "El Mundo YoDona", "url": "https://www.elmundo.es" },
+              "datePublished": "2025-12-10",
+              "inLanguage": "es",
+              "about": ["creencias limitantes", "liderazgo femenino", "transformación personal"]
             }
           },
           {
@@ -74,10 +84,118 @@
             "position": 2,
             "item": {
               "@type": "Article",
-              "name": "Publicaciones en Cosmopolitan",
+              "url": "https://www.vogue.es/belleza/articulos/como-hablar-en-publico-consejos-perder-miedo-nervios-estres",
+              "name": "Los consejos de dos expertas para perder el miedo a hablar en público",
+              "description": "Laura G. Ortiz de Zárate y Leïla Salamat, cofundadoras de ellas Coach, desglosan técnicas prácticas para antes y durante la exposición: preparación, respiración y lenguaje no verbal.",
               "author": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" },
-              "publisher": { "@type": "Organization", "name": "Cosmopolitan España" },
-              "inLanguage": "es"
+              "publisher": { "@type": "Organization", "name": "Vogue España", "url": "https://www.vogue.es" },
+              "datePublished": "2020-01-01",
+              "inLanguage": "es",
+              "about": ["hablar en público", "comunicación", "liderazgo"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Article",
+              "url": "https://www.cosmopolitan.com/es/consejos-planes/trabajo-estudios/a40906772/como-convencer-jefe/",
+              "name": "Cómo convencer a tu jefe con tu proyecto",
+              "description": "El arte de la persuasión se asienta en tres pilares: preparación, presencia y escucha activa. Laura González Ortiz y Leïla Salamat explican cómo estructurar un argumentario sólido.",
+              "author": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" },
+              "publisher": { "@type": "Organization", "name": "Cosmopolitan España", "url": "https://www.cosmopolitan.com/es" },
+              "datePublished": "2022-11-01",
+              "inLanguage": "es",
+              "about": ["persuasión", "comunicación", "liderazgo"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Article",
+              "url": "https://www.vogue.es/belleza/articulos/estado-flow-motivacion-reducir-estres-ansiedad-como-conseguirlo",
+              "name": "Cómo conseguir el estado de flow para reducir el estrés y la ansiedad",
+              "description": "Activar el estado de flow requiere autoconocimiento y gestión de las distracciones. Laura González Ortiz y Leïla Salamat explican cómo lograrlo para mejorar productividad y salud mental.",
+              "author": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" },
+              "publisher": { "@type": "Organization", "name": "Vogue España", "url": "https://www.vogue.es" },
+              "datePublished": "2022-10-01",
+              "inLanguage": "es",
+              "about": ["estado de flow", "productividad", "bienestar", "estrés"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Article",
+              "url": "https://www.cosmopolitan.com/es/consejos-planes/trabajo-estudios/a40905967/acoso-laboral-identificarlo-que-hacer/",
+              "name": "Acoso laboral: cómo identificarlo y qué debes hacer",
+              "description": "El mobbing es más frecuente y más silencioso de lo que parece. Laura González Ortiz y Leïla Salamat desglosan sus señales de alerta y las claves para construir entornos de confianza.",
+              "author": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" },
+              "publisher": { "@type": "Organization", "name": "Cosmopolitan España", "url": "https://www.cosmopolitan.com/es" },
+              "datePublished": "2022-10-01",
+              "inLanguage": "es",
+              "about": ["acoso laboral", "mobbing", "liderazgo", "bienestar"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "VideoObject",
+              "url": "https://www.youtube.com/watch?v=bahYHhhXVJM",
+              "name": "Retención de talento y maternidad: estrategias para evitar la fuga de liderazgo femenino",
+              "description": "Laura González Ortiz de Zárate expone un marco metodológico para gestionar la transición de la maternidad en organizaciones mediante la deconstrucción de creencias limitantes.",
+              "author": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" },
+              "publisher": { "@type": "Organization", "name": "Yo No Renuncio × Malasmadres" },
+              "inLanguage": "es",
+              "about": ["retención de talento", "maternidad", "liderazgo femenino"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "Article",
+              "url": "https://clubdemalasmadres.com/reconciliacion-palabra-no/",
+              "name": "Cómo reconciliarte con la palabra 'no' y aplicar límites en tu vida",
+              "description": "Laura González Ortiz y Leïla Salamat proponen la técnica PERA para aprender a poner límites desde la autenticidad, sin culpa y con coherencia.",
+              "author": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" },
+              "publisher": { "@type": "Organization", "name": "Club de Malasmadres", "url": "https://clubdemalasmadres.com" },
+              "datePublished": "2021-07-01",
+              "inLanguage": "es",
+              "about": ["límites", "bienestar", "autoconocimiento"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "item": {
+              "@type": "Article",
+              "url": "https://www.cosmopolitan.com/es/consejos-planes/trabajo-estudios/a40917720/organizarse-trabajo-vuelta-vacaciones/",
+              "name": "Cómo organizarse en el trabajo a la vuelta de vacaciones",
+              "description": "Reincorporarse tras el verano sin abrumarse requiere legitimar la parada y dedicar tiempo a la planificación estratégica. Laura González Ortiz y Leïla Salamat ofrecen herramientas prácticas.",
+              "author": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" },
+              "publisher": { "@type": "Organization", "name": "Cosmopolitan España", "url": "https://www.cosmopolitan.com/es" },
+              "datePublished": "2022-09-01",
+              "inLanguage": "es",
+              "about": ["productividad", "organización", "gestión del tiempo"]
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "item": {
+              "@type": "Article",
+              "url": "https://www.cosmopolitan.com/es/consejos-planes/familia-amigos/a40915841/habitos-saludables-vuelta-rutina/",
+              "name": "Hábitos saludables para estar en forma tras el verano, física y mentalmente",
+              "description": "La vuelta es el momento idóneo para soltar lo que ya no aporta e instaurar hábitos alineados con los propios valores. Moverse, alimentarse con consciencia y reservar espacios de descanso.",
+              "author": { "@id": "https://www.lauragonzalezortizdezarate.com/#person" },
+              "publisher": { "@type": "Organization", "name": "Cosmopolitan España", "url": "https://www.cosmopolitan.com/es" },
+              "datePublished": "2022-09-01",
+              "inLanguage": "es",
+              "about": ["hábitos saludables", "bienestar", "productividad"]
             }
           }
         ]
