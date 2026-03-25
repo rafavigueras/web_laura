@@ -1111,7 +1111,43 @@
     </p>
   </div>
 
-  <div class="recursos-grid">
+  <!-- Newsletter form -->
+  <div class="nl-dark-wrap reveal">
+    <div class="nl-dark-header">
+      <div>
+        <span class="recursos-tag" style="margin-bottom:0.75rem;display:inline-flex;">Newsletter</span>
+        <h3>Semillas para<br>el <em>Cambio.</em></h3>
+      </div>
+      <p>Cada viernes en tu bandeja: reflexiones sobre crecimiento personal, herramientas de coaching y anécdotas reales que te ayudarán a vivir y liderar con más conciencia.<br><br>Sin spam · Cancela cuando quieras.</p>
+    </div>
+    <form class="nl-dark-form" id="mc-newsletter-form" novalidate>
+      <div class="nl-dark-row">
+        <div class="nl-dark-field">
+          <label class="nl-dark-label" for="mc-fname">Nombre</label>
+          <input class="nl-dark-input" type="text" id="mc-fname" name="FNAME" placeholder="Tu nombre" autocomplete="given-name">
+        </div>
+        <div class="nl-dark-field">
+          <label class="nl-dark-label" for="mc-email">Email <span style="color:rgba(205,160,133,0.5)">*</span></label>
+          <input class="nl-dark-input" type="email" id="mc-email" name="EMAIL" placeholder="tu@email.com" required autocomplete="email">
+        </div>
+      </div>
+      <div class="nl-dark-field">
+        <label class="nl-dark-label" for="mc-bday-day">Cumpleaños <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(253,252,250,0.4)">(para mandarte algo especial en tu día)</span></label>
+        <div class="nl-dark-row" style="margin-top:0;">
+          <select class="nl-dark-select" id="mc-bday-day" name="BDAY[day]">
+            <option value="">Día</option>
+          </select>
+          <select class="nl-dark-select" id="mc-bday-month" name="BDAY[month]">
+            <option value="">Mes</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="nl-dark-submit">Suscribirme a Semillas para el Cambio</button>
+      <p class="nl-dark-msg" id="mc-message-index"></p>
+    </form>
+  </div>
+
+  <div class="recursos-grid" style="margin-top:3.5rem;">
 
     <div class="recursos-card reveal">
       <span class="recursos-tag">Talleres Presenciales</span>
@@ -1135,42 +1171,6 @@
       <a href="mailto:colabs@lauragonzalezortizdezarate.com" class="btn btn-copper" style="width:fit-content;">Hablemos de tu proyecto</a>
     </div>
 
-  </div>
-
-  <!-- Newsletter form -->
-  <div class="nl-dark-wrap reveal d2">
-    <div class="nl-dark-header">
-      <div>
-        <span class="recursos-tag" style="margin-bottom:0.75rem;display:inline-flex;">Newsletter</span>
-        <h3>Semillas para<br>el <em>Cambio.</em></h3>
-      </div>
-      <p>Cada viernes en tu bandeja: reflexiones sobre crecimiento personal, herramientas de coaching y anécdotas reales que te ayudarán a vivir y liderar con más conciencia.<br><br>Sin spam · Cancela cuando quieras.</p>
-    </div>
-    <form class="nl-dark-form" id="mc-newsletter-form" novalidate>
-      <div class="nl-dark-row">
-        <div class="nl-dark-field">
-          <label class="nl-dark-label" for="mc-fname">Nombre</label>
-          <input class="nl-dark-input" type="text" id="mc-fname" name="FNAME" placeholder="Tu nombre" autocomplete="given-name">
-        </div>
-        <div class="nl-dark-field">
-          <label class="nl-dark-label" for="mc-email">Email <span style="color:rgba(205,160,133,0.5)">*</span></label>
-          <input class="nl-dark-input" type="email" id="mc-email" name="EMAIL" placeholder="tu@email.com" required autocomplete="email">
-        </div>
-      </div>
-      <div class="nl-dark-field">
-        <label class="nl-dark-label" for="mc-bday-day">Cumpleaños <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(253,252,250,0.4)">(opcional — para mandarte algo especial)</span></label>
-        <div class="nl-dark-row" style="margin-top:0;">
-          <select class="nl-dark-select" id="mc-bday-day" name="BDAY[day]">
-            <option value="">Día</option>
-          </select>
-          <select class="nl-dark-select" id="mc-bday-month" name="BDAY[month]">
-            <option value="">Mes</option>
-          </select>
-        </div>
-      </div>
-      <button type="submit" class="nl-dark-submit">Suscribirme a Semillas para el Cambio →</button>
-      <p class="nl-dark-msg" id="mc-message-index"></p>
-    </form>
   </div>
 
 </section>
