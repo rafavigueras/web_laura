@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Firma de Correo — Laura González Ortiz de Zárate</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #EDE9E3;
+    font-family: 'Jost', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px 24px 80px;
+  }
+
+  .page-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #9A9590;
+    margin-bottom: 8px;
+    font-weight: 400;
+  }
+
+  .page-subtitle {
+    font-family: 'Jost', Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #BDC0B5;
+    margin-bottom: 40px;
+  }
+
+  /* Simulated email window */
+  .email-window {
+    background: #fff;
+    width: 100%;
+    max-width: 680px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow:
+      0 2px 4px rgba(26,24,21,0.04),
+      0 8px 32px rgba(26,24,21,0.10),
+      0 32px 80px rgba(26,24,21,0.08);
+  }
+
+  .email-chrome {
+    background: #F5F2EE;
+    border-bottom: 1px solid #E8E4DD;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .dot-r { background: #FF6159; }
+  .dot-y { background: #FFBD2E; }
+  .dot-g { background: #28C840; }
+
+  .email-meta {
+    padding: 20px 28px 0;
+    border-bottom: 1px solid #F0ECE7;
+    padding-bottom: 16px;
+  }
+
+  .email-meta-row {
+    display: flex;
+    gap: 8px;
+    font-family: 'Jost', Arial, sans-serif;
+    font-size: 12px;
+    color: #8A8580;
+    line-height: 1.8;
+  }
+
+  .email-meta-row span:first-child {
+    color: #C0BDB8;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    width: 32px;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+
+  .email-body {
+    padding: 28px 28px 0;
+    font-family: 'Jost', Arial, sans-serif;
+    font-size: 13.5px;
+    color: #3A3834;
+    line-height: 1.8;
+  }
+
+  .email-body p { margin-bottom: 12px; }
+
+  .sig-divider {
+    border: none;
+    border-top: 1px solid #EDEAE5;
+    margin: 24px 0 20px;
+  }
+
+  .sig-wrapper {
+    padding: 0 28px 32px;
+  }
+
+  /* ─────────────────────────────────────────
+     SIGNATURE — This is the actual email sig
+     ───────────────────────────────────────── */
+  #email-signature {
+    max-width: 480px;
+  }
+
+  /* Code section */
+  .code-section {
+    margin-top: 32px;
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .code-label {
+    font-family: 'Jost', Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #9A9590;
+  }
+
+  .copy-btn {
+    font-family: 'Jost', Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #CDA085;
+    background: none;
+    border: 1px solid #CDA085;
+    padding: 4px 12px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .copy-btn:hover { background: #CDA085; color: #fff; }
+
+  .code-box {
+    background: #1A1815;
+    border-radius: 4px;
+    padding: 20px 24px;
+    overflow-x: auto;
+  }
+
+  .code-box pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10.5px;
+    color: #C8C3BB;
+    white-space: pre;
+    line-height: 1.65;
+    tab-size: 2;
+  }
+
+  .instructions {
+    margin-top: 32px;
+    width: 100%;
+    max-width: 680px;
+    background: white;
+    border-radius: 4px;
+    padding: 24px 28px;
+    box-shadow: 0 1px 4px rgba(26,24,21,0.06);
+  }
+
+  .instructions h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #1A1815;
+    margin-bottom: 14px;
+  }
+
+  .instructions ol {
+    font-family: 'Jost', Arial, sans-serif;
+    font-size: 12px;
+    color: #5A5854;
+    line-height: 2;
+    padding-left: 18px;
+  }
+
+  .instructions li { margin-bottom: 4px; }
+
+  .instructions code {
+    font-family: 'Courier New', monospace;
+    font-size: 10.5px;
+    background: #F5F2EE;
+    padding: 1px 5px;
+    border-radius: 2px;
+    color: #CDA085;
+  }
+
+  .tag {
+    display: inline-block;
+    background: #F5F2EE;
+    color: #CDA085;
+    font-family: 'Jost', Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<p class="page-title">Laura González Ortiz de Zárate</p>
+<p class="page-subtitle">Firma de Correo Electrónico &nbsp;·&nbsp; Versión B2B</p>
+
+<!-- ── Simulated email window ── -->
+<div class="email-window">
+
+  <!-- Chrome bar -->
+  <div class="email-chrome">
+    <div class="dot dot-r"></div>
+    <div class="dot dot-y"></div>
+    <div class="dot dot-g"></div>
+  </div>
+
+  <!-- Email metadata -->
+  <div class="email-meta">
+    <div class="email-meta-row"><span>De</span><span>Laura González Ortiz de Zárate &lt;hola@lauragonzalezortizdezarate.com&gt;</span></div>
+    <div class="email-meta-row"><span>Para</span><span>Elena Martínez &lt;elena.martinez@empresa.com&gt;</span></div>
+    <div class="email-meta-row"><span>Asunto</span><span>Propuesta de Coaching Ejecutivo — Equipo Directivo</span></div>
+  </div>
+
+  <!-- Email body -->
+  <div class="email-body">
+    <p>Estimada Elena,</p>
+    <p>
+      Gracias por el tiempo que dedicaste ayer a nuestra llamada. Adjunto la propuesta detallada
+      para el acompañamiento del equipo directivo, tal como acordamos.
+    </p>
+    <p>
+      Quedo disponible para resolver cualquier duda antes de vuestra reunión del jueves.
+    </p>
+    <p>Un cordial saludo,</p>
+  </div>
+
+  <hr class="sig-divider" style="border:none;border-top:1px solid #EDEAE5;margin:0 28px 20px;">
+
+  <!-- ══ FIRMA ══ -->
+  <div class="sig-wrapper">
+    <div id="email-signature">
+
+      <!-- ═══════════════════════════════════════════════════
+           FIRMA DE CORREO — INICIO
+           Usar solo HTML inline. Tablas para compatibilidad.
+           Reemplazar src de imágenes con URLs absolutas hosted.
+      ════════════════════════════════════════════════════ -->
+      <table cellpadding="0" cellspacing="0" border="0" role="presentation"
+        style="font-family:Arial,Helvetica,sans-serif;width:100%;max-width:480px;border-collapse:collapse;">
+
+        <!-- Borde superior terracota -->
+        <tr>
+          <td colspan="2"
+            style="border-top:2px solid #CDA085;padding-bottom:14px;font-size:0;line-height:0;">
+          </td>
+        </tr>
+
+        <!-- Fila principal: foto + contenido -->
+        <tr>
+
+          <!-- Columna izquierda: foto + logo -->
+          <td style="width:80px;vertical-align:top;padding-right:20px;">
+
+            <!-- Foto circular -->
+            <img
+              src="brand_assets/laura_headshot_3295.jpg"
+              data-hosted-src="https://www.lauragonzalezortizdezarate.com/brand_assets/laura_headshot_3295.jpg"
+              width="72" height="72"
+              alt="Laura González Ortiz de Zárate"
+              style="display:block;width:72px;height:72px;border-radius:50%;border:2px solid #CDA085;">
+
+            <!-- Logo LG -->
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation"
+              style="margin-top:8px;width:72px;">
+              <tr>
+                <td style="text-align:center;">
+                  <img
+                    src="brand_assets/LG_logo.png"
+                    data-hosted-src="https://www.lauragonzalezortizdezarate.com/brand_assets/LG_logo.png"
+                    width="30" height="30"
+                    alt="LG"
+                    style="display:inline-block;width:30px;height:30px;opacity:0.7;">
+                </td>
+              </tr>
+            </table>
+
+          </td>
+
+          <!-- Columna derecha: texto -->
+          <td style="vertical-align:top;">
+
+            <!-- Nombre -->
+            <div style="font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:bold;font-style:italic;color:#1A1815;letter-spacing:-0.01em;line-height:1.15;margin-bottom:5px;">
+              Laura González Ortiz de Zárate
+            </div>
+
+            <!-- Cargo principal — terracota, uppercase -->
+            <div style="font-family:Arial,Helvetica,sans-serif;font-size:10.5px;color:#CDA085;letter-spacing:0.07em;text-transform:uppercase;font-weight:700;line-height:1.5;margin-bottom:2px;">
+              Coach Ejecutiva &amp; Consultora de Liderazgo
+            </div>
+
+            <!-- Credenciales — terracota suave + gris -->
+            <div style="font-family:Arial,Helvetica,sans-serif;font-size:10.5px;color:#C0A090;letter-spacing:0.04em;text-transform:uppercase;font-weight:600;line-height:1.5;margin-bottom:12px;">
+              ICF Certified&nbsp;&nbsp;·&nbsp;&nbsp;Colaboradora con la UCM&nbsp;&nbsp;·&nbsp;&nbsp;Autora
+            </div>
+
+            <!-- Separador fino -->
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation"
+              style="width:100%;margin-bottom:10px;">
+              <tr>
+                <td style="border-top:1px solid #E8E3DD;font-size:0;line-height:0;">&nbsp;</td>
+              </tr>
+            </table>
+
+            <!-- Contacto -->
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation"
+              style="margin-bottom:12px;">
+              <tr>
+                <td style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#5A5854;padding-right:14px;padding-bottom:3px;white-space:nowrap;">
+                  <a href="https://www.lauragonzalezortizdezarate.com"
+                    style="color:#5A5854;text-decoration:none;">
+                    www.lauragonzalezortizdezarate.com
+                  </a>
+                </td>
+                <td style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#5A5854;white-space:nowrap;">
+                  <a href="tel:+34617392132" style="color:#5A5854;text-decoration:none;">+34 617 392 132</a>
+                </td>
+              </tr>
+            </table>
+
+            <!-- CTA + Instagram -->
+            <table cellpadding="0" cellspacing="0" border="0" role="presentation">
+              <tr>
+                <!-- Botón CTA -->
+                <td style="background-color:#CDA085;border-radius:2px;">
+                  <a href="https://www.lauragonzalezortizdezarate.com#contacto"
+                    style="display:inline-block;padding:6px 13px;font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:700;color:#ffffff;text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;white-space:nowrap;">
+                    Agenda tu llamada exploratoria &rarr;
+                  </a>
+                </td>
+                <!-- Redes sociales -->
+                <td style="padding-left:10px;vertical-align:middle;border-left:1px solid #E8E3DD;">
+                  <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="padding-left:10px;">
+                    <tr>
+                      <!-- Instagram -->
+                      <td style="padding-right:7px;">
+                        <a href="https://www.instagram.com/lauragonzalezortizdezarate" target="_blank" style="display:inline-block;width:20px;height:20px;background-color:#9A9590;border-radius:50%;text-decoration:none;line-height:20px;text-align:center;">
+                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z'/%3E%3C/svg%3E" width="11" height="11" alt="Instagram" style="display:block;margin:4.5px auto;">
+                        </a>
+                      </td>
+                      <!-- LinkedIn -->
+                      <td style="padding-right:7px;">
+                        <a href="https://www.linkedin.com/in/laura-g-ortizdezarate/" target="_blank" style="display:inline-block;width:20px;height:20px;background-color:#9A9590;border-radius:50%;text-decoration:none;line-height:20px;text-align:center;">
+                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'/%3E%3C/svg%3E" width="11" height="11" alt="LinkedIn" style="display:block;margin:4.5px auto;">
+                        </a>
+                      </td>
+                      <!-- YouTube -->
+                      <td style="padding-right:7px;">
+                        <a href="https://www.youtube.com/@lauragonzalezortizdezarate" target="_blank" style="display:inline-block;width:20px;height:20px;background-color:#9A9590;border-radius:50%;text-decoration:none;line-height:20px;text-align:center;">
+                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/%3E%3C/svg%3E" width="12" height="12" alt="YouTube" style="display:block;margin:4px auto;">
+                        </a>
+                      </td>
+                      <!-- TikTok -->
+                      <td>
+                        <a href="https://www.tiktok.com/@lauraortizdezarate.net" target="_blank" style="display:inline-block;width:20px;height:20px;background-color:#9A9590;border-radius:50%;text-decoration:none;line-height:20px;text-align:center;">
+                          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z'/%3E%3C/svg%3E" width="11" height="11" alt="TikTok" style="display:block;margin:4.5px auto;">
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+
+      </table>
+      <!-- FIRMA DE CORREO — FIN -->
+
+    </div>
+  </div>
+
+</div>
+<!-- ── fin email window ── -->
+
+
+<!-- ── Código copiable ── -->
+<div class="code-section">
+  <div class="code-header">
+    <span class="code-label">Código HTML para clientes de correo</span>
+    <button class="copy-btn" onclick="copySignature()">Copiar código</button>
+  </div>
+  <div class="code-box">
+    <pre id="code-output">Cargando…</pre>
+  </div>
+</div>
+
+
+<!-- ── Instrucciones de uso ── -->
+<div class="instructions">
+  <h3>Instrucciones de instalación</h3>
+  <ol>
+    <li><strong>Gmail:</strong> Configuración → Ver todos los ajustes → General → Firma → Crear nueva → pegar código en modo HTML</li>
+    <li><strong>Outlook:</strong> Archivo → Opciones → Correo → Firmas → Nueva → editor HTML</li>
+    <li><strong>Apple Mail:</strong> Preferencias → Firmas → crear nueva → editar con HTML via <em>Editar → Adjuntos</em></li>
+    <li>Las imágenes ya usan URLs absolutas del dominio live — no necesitas cambiar nada.</li>
+    <li>Si la foto aparece sin recortar en Outlook, usa una versión pre-recortada a <strong>150×150 px cuadrada</strong> y súbela al servidor con otro nombre.</li>
+  </ol>
+</div>
+
+
+<script>
+  function getSignatureHTML() {
+    const sig = document.getElementById('email-signature');
+    const clone = sig.querySelector('table').cloneNode(true);
+    // Swap local src → hosted src for email clients
+    clone.querySelectorAll('img[data-hosted-src]').forEach(img => {
+      img.src = img.dataset.hostedSrc;
+      img.removeAttribute('data-hosted-src');
+    });
+    return clone.outerHTML;
+  }
+
+  function copySignature() {
+    const html = getSignatureHTML();
+    if (navigator.clipboard && window.ClipboardItem) {
+      const blob = new Blob([html], { type: 'text/html' });
+      const item = new ClipboardItem({ 'text/html': blob });
+      navigator.clipboard.write([item])
+        .then(() => {
+          const btn = document.querySelector('.copy-btn');
+          btn.textContent = '¡Copiado!';
+          btn.style.background = '#CDA085';
+          btn.style.color = '#fff';
+          setTimeout(() => {
+            btn.textContent = 'Copiar código';
+            btn.style.background = '';
+            btn.style.color = '';
+          }, 2000);
+        });
+    } else {
+      // Fallback
+      const ta = document.createElement('textarea');
+      ta.value = html;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+  }
+
+  // Populate code block
+  window.addEventListener('DOMContentLoaded', () => {
+    const html = getSignatureHTML();
+    const pre = document.getElementById('code-output');
+    // Escape for display
+    pre.textContent = html
+      .replace(/\t/g, '  ')
+      // simple pretty-print: add newlines after closing tags
+      .replace(/></g, '>\n<')
+      .replace(/>\n<\/td>/g, '></td>')
+      .replace(/>\n<\/a>/g, '></a>');
+  });
+</script>
+
+</body>
+</html>
