@@ -343,7 +343,7 @@
       text-transform: uppercase; color: var(--sage); white-space: nowrap;
     }
     .trust-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
-    .trust-items { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+    .trust-items { display: flex; align-items: center; gap: 2.5rem; flex-wrap: nowrap; }
     .trust-item {
       font-size: 0.8125rem; font-weight: 400; letter-spacing: 0.025em;
       color: rgba(253,252,250,0.65); white-space: nowrap;
@@ -558,6 +558,10 @@
       .hero-ctas { flex-direction: column; gap: 0.75rem; }
       .hero-ctas .btn { width: 100%; justify-content: center; }
       .hero-stat { display: none; }
+      .trust-bar { padding: 1rem 1.25rem; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+      .trust-sep { display: none; }
+      .trust-items { gap: 0.5rem; flex-direction: column; align-items: flex-start; flex-wrap: nowrap; }
+      .trust-item { font-size: 0.75rem; white-space: normal; line-height: 1.4; }
       .section { padding: 3.5rem 1.25rem; }
       .bento { grid-template-columns: 1fr; }
       .bento-card.span-3 { grid-column: span 1; }
