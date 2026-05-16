@@ -2,3 +2,23 @@ node_modules/
 temporary screenshots/
 .claude/
 www.eloqwnt.com.png
+
+# Playwright MCP tool logs
+.playwright-mcp/
+
+# Work-in-progress screenshot PNGs in root (not website assets)
+/about-section.png
+/b2b-*.png
+/b2c-*.png
+/both-cards.png
+/hero-b2b-final.png
+/hero-b2c-final.png
+/hero-index-check.png
+/logos-actual.png
+/logos-opcion-a.png
+/logos-opcion-b.png
+/particulares-card.png
+/particulares-fixed.png
+/photo-strip*.png
+/routing-card*.png
+/trust-bar-check*.png

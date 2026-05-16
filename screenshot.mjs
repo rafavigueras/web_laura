@@ -19,7 +19,11 @@ while (fs.existsSync(path.join(outDir, label ? `screenshot-${n}-${label}.png` : 
 const filename = label ? `screenshot-${n}-${label}.png` : `screenshot-${n}.png`;
 const outPath  = path.join(outDir, filename);
 
-const browser = await puppeteer.launch({ headless: true });
+const browser = await puppeteer.launch({
+  headless: 'new',
+  executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+});
 const page    = await browser.newPage();
 await page.setViewport({ width: 1440, height: 900 });
 await page.goto(url, { waitUntil: 'networkidle2' });

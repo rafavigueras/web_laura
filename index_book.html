@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuando todo se rompe — Nuevo libro de Laura González Ortiz de Zárate | Pre-reserva abierta</title>
+  <meta name="description" content="Pre-reserva 'Cuando todo se rompe', el nuevo libro de Laura González Ortiz de Zárate. Un libro sobre la extraordinaria capacidad humana de rehacerse. Publicado por DashBook.">
+  <link rel="canonical" href="https://www.lauragonzalezortizdezarate.com/index_book.html">
+  <link rel="icon" type="image/png" href="brand_assets/LG_logo.png">
+
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Cuando todo se rompe — Laura González Ortiz de Zárate">
+  <meta property="og:description" content="Pre-reserva abierta desde el 18 de marzo. Un libro sobre los momentos en que la vida te desmonta — y sobre la extraordinaria capacidad humana de rehacerse.">
+  <meta property="og:image" content="https://www.lauragonzalezortizdezarate.com/brand_assets/Libro.jpeg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Laura González Ortiz de Zárate">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Cuando todo se rompe",
+    "alternativeHeadline": "El arte de hilar, deshilar y volver a hilar",
+    "author": {
+      "@type": "Person",
+      "name": "Laura González Ortiz de Zárate",
+      "url": "https://www.lauragonzalezortizdezarate.com/"
+    },
+    "publisher": { "@type": "Organization", "name": "DashBook" },
+    "image": "https://www.lauragonzalezortizdezarate.com/brand_assets/Libro.jpeg",
+    "inLanguage": "es",
+    "url": "https://dashbook.fr/book/cuando-todo-se-rompe?preview=true"
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:        #F8F5F0;
+      --cream-alt:    #F0EBE4;
+      --sage:         #BDC0B5;
+      --sage-light:   #D6D9D2;
+      --copper:       #CDA085;
+      --copper-dark:  #B08060;
+      --copper-light: #ECD8CA;
+      --charcoal:     #69775c;
+      --charcoal-mid: #545454;
+      --text:         #545454;
+      --muted:        #888;
+      --border:       rgba(105,119,92,0.14);
+      --white:        #FDFCFA;
+      --ink:          #1A1C17;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: 'Jost', system-ui, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      font-weight: 600;
+    }
+    .label {
+      display: block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6875rem; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .hr-deco {
+      display: block; width: 2.5rem; height: 1.5px;
+      background: var(--copper);
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.125rem 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.45s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    nav.scrolled { background: var(--cream); box-shadow: 0 1px 0 var(--border); }
+    .nav-logo { height: 50px; width: auto; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em;
+      color: rgba(253,252,250,0.8); text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    nav.scrolled .nav-links a { color: var(--text); }
+    .nav-links a:hover { color: var(--copper); }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.65rem 1.5rem; border-radius: 100px;
+      font-family: 'Jost', sans-serif; font-size: 0.875rem;
+      font-weight: 500; letter-spacing: 0.02em;
+      text-decoration: none; border: none; cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+    .btn:active { transform: translateY(0) !important; }
+    .btn-dark { background: var(--charcoal); color: var(--white); }
+    .btn-dark:hover { background: var(--copper-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(205,160,133,0.28); }
+    .btn-copper { background: var(--copper); color: var(--white); }
+    .btn-copper:hover { background: var(--copper-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(205,160,133,0.35); }
+    .btn-outline-white { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.65); transform: translateY(-2px); }
+
+    /* ─── BOOK HERO ─── */
+    .book-hero {
+      min-height: 100vh;
+      background: var(--ink);
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      padding-top: 74px;
+    }
+    /* Grain */
+    .book-hero::before {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+    /* Glow behind book */
+    .book-hero-visual {
+      position: relative; z-index: 2;
+      display: flex; align-items: center; justify-content: center;
+      padding: 5rem 3rem;
+    }
+    .book-hero-visual::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 55%, rgba(205,160,133,0.13) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .book-cover-wrap { position: relative; }
+    .book-deco-frame {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-53%, -50%);
+      width: 330px; height: 420px;
+      border: 1px solid rgba(205,160,133,0.14);
+      border-radius: 8px;
+      z-index: -1;
+    }
+    .book-deco-frame::before {
+      content: ''; position: absolute; inset: -14px;
+      border: 1px solid rgba(205,160,133,0.07);
+      border-radius: 10px;
+    }
+    .book-cover-hero {
+      width: 260px;
+      border-radius: 5px;
+      box-shadow: -18px 18px 55px rgba(0,0,0,0.65), -5px 5px 18px rgba(0,0,0,0.4), 0 0 70px rgba(205,160,133,0.14);
+      transform: rotate(-3deg);
+      transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.45s ease;
+      display: block;
+    }
+    .book-cover-hero:hover {
+      transform: rotate(0deg) scale(1.05);
+      box-shadow: -22px 22px 70px rgba(0,0,0,0.7), -6px 6px 22px rgba(0,0,0,0.4), 0 0 90px rgba(205,160,133,0.22);
+    }
+    .prereserva-badge {
+      position: absolute; top: -1.25rem; right: -1.75rem;
+      background: var(--copper);
+      color: white;
+      font-family: 'Jost', sans-serif; font-size: 0.5625rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 0.45rem 0.8rem; border-radius: 100px;
+      box-shadow: 0 4px 16px rgba(205,160,133,0.5);
+      animation: floatBadge 3s ease-in-out infinite;
+      white-space: nowrap;
+    }
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .book-hero-content {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 5rem 5rem 3rem;
+      gap: 1.75rem;
+    }
+    .book-eyebrow { display: flex; flex-direction: column; gap: 0.625rem; }
+    .book-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.625rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--copper);
+    }
+    .book-sep { display: block; width: 2rem; height: 1px; background: rgba(205,160,133,0.45); }
+    .book-hero h1 {
+      font-size: clamp(3.5rem, 5vw, 6.5rem);
+      line-height: 0.92; color: var(--white);
+    }
+    .book-hero h1 em { font-style: italic; color: var(--copper); }
+    .book-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+      font-style: italic; font-weight: 400;
+      color: rgba(253,252,250,0.5); line-height: 1.4;
+    }
+    .book-body {
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem; font-weight: 300;
+      color: rgba(253,252,250,0.65); line-height: 1.75; max-width: 44ch;
+    }
+    .book-launch-line {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8125rem; font-weight: 400;
+      color: rgba(253,252,250,0.4); letter-spacing: 0.03em;
+    }
+    .book-launch-line strong { color: rgba(205,160,133,0.9); font-weight: 600; }
+    .book-launch-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--copper); flex-shrink: 0; }
+    .book-ctas { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+
+    /* ─── SECTIONS ─── */
+    .section { padding: 7rem 5rem; }
+    .section-white { background: var(--white); }
+    .section-dark { background: var(--charcoal); color: var(--white); }
+    .section-sage { background: var(--sage-light); }
+    .section-copper { background: var(--copper-light); }
+    .section-alt { background: var(--cream-alt); }
+    .section-ink { background: var(--ink); color: var(--white); }
+
+    /* ─── ABOUT THE BOOK ─── */
+    .book-about-grid {
+      display: grid; grid-template-columns: 1fr 1.3fr;
+      gap: 6rem; align-items: center; max-width: 1100px; margin: 0 auto;
+    }
+    .book-pull-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.875rem, 2.8vw, 3.25rem);
+      font-style: italic; font-weight: 500;
+      line-height: 1.1; letter-spacing: -0.025em;
+      color: var(--text);
+      position: relative; padding-left: 1.75rem;
+    }
+    .book-pull-quote::before {
+      content: ''; position: absolute; left: 0; top: 0.15em;
+      width: 3px; height: calc(100% - 0.3em);
+      background: var(--copper); border-radius: 2px;
+    }
+    .book-about-text { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* ─── FOR WHOM ─── */
+    .forwho-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem; margin-top: 3.5rem;
+    }
+    .forwho-card {
+      padding: 2rem; border-radius: 1.25rem;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex; flex-direction: column; gap: 0.875rem;
+      transition: background 0.25s ease, transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .forwho-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
+    .forwho-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.75rem; font-weight: 300; line-height: 1;
+      color: rgba(205,160,133,0.35);
+    }
+    .forwho-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.375rem; font-weight: 600;
+      color: var(--white); line-height: 1.15;
+    }
+    .forwho-card p { font-size: 0.875rem; color: rgba(253,252,250,0.55); line-height: 1.65; }
+
+    /* ─── THEMES GRID ─── */
+    .themes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .theme-item {
+      padding: 2.25rem 2rem; border-radius: 1.25rem;
+      background: var(--white); border: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 0.875rem;
+      transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
+    }
+    .theme-item:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,24,21,0.1); }
+    .theme-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem; font-weight: 300; line-height: 1;
+      color: rgba(205,160,133,0.32);
+    }
+    .theme-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600;
+      color: var(--text); line-height: 1.15; letter-spacing: -0.02em;
+    }
+    .theme-item p { font-size: 0.9375rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── AUTHOR ─── */
+    .author-grid {
+      display: grid; grid-template-columns: 340px 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .author-photo { border-radius: 1.75rem; overflow: hidden; aspect-ratio: 3/4; position: relative; }
+    .author-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .author-photo::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(205,160,133,0.15) 0%, transparent 60%);
+      mix-blend-mode: multiply;
+    }
+    .author-content { display: flex; flex-direction: column; gap: 1.5rem; }
+    .credentials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem; }
+    .cred-item {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      padding: 0.75rem 0.875rem; background: var(--cream-alt); border-radius: 0.875rem;
+    }
+    .cred-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--copper); margin-top: 0.55rem; flex-shrink: 0; }
+    .cred-text { font-size: 0.8125rem; font-weight: 500; color: var(--charcoal-mid); line-height: 1.35; }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta {
+      text-align: center; display: flex; flex-direction: column;
+      align-items: center; gap: 2rem;
+    }
+    .final-cta h2 { font-size: clamp(2.5rem, 4.5vw, 5.5rem); line-height: 0.93; }
+    .final-cta h2 em { font-style: italic; color: var(--copper-dark); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--charcoal); color: var(--white); padding: 5rem 5rem 2.5rem; }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 4rem; padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem;
+    }
+    .footer-logo { height: 46px; opacity: 0.9; margin-bottom: 1.125rem; }
+    .footer-tagline { font-size: 0.875rem; color: rgba(253,252,250,0.5); line-height: 1.7; max-width: 26ch; }
+    .social-row { display: flex; gap: 0.75rem; margin-top: 1.625rem; }
+    .social-btn {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.55); text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    }
+    .social-btn svg { width: 16px; height: 16px; fill: currentColor; }
+    .social-btn:hover { border-color: var(--copper); color: var(--white); background: var(--copper); }
+    footer h5 {
+      font-family: 'Jost', sans-serif; font-size: 0.625rem; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1.25rem;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 0.125rem; }
+    .footer-links a {
+      font-size: 0.875rem; color: rgba(253,252,250,0.55); text-decoration: none;
+      line-height: 2.1; transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+    .footer-legal { display: flex; gap: 1.75rem; }
+    .footer-legal a { font-size: 0.75rem; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s ease; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.55); }
+
+    /* ─── REVEAL ANIMATIONS ─── */
+    body.js-reveals .reveal {
+      opacity: 0; transform: translateY(26px);
+      transition: opacity 0.75s cubic-bezier(0.4,0,0.2,1), transform 0.75s cubic-bezier(0.4,0,0.2,1);
+    }
+    body.js-reveals .reveal.from-left { transform: translateX(-26px); }
+    body.js-reveals .reveal.from-right { transform: translateX(26px); }
+    body.js-reveals .reveal.visible { opacity: 1 !important; transform: translate(0,0) !important; }
+    body.js-reveals .d1 { transition-delay: 0.08s; }
+    body.js-reveals .d2 { transition-delay: 0.16s; }
+    body.js-reveals .d3 { transition-delay: 0.24s; }
+    body.js-reveals .d4 { transition-delay: 0.32s; }
+    body.js-reveals .d5 { transition-delay: 0.40s; }
+
+    /* ─── NAV MOBILE ─── */
+    .nav-burger {
+      display: none; flex-direction: column; justify-content: center; align-items: center;
+      gap: 5px; width: 40px; height: 40px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .nav-burger span {
+      display: block; width: 22px; height: 1.5px; background: var(--white);
+      transition: transform 0.3s ease, opacity 0.3s ease; transform-origin: center;
+    }
+    nav.scrolled .nav-burger span { background: var(--charcoal); }
+    .nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .nav-mobile-menu {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--cream); z-index: 99;
+      flex-direction: column; justify-content: center; align-items: center;
+      padding: 6rem 2rem 3rem;
+    }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 8vw, 3rem); font-weight: 600; letter-spacing: -0.03em;
+      color: var(--text); text-decoration: none;
+      padding: 0.75rem 0; width: 100%; text-align: center;
+      border-bottom: 1px solid var(--border); transition: color 0.2s ease;
+    }
+    .nav-mobile-menu a:first-child { border-top: 1px solid var(--border); }
+    .nav-mobile-menu a:hover { color: var(--copper); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      nav { padding: 1rem 2rem; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      nav .btn { display: none; }
+      .book-hero { grid-template-columns: 1fr; padding-top: 64px; }
+      .book-hero-visual { padding: 4rem 2rem 2rem; min-height: auto; }
+      .book-cover-hero { width: 200px; }
+      .book-hero-content { padding: 2rem 2.5rem 4rem; }
+      .book-about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .forwho-grid { grid-template-columns: 1fr 1fr; }
+      .themes-grid { grid-template-columns: 1fr; }
+      .author-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .author-photo { aspect-ratio: 16/9; max-width: 400px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .section { padding: 5rem 2.5rem; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 0.9375rem; }
+      nav { padding: 0.875rem 1.25rem; }
+      .book-hero-visual { padding: 3rem 1.5rem 2rem; }
+      .book-hero-content { padding: 2rem 1.25rem 3rem; gap: 1.375rem; }
+      .book-hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); }
+      .book-cover-hero { width: 155px; }
+      .prereserva-badge { right: -0.75rem; top: -0.875rem; }
+      .book-ctas { flex-direction: column; }
+      .book-ctas .btn { width: 100%; justify-content: center; }
+      .forwho-grid { grid-template-columns: 1fr; }
+      .credentials-grid { grid-template-columns: 1fr; }
+      .section { padding: 3.5rem 1.25rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      footer { padding: 3.5rem 1.25rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html">
+    <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" class="nav-logo">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#el-libro">El libro</a></li>
+    <li><a href="#para-quien">Para quién</a></li>
+    <li><a href="#laura">La autora</a></li>
+    <li><a href="index.html">Coaching</a></li>
+  </ul>
+  <a href="https://dashbook.fr/book/cuando-todo-se-rompe?preview=true" class="btn btn-copper" target="_blank" rel="noopener">Pre-reservar ahora</a>
+  <button class="nav-burger" id="navBurger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="#el-libro">El libro</a>
+  <a href="#para-quien">Para quién</a>
+  <a href="#laura">La autora</a>
+  <a href="index.html">Coaching</a>
+  <a href="https://dashbook.fr/book/cuando-todo-se-rompe?preview=true"
+     class="btn btn-copper"
+     style="font-family:'Jost',sans-serif;font-size:0.875rem;font-weight:500;letter-spacing:0.02em;border-top:none;border-bottom:none;width:auto;margin-top:2rem;color:var(--white);"
+     target="_blank" rel="noopener">Pre-reservar ahora</a>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     BOOK HERO
+═══════════════════════════════════ -->
+<section class="book-hero" id="el-libro">
+
+  <!-- Left: Book cover -->
+  <div class="book-hero-visual">
+    <div class="book-cover-wrap">
+      <div class="book-deco-frame"></div>
+      <img src="brand_assets/Libro.jpeg"
+           alt="Portada del libro Cuando todo se rompe de Laura González Ortiz de Zárate, publicado por DashBook"
+           class="book-cover-hero"
+           fetchpriority="high">
+      <span class="prereserva-badge">✦ Pre-reserva abierta · 18 marzo</span>
+    </div>
+  </div>
+
+  <!-- Right: Copy -->
+  <div class="book-hero-content">
+    <div class="book-eyebrow reveal">
+      <span class="book-label">Nuevo libro · DashBook</span>
+      <span class="book-sep"></span>
+    </div>
+
+    <h1 class="reveal d1">
+      Cuando<br>todo <em>se</em><br>rompe.
+    </h1>
+
+    <p class="book-subtitle reveal d2">
+      El arte de hilar, deshilar<br>y volver a hilar.
+    </p>
+
+    <p class="book-body reveal d2">
+      Un libro sobre los momentos en que la vida te desmonta — y sobre la extraordinaria capacidad humana de rehacerse. Porque romperse no es el final. Es el principio de algo más verdadero.
+    </p>
+
+    <div class="book-launch-line reveal d3">
+      <span class="book-launch-dot"></span>
+      <span>Pre-reserva abierta desde el <strong>18 de marzo de 2026</strong></span>
+    </div>
+
+    <div class="book-ctas reveal d4">
+      <a href="https://dashbook.fr/book/cuando-todo-se-rompe?preview=true"
+         class="btn btn-copper" style="font-size:1rem; padding:0.875rem 2.25rem;"
+         target="_blank" rel="noopener">
+        Reservar mi ejemplar →
+      </a>
+      <a href="#el-libro-desc" class="btn btn-outline-white">Leer más</a>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════
+     ABOUT THE BOOK
+═══════════════════════════════════ -->
+<section class="section section-white" id="el-libro-desc">
+  <div class="book-about-grid">
+
+    <div class="reveal from-left">
+      <blockquote class="book-pull-quote">
+        "No hay<br>transformación<br>sin fractura.<br>Lo que se rompe<br>también te abre."
+      </blockquote>
+    </div>
+
+    <div class="book-about-text">
+      <div class="reveal">
+        <span class="label">Sobre el libro</span>
+        <span class="hr-deco" style="margin-top:0.75rem;"></span>
+      </div>
+      <h2 class="reveal d1" style="font-size:clamp(2rem,2.8vw,3.25rem);">
+        Un acompañante para<br>los momentos <em>que nadie<br>enseña a atravesar.</em>
+      </h2>
+      <p class="reveal d2" style="color:var(--muted);">
+        Hay momentos en la vida —una pérdida, un cambio de dirección, una crisis que nadie vio venir— en los que todo lo que parecía sólido empieza a deshacerse. Y nadie te ha preparado para eso.
+      </p>
+      <p class="reveal d2" style="color:var(--muted);">
+        En este libro, Laura González Ortiz de Zárate comparte el conocimiento destilado de años acompañando procesos de transformación profunda: herramientas del coaching, neurociencia aplicada y la honestidad de quien también ha tenido que rehacerse.
+      </p>
+      <p class="reveal d3" style="color:var(--text); font-style:italic; border-left:2px solid var(--copper); padding-left:1rem;">
+        No es un libro de autoayuda al uso. Es un compañero de viaje para los momentos en que la vida te exige más de lo que creías poder dar.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     PARA QUIÉN
+═══════════════════════════════════ -->
+<section class="section section-ink" id="para-quien">
+
+  <div class="reveal" style="text-align:center; margin-bottom:0.75rem;">
+    <span class="label" style="color:var(--sage);">Este libro es para ti si…</span>
+  </div>
+  <h2 class="reveal d1" style="font-size:clamp(2.5rem,4.5vw,4.75rem); color:var(--white); text-align:center; line-height:0.95; margin-bottom:0.625rem;">
+    Para quien siente que<br><em style="color:var(--copper);">ya no aguanta más.</em>
+  </h2>
+  <p class="reveal d2" style="text-align:center; color:rgba(253,252,250,0.5); max-width:46ch; margin:0 auto 3.5rem; font-size:1.0625rem;">
+    Y también para quien ha salido al otro lado y todavía no entiende del todo lo que vivió.
+  </p>
+
+  <div class="forwho-grid">
+
+    <div class="forwho-card reveal">
+      <span class="forwho-num">01</span>
+      <h3>Cuando todo cambia de golpe</h3>
+      <p>Una ruptura, una pérdida, un trabajo que desaparece, una identidad que ya no encaja. Para ti, que estás en medio del desorden y no sabes por dónde empezar.</p>
+    </div>
+
+    <div class="forwho-card reveal d1">
+      <span class="forwho-num">02</span>
+      <h3>Cuando llevas tiempo intentando levantarte</h3>
+      <p>Has hecho cosas. Has intentado avanzar. Pero algo no termina de encajar. Este libro te acompaña donde otros se quedan cortos o te dicen que "todo pasa por algo".</p>
+    </div>
+
+    <div class="forwho-card reveal d2">
+      <span class="forwho-num">03</span>
+      <h3>Cuando quieres entender lo que te pasó</h3>
+      <p>Porque a veces no necesitas seguir adelante antes de entender. Necesitas darle sentido a lo que se rompió para poder reconstruirlo bien, esta vez desde ti.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════
+     QUÉ ENCONTRARÁS
+═══════════════════════════════════ -->
+<section class="section section-alt">
+
+  <div class="reveal" style="display:flex; flex-direction:column; gap:0.875rem; margin-bottom:4rem;">
+    <span class="label">Dentro del libro</span>
+    <span class="hr-deco"></span>
+    <h2 style="font-size:clamp(2rem,3vw,3.75rem);">Cuatro ideas que<br>cambian la forma<br>en que te ves.</h2>
+  </div>
+
+  <div class="themes-grid">
+
+    <div class="theme-item reveal">
+      <span class="theme-num">I</span>
+      <h3>Romperse no es fracasar</h3>
+      <p>La fractura como umbral, no como fin. Por qué los momentos de quiebre son también momentos de apertura — y cómo atravesarlos sin perderte en ellos.</p>
+    </div>
+
+    <div class="theme-item reveal d1">
+      <span class="theme-num">II</span>
+      <h3>Reconstruir la identidad cuando todo cambia</h3>
+      <p>Cuando lo que eras ya no sirve, ¿quién eres? Herramientas concretas para volver a hilar tu historia desde un lugar más auténtico y más tuyo.</p>
+    </div>
+
+    <div class="theme-item reveal d2">
+      <span class="theme-num">III</span>
+      <h3>Las emociones como brújula</h3>
+      <p>No sentirlas, sino entenderlas. Cómo la neurociencia y el coaching te enseñan a usar lo que sientes como información y recurso, no como obstáculo.</p>
+    </div>
+
+    <div class="theme-item reveal d3">
+      <span class="theme-num">IV</span>
+      <h3>Vivir con más conciencia después</h3>
+      <p>Lo que aprendiste en el momento más difícil es tu mayor recurso. Cómo integrar esa experiencia y construir desde ahí una vida que tenga sentido de verdad.</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ═══════════════════════════════════
+     AUTHOR
+═══════════════════════════════════ -->
+<section class="section section-white" id="laura">
+  <div class="author-grid">
+
+    <div class="author-photo reveal from-left">
+      <img src="brand_assets/IMG_2313.jpg"
+           alt="Laura González Ortiz de Zárate — autora, coach ejecutiva y docente"
+           loading="lazy">
+    </div>
+
+    <div class="author-content">
+      <div class="reveal">
+        <span class="label">La autora</span>
+        <span class="hr-deco" style="margin-top:0.75rem;"></span>
+      </div>
+      <h2 class="reveal d1" style="font-size:clamp(2.25rem,3vw,3.75rem);">
+        Laura González<br>Ortiz de <em>Zárate.</em>
+      </h2>
+      <p class="reveal d2" style="color:var(--muted);">
+        Coach ejecutiva certificada ICF, docente en la Universidad Complutense de Madrid y autora publicada. Hija de psicoanalistas, formada en Economía y Asesoría Fiscal, especializada en neurocomunicación y desarrollo del talento.
+      </p>
+      <p class="reveal d2" style="color:var(--muted);">
+        Lleva años acompañando a personas y organizaciones en sus momentos de transformación más exigentes. Este libro nace de esa experiencia — y de la suya propia.
+      </p>
+      <div class="credentials-grid reveal d3">
+        <div class="cred-item"><span class="cred-dot"></span><span class="cred-text">Coach Certificada ICF</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="cred-text">Docente Colaboradora UCM</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="cred-text">Autora — Octaedro &amp; DashBook</span></div>
+        <div class="cred-item"><span class="cred-dot"></span><span class="cred-text">Especialista Neurocomunicación</span></div>
+      </div>
+      <div class="reveal d4" style="display:flex; gap:0.875rem; flex-wrap:wrap; align-items:center;">
+        <a href="https://dashbook.fr/book/cuando-todo-se-rompe?preview=true"
+           class="btn btn-copper" target="_blank" rel="noopener">
+          Pre-reservar el libro →
+        </a>
+        <a href="index.html"
+           style="font-family:'Jost',sans-serif;font-size:0.8125rem;font-weight:500;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:0.35rem;transition:color 0.2s ease;"
+           onmouseover="this.style.color='var(--copper-dark)'"
+           onmouseout="this.style.color='var(--muted)'">
+          Ver su trabajo de coaching →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════ -->
+<section class="section section-copper">
+  <div class="final-cta">
+    <div class="reveal" style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+      <span class="label">Pre-reserva abierta · 18 de marzo</span>
+      <span class="hr-deco"></span>
+    </div>
+    <h2 class="reveal d1">
+      Hay cosas que solo<br>se entienden cuando<br><em>las has vivido.</em>
+    </h2>
+    <p class="reveal d2" style="color:var(--charcoal-mid); max-width:44ch; font-size:1.0625rem; text-align:center;">
+      Pre-reserva tu ejemplar desde el 18 de marzo y sé de las primeras personas en tenerlo.
+    </p>
+    <a href="https://dashbook.fr/book/cuando-todo-se-rompe?preview=true"
+       class="btn btn-dark reveal d3"
+       style="font-size:1rem; padding:0.875rem 2.5rem;"
+       target="_blank" rel="noopener">
+      Reservar mi ejemplar →
+    </a>
+    <p class="reveal d4" style="font-size:0.8125rem; color:var(--muted); font-style:italic; text-align:center;">
+      Publicado por DashBook · Pre-reserva abierta desde el 18 de marzo de 2026
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     FOOTER
+═══════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <img src="brand_assets/LG_logo.png" alt="Laura González Ortiz de Zárate" class="footer-logo">
+      <p class="footer-tagline">Coach ejecutiva, autora y especialista en habilidades directivas. Madrid, España.</p>
+      <div class="social-row">
+        <a href="https://www.instagram.com/lauragonzalezortizdezarate" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/laura-g-ortizdezarate/" class="social-btn" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@lauragonzalezortizdezarate" class="social-btn" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@lauraortizdezarate.net" class="social-btn" aria-label="TikTok" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h5>El libro</h5>
+      <div class="footer-links">
+        <a href="#el-libro">Sobre el libro</a>
+        <a href="#para-quien">Para quién es</a>
+        <a href="#laura">La autora</a>
+        <a href="https://dashbook.fr/book/cuando-todo-se-rompe?preview=true" target="_blank" rel="noopener">Pre-reservar →</a>
+      </div>
+    </div>
+
+    <div>
+      <h5>Laura</h5>
+      <div class="footer-links">
+        <a href="index.html">Coaching ejecutivo</a>
+        <a href="landing-b2b.html">Para Empresas</a>
+        <a href="landing-b2c.html">Para Particulares</a>
+        <a href="publicaciones.html">Publicaciones</a>
+      </div>
+    </div>
+
+    <div>
+      <h5>Contacto</h5>
+      <div class="footer-links">
+        <a href="mailto:hola@lauragonzalezortizdezarate.com">hola@lauragonzalezortizdezarate.com</a>
+        <a href="#">Madrid, España</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Laura González Ortiz de Zárate. Todos los derechos reservados.</p>
+    <div class="footer-legal">
+      <a href="#">Aviso Legal</a>
+      <a href="#">Privacidad</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Sticky nav
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // Scroll-reveal — only activates on first user interaction
+  let revealActivated = false;
+  function activateReveals() {
+    if (revealActivated) return;
+    revealActivated = true;
+    document.body.classList.add('js-reveals');
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => obs.observe(el));
+  }
+  window.addEventListener('scroll',      activateReveals, { once: true, passive: true });
+  window.addEventListener('pointermove', activateReveals, { once: true, passive: true });
+  window.addEventListener('touchstart',  activateReveals, { once: true, passive: true });
+
+  // Mobile hamburger
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('navMobileMenu');
+  burger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    navbar.classList.toggle('scrolled', isOpen || window.scrollY > 20);
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+</script>
+</body>
+</html>
