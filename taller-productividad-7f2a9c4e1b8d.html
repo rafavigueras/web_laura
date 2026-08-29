@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenido del Taller — Laura González Ortiz de Zárate</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="brand_assets/LG_logo.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:        #F8F5F0;
+      --sage-dark:    #8A9087;
+      --copper:       #CDA085;
+      --copper-dark:  #B08060;
+      --charcoal:     #69775c;
+      --text:         #545454;
+      --muted:        #888;
+      --border:       rgba(105,119,92,0.14);
+      --white:        #FDFCFA;
+      --error:        #B0554A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: 'Jost', system-ui, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+    }
+
+    h1, h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card {
+      width: 100%;
+      max-width: 30rem;
+      background: var(--white);
+      border-radius: 1.25rem;
+      padding: 2.75rem 2.25rem;
+      box-shadow: 0 1px 2px rgba(26,24,21,0.06), 0 20px 48px rgba(26,24,21,0.1);
+      border: 1px solid var(--border);
+    }
+
+    .label {
+      display: block;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--muted); font-size: 0.9375rem; margin-bottom: 1.75rem; }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 0.65rem;
+      border: 1.5px solid var(--border);
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    input[type="password"]:focus-visible {
+      outline: none;
+      border-color: var(--copper);
+      box-shadow: 0 0 0 3px rgba(205,160,133,0.25);
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      width: 100%;
+      padding: 0.85rem 1.5rem; border-radius: 100px;
+      font-family: 'Jost', sans-serif; font-size: 0.9375rem;
+      font-weight: 500; letter-spacing: 0.02em;
+      text-decoration: none; border: none; cursor: pointer;
+      background: var(--charcoal); color: var(--white);
+      margin-top: 1.25rem;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1),
+                  box-shadow 0.18s ease, background 0.18s ease;
+    }
+    .btn:hover { background: var(--copper-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(205,160,133,0.28); }
+    .btn:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; }
+    .btn:active { transform: translateY(0) !important; }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; }
+
+    .error-msg {
+      color: var(--error);
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+      display: none;
+    }
+    .error-msg.visible { display: block; }
+
+    .module-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+    .module-link {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      border-radius: 0.75rem;
+      border: 1.5px solid var(--border);
+      background: var(--cream);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), border-color 0.18s ease, background 0.18s ease;
+    }
+    .module-link:hover { border-color: var(--copper); background: var(--white); transform: translateY(-2px); }
+    .module-link:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; }
+    .module-link svg { flex-shrink: 0; width: 18px; height: 18px; color: var(--copper-dark); }
+
+    .pdf-note { color: var(--muted); font-size: 0.8125rem; margin-top: 1rem; }
+
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div id="gate">
+      <span class="label">Acceso privado</span>
+      <h1>Taller de Productividad Personal</h1>
+      <p class="subtitle">Introduce la contraseña que recibiste por email para ver el contenido.</p>
+
+      <form id="password-form">
+        <input type="password" id="password-input" placeholder="Contraseña" autocomplete="current-password" required>
+        <button type="submit" class="btn" id="submit-btn">Entrar</button>
+        <p class="error-msg" id="error-msg">Contraseña incorrecta. Inténtalo de nuevo.</p>
+      </form>
+    </div>
+
+    <div id="content" hidden>
+      <span class="label">Taller de Productividad Personal</span>
+      <h1>Tu contenido</h1>
+      <p class="subtitle">Cada vídeo está protegido con la misma contraseña que has usado aquí.</p>
+
+      <ul class="module-list">
+        <li><a class="module-link" href="https://vimeo.com/1055513346" target="_blank" rel="noopener">Módulo 1
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a></li>
+        <li><a class="module-link" href="https://vimeo.com/1055519813" target="_blank" rel="noopener">Módulo 2
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a></li>
+        <li><a class="module-link" href="https://vimeo.com/1055522995" target="_blank" rel="noopener">Módulo 3
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a></li>
+      </ul>
+
+      <a class="btn" id="pdf-link" href="brand_assets/taller-productividad-material.pdf" target="_blank" rel="noopener" download>Descargar material en PDF</a>
+      <p class="pdf-note">Si el botón no funciona, escríbenos y te lo reenviamos.</p>
+    </div>
+
+  </div>
+
+  <script>
+    const gate = document.getElementById('gate');
+    const content = document.getElementById('content');
+    const form = document.getElementById('password-form');
+    const input = document.getElementById('password-input');
+    const submitBtn = document.getElementById('submit-btn');
+    const errorMsg = document.getElementById('error-msg');
+
+    function reveal() {
+      gate.hidden = true;
+      content.hidden = false;
+    }
+
+    // Si ya hay una sesión válida (cookie de una visita anterior), saltamos el formulario.
+    fetch('/api/verificar-acceso', { credentials: 'same-origin' })
+      .then((r) => r.json())
+      .then((data) => { if (data.valid) reveal(); })
+      .catch(() => {});
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorMsg.classList.remove('visible');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Comprobando…';
+
+      try {
+        const res = await fetch('/api/verificar-acceso', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password: input.value }),
+        });
+        const data = await res.json();
+
+        if (data.ok) {
+          reveal();
+        } else {
+          errorMsg.classList.add('visible');
+        }
+      } catch {
+        errorMsg.textContent = 'Ha ocurrido un error. Inténtalo de nuevo.';
+        errorMsg.classList.add('visible');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Entrar';
+      }
+    });
+  </script>
+
+</body>
+</html>

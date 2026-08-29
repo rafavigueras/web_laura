@@ -2,6 +2,12 @@ node_modules/
 temporary screenshots/
 .claude/
 www.eloqwnt.com.png
+.DS_Store
+
+# Local environment variables (Stripe/IONOS/session secrets — never commit)
+.env
+.env.local
+.env*.local
 
 # Playwright MCP tool logs
 .playwright-mcp/

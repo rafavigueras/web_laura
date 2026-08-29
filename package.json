@@ -2,8 +2,17 @@
   "name": "website-building",
   "type": "module",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
   "dependencies": {
-    "puppeteer": "^21.11.0"
+    "@upstash/redis": "^1.34.3",
+    "nodemailer": "^6.9.14",
+    "puppeteer": "^21.11.0",
+    "stripe": "^16.9.0"
   },
   "devDependencies": {
     "jimp": "^1.6.0"
