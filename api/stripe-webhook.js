@@ -13,12 +13,15 @@ async function readRawBody(req) {
 }
 
 async function alreadyProcessed(sessionId) {
-  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+  const url = process.env.UPSTASH_REDIS_REST_KV_REST_API_URL;
+  const token = process.env.UPSTASH_REDIS_REST_KV_REST_API_TOKEN;
+
+  if (!url || !token) {
     console.warn('Redis (Upstash/Vercel) no configurado: sin deduplicación de emails.');
     return false;
   }
   const { Redis } = await import('@upstash/redis');
-  const redis = Redis.fromEnv();
+  const redis = new Redis({ url, token });
   const key = `stripe-session-emailed:${sessionId}`;
   const seen = await redis.get(key);
   if (seen) return true;
