@@ -502,6 +502,8 @@
     }
     .footer-contact a:hover { color: var(--white); }
 
+    .footer-legal-row { order: 3; flex-basis: 100%; gap: 1.25rem; }
+    .footer-legal-row a { font-size: 0.75rem; color: rgba(253,252,250,0.38); }
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1100px) {
       nav { padding: 1rem 2rem; }
@@ -542,6 +544,8 @@
       footer { padding: 2rem 1.25rem; }
     }
   </style>
+  <!-- Consentimiento de cookies + Meta Pixel (ver js/cookies.js) -->
+  <script src="/js/cookies.js"></script>
 </head>
 <body>
 
@@ -884,6 +888,13 @@
     <a href="mailto:hola@lauragonzalezortizdezarate.com">hola@lauragonzalezortizdezarate.com</a>
     <a href="landing-b2c.html">Servicios para particulares</a>
     <a href="index.html">← Web principal</a>
+  </div>
+  <div class="footer-contact footer-legal-row">
+    <a href="/aviso-legal.html">Aviso legal</a>
+    <a href="/privacidad.html">Privacidad</a>
+    <a href="/cookies.html">Cookies</a>
+    <a href="/cookies.html" data-cookie-settings>Configurar cookies</a>
+    <a href="/condiciones.html">Condiciones de venta</a>
   </div>
   <span class="footer-copy">© 2025 Laura González Ortiz de Zárate</span>
 </footer>

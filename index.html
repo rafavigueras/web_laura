@@ -611,6 +611,18 @@
     .nl-dark-submit:hover { background: var(--copper-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(205,160,133,0.3); }
     .nl-dark-submit:active { transform: translateY(0); }
     .nl-dark-msg { font-size: 0.8125rem; text-align: center; min-height: 1.2em; display: none; color: var(--copper-light); }
+    .nl-dark-consent {
+      display: flex; align-items: flex-start; gap: 0.625rem;
+      font-size: 0.8125rem; line-height: 1.5; color: rgba(253,252,250,0.7); cursor: pointer;
+    }
+    .nl-dark-consent input {
+      flex-shrink: 0; width: 1.125rem; height: 1.125rem; margin-top: 0.125rem;
+      accent-color: var(--copper); cursor: pointer;
+    }
+    .nl-dark-consent input:focus-visible { outline: 2px solid var(--copper-light); outline-offset: 2px; }
+    .nl-dark-consent a, .nl-dark-legal a { color: var(--copper-light); text-underline-offset: 2px; }
+    .nl-dark-consent a:hover, .nl-dark-legal a:hover { color: var(--white); }
+    .nl-dark-legal { font-size: 0.75rem; line-height: 1.55; color: rgba(253,252,250,0.6); }
     @media (max-width: 768px) {
       .nl-dark-wrap { padding: 2rem 1.5rem 2.5rem; }
       .nl-dark-header { flex-direction: column; gap: 0.75rem; }
@@ -780,6 +792,8 @@
       footer { padding: 3.5rem 1.25rem 2rem; }
     }
   </style>
+  <!-- Consentimiento de cookies + Meta Pixel (ver js/cookies.js) -->
+  <script src="/js/cookies.js"></script>
 </head>
 <body>
 
@@ -1138,8 +1152,13 @@
           </select>
         </div>
       </div>
+      <label class="nl-dark-consent">
+        <input type="checkbox" id="mc-consent" required>
+        <span>He leído la <a href="/privacidad.html" target="_blank">política de privacidad</a> y quiero recibir la newsletter.</span>
+      </label>
       <button type="submit" class="nl-dark-submit">Suscribirme a Semillas para el Cambio</button>
       <p class="nl-dark-msg" id="mc-message-index"></p>
+      <p class="nl-dark-legal">Responsable: Laura González Ortiz de Zárate. Finalidad: enviarte la newsletter. Base legal: tu consentimiento. Destinatario: Mailchimp (Intuit Inc., EE.&nbsp;UU.), adherido al Marco de Privacidad de Datos UE-EE.&nbsp;UU. Puedes darte de baja en cada envío y ejercer tus derechos en hola@lauragonzalezortizdezarate.com. <a href="/privacidad.html" target="_blank">Más información</a>.</p>
     </form>
   </div>
 
@@ -1264,10 +1283,11 @@
   <div class="footer-bottom">
     <p class="footer-copy">© 2026 Laura González Ortiz de Zárate. Todos los derechos reservados.</p>
     <div class="footer-legal">
-      <a href="#">Aviso Legal</a>
-      <a href="#">Privacidad</a>
-      <a href="#">Cookies</a>
-      <a href="#">Términos y Condiciones</a>
+      <a href="/aviso-legal.html">Aviso legal</a>
+      <a href="/privacidad.html">Privacidad</a>
+      <a href="/cookies.html">Cookies</a>
+      <a href="/cookies.html" data-cookie-settings>Configurar cookies</a>
+      <a href="/condiciones.html">Condiciones de venta</a>
     </div>
   </div>
 </footer>
@@ -1336,6 +1356,12 @@
       const bMonth = document.getElementById('mc-bday-month').value;
 
       if (!email) return;
+      if (!document.getElementById('mc-consent').checked) {
+        mcMsgIdx.style.display = 'block';
+        mcMsgIdx.style.color = 'var(--copper-light)';
+        mcMsgIdx.textContent = 'Marca la casilla de privacidad para suscribirte.';
+        return;
+      }
 
       if (MAILCHIMP_ACTION) {
         const cbName = 'mc_cb_' + Date.now();
@@ -1351,6 +1377,7 @@
           if (data.result === 'success') {
             mcMsgIdx.textContent = '¡Bienvenida! Ya estás suscrita a Semillas para el Cambio.';
             mcFormIdx.reset();
+            if (window.fbq) fbq('track', 'Lead');
           } else {
             mcMsgIdx.style.color = 'var(--copper-light)';
             mcMsgIdx.textContent = (data.msg || 'Ha habido un error. Inténtalo de nuevo.').replace(/<[^>]+>/g,'');

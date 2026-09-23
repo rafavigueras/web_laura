@@ -136,6 +136,21 @@
 
     [hidden] { display: none !important; }
   </style>
+  <!-- Consentimiento de cookies + Meta Pixel (ver js/cookies.js) -->
+  <script src="/js/cookies.js"></script>
+  <script>
+    // Compra completada: Stripe redirige aquí con ?compra=ok&valor=<precio pagado>.
+    // Se registra una sola vez y se limpia la URL para que recargar o volver
+    // más tarde al curso no cuente otra compra.
+    (function () {
+      var params = new URLSearchParams(location.search);
+      if (params.get('compra') !== 'ok') return;
+      var valor = Number(params.get('valor'));
+      if (!(valor > 0 && valor < 10000)) valor = 149;
+      fbq('track', 'Purchase', { value: valor, currency: 'EUR', content_name: 'Curso de Productividad Personal' });
+      history.replaceState(null, '', location.pathname + location.hash);
+    })();
+  </script>
 </head>
 <body>
 
